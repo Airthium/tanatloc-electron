@@ -8,7 +8,8 @@
     "baseUrl": ".",
     "paths": {
       "@/auth/*": ["../auth/*"],
-      "@/config/*": ["../../config/*", "../../../config/*"],
+      "@/config/*": ["../config/*", "../../config/*", "../../../config/*"],
+      "@/database": ["../src/database"],
       "@/database/*": ["../../database/*"],
       "@/lib/*": ["../lib/*"]
     }

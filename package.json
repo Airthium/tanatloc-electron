@@ -12,6 +12,11 @@
   },
   "main": "app/background.js",
   "scripts": {
+    "postinstall": "yarn postinstallconfig && yarn postinstallinstall && yarn postinstalldatabase && yarn postinstallrun",
+    "postinstallconfig": "swc --config-file .swcrc tanatloc-ssr/config --out-dir dist-install",
+    "postinstallinstall": "swc --config-file .swcrc tanatloc-ssr/install --out-dir dist-install",
+    "postinstalldatabase": "swc --config-file .swcrc tanatloc-ssr/src/database --out-dir dist-install",
+    "postinstallrun": "node dist-install/install",
     "serverbuild": "yarn serverbuildconfig && yarn serverbuildmodels && yarn serverbuildmodules && yarn serverbuildplugins && yarn serverbuildserver && yarn serverbuildauth && yarn serverbuilddatabase && yarn serverbuildlib && yarn serverbuildroute && yarn serverbuildservices && yarn serverbuildtemplates",
     "serverbuildconfig": "swc --config-file .swcrc tanatloc-ssr/config --out-dir dist-server/tanatloc-ssr",
     "serverbuildmodels": "swc --config-file .swcrc tanatloc-ssr/models --out-dir dist-server/tanatloc-ssr",
