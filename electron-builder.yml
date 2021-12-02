@@ -1,0 +1,17 @@
+appId: com.tanatloc.app
+productName: Tanatloc
+copyright: Copyright © 2021 Airthium
+directories:
+  output: dist
+  buildResources: resources
+files:
+  - from: .
+    filter:
+      - package.json
+      - app
+extraResources:
+  [
+    { from: './tanatloc-ssr/plugins', to: 'plugins', filter: ['**/*'] },
+    { from: './tanatloc-ssr/templates', to: 'templates', filter: ['**/*'] }
+  ]
+publish: null
