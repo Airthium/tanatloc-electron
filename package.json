@@ -1,0 +1,50 @@
+{
+  "name": "tanatloc-electron",
+  "description": "Tanatloc",
+  "version": "1.0.0",
+  "repository": "git@github.com:Airthium/tanatloc-electron.git",
+  "license": "UNLICENSED",
+  "private": true,
+  "homepage": "./",
+  "author": {
+    "name": "Airthium",
+    "url": "https://github.com/orgs/Airthium/people"
+  },
+  "main": "app/background.js",
+  "scripts": {
+    "serverbuild": "yarn serverbuildconfig && yarn serverbuildmodels && yarn serverbuildmodules && yarn serverbuildplugins && yarn serverbuildserver && yarn serverbuildauth && yarn serverbuilddatabase && yarn serverbuildlib && yarn serverbuildroute && yarn serverbuildservices && yarn serverbuildtemplates",
+    "serverbuildconfig": "swc --config-file .swcrc tanatloc-ssr/config --out-dir dist-server/tanatloc-ssr",
+    "serverbuildmodels": "swc --config-file .swcrc tanatloc-ssr/models --out-dir dist-server/tanatloc-ssr",
+    "serverbuildmodules": "swc --config-file .swcrc tanatloc-ssr/modules --out-dir dist-server/tanatloc-ssr",
+    "serverbuildplugins": "swc --config-file .swcrc tanatloc-ssr/plugins --out-dir dist-server/tanatloc-ssr",
+    "serverbuildserver": "swc server --out-dir dist-server/server",
+    "serverbuildauth": "swc --config-file .swcrc tanatloc-ssr/src/auth --out-dir dist-server/tanatloc-ssr",
+    "serverbuilddatabase": "swc --config-file .swcrc tanatloc-ssr/src/database --out-dir dist-server/tanatloc-ssr",
+    "serverbuildlib": "swc --config-file .swcrc tanatloc-ssr/src/lib --out-dir dist-server/tanatloc-ssr",
+    "serverbuildroute": "swc --config-file .swcrc tanatloc-ssr/src/route --out-dir dist-server/tanatloc-ssr",
+    "serverbuildservices": "swc --config-file .swcrc tanatloc-ssr/src/services --out-dir dist-server/tanatloc-ssr",
+    "serverbuildtemplates": "swc --config-file .swcrc tanatloc-ssr/templates --out-dir dist-server/tanatloc-ssr"
+  },
+  "dependencies": {
+    "electron-serve": "^1.1.0",
+    "electron-store": "^8.0.1"
+  },
+  "devDependencies": {
+    "@hapi/iron": "^6.0.0",
+    "@sentry/node": "^6.15.0",
+    "@swc/cli": "^0.1.52",
+    "@swc/core": "^1.2.117",
+    "cors": "^2.8.5",
+    "electron": "^16.0.3",
+    "electron-builder": "^22.14.5",
+    "express": "^4.17.1",
+    "http": "^0.0.1-security",
+    "http-errors": "^1.8.1",
+    "is-electron": "^2.2.1",
+    "mailersend": "^1.3.0",
+    "nextron": "^7.1.0",
+    "pg": "^8.7.1",
+    "tar": "^6.1.11",
+    "three-to-glb": "./tanatloc-ssr/modules/three-to-glb/"
+  }
+}
