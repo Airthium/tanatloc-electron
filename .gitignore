@@ -4,5 +4,7 @@ public
 
 dist-install
 dist-server
+dist
+app
 
 coverage

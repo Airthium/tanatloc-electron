@@ -5,7 +5,6 @@
   "repository": "git@github.com:Airthium/tanatloc-electron.git",
   "license": "UNLICENSED",
   "private": true,
-  "homepage": "./",
   "author": {
     "name": "Airthium",
     "url": "https://github.com/orgs/Airthium/people"

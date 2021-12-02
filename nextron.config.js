@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  mainSrcDir: 'electron',
+  mainSrcDir: 'main',
   rendererSrcDir: 'tanatloc-ssr',
 
   webpack: (defaultConfig) => {
