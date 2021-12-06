@@ -1,4 +1,5 @@
 {
+  "minify": true,
   "jsc": {
     "parser": {
       "syntax": "typescript",
@@ -37,6 +38,9 @@
       "@/styles": ["src/styles"],
       "@/styles/*": ["src/styles/*"]
     }
+  },
+  "module": {
+    "type": "commonjs"
   },
   "sourceMaps": true
 }
