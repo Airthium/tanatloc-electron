@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "repository": "git@github.com:Airthium/tanatloc-electron.git",
   "license": "UNLICENSED",
+  "type": "module",
   "private": true,
   "author": {
     "name": "Airthium",
@@ -11,8 +12,9 @@
   },
   "main": "app/background.js",
   "scripts": {
-    "build": "yarn prebuild && yarn serverbuild && nextron build && electron-builder install-all-deps",
-    "prebuild": "yarn prebuildconfig && yarn prebuildinstall && yarn prebuilddatabase && yarn prebuildrun",
+    "dev": "yarn prebuild && yarn serverbuild && nextron",
+    "build": "yarn prebuild && yarn serverbuild && nextron build && electron-builder install-app-deps",
+    "prebuild": "yarn prebuildconfig && yarn prebuildinstall && yarn prebuilddatabase",
     "prebuildconfig": "swc --config-file .swcrc tanatloc-ssr/config --out-dir dist-install",
     "prebuildinstall": "swc --config-file .swcrc tanatloc-ssr/install --out-dir dist-install",
     "prebuilddatabase": "swc --config-file .swcrc tanatloc-ssr/src/database --out-dir dist-install",

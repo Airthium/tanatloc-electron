@@ -7,8 +7,8 @@ directories:
 files:
   - from: .
     filter:
-      - package.json
       - app
+      - package.json
 extraResources:
   [
     { from: './tanatloc-ssr/plugins', to: 'plugins', filter: ['**/*'] },

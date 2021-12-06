@@ -27,7 +27,7 @@ const start = async (): Promise<void> => {
 
   // Server
   console.info('Starting server')
-  require('../dist-server/server/bin/www')
+  await import('../dist-server/server/bin/www')
 
   // Client
   console.info('Starting client')

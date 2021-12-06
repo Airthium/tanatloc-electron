@@ -21,6 +21,7 @@ import plugin from '../tanatloc-ssr/src/route/plugin'
 import plugins from '../tanatloc-ssr/src/route/plugins'
 import project from '../tanatloc-ssr/src/route/project'
 import projectId from '../tanatloc-ssr/src/route/project/[id]'
+import projectArchive from '../tanatloc-ssr/src/route/project/[id]/archive'
 import projects from '../tanatloc-ssr/src/route/projects'
 import result from '../tanatloc-ssr/src/route/result'
 import resultDownload from '../tanatloc-ssr/src/route/result/download'
@@ -77,6 +78,7 @@ app.all('/api/plugin', plugin)
 app.all('/api/plugins', plugins)
 
 app.all('/api/project', project)
+app.all('/api/project/:id/archive', projectArchive)
 app.all('/api/project/:id', projectId)
 
 app.all('/api/projects', projects)
