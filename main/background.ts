@@ -22,12 +22,24 @@ const start = async (): Promise<void> => {
   await app.whenReady()
 
   // Install
-  console.info('Install')
-  require('../dist-install/install/index')
+  try {
+    console.info('Install')
+    await import('../dist-install/install/index')
+  } catch (err) {
+    console.error('Install error')
+    console.error(err)
+    app.quit()
+  }
 
   // Server
-  console.info('Starting server')
-  await import('../dist-server/server/bin/www')
+  try {
+    console.info('Starting server')
+    await import('../dist-server/server/bin/www')
+  } catch (err) {
+    console.error('Server error')
+    console.error(err)
+    app.quit()
+  }
 
   // Client
   console.info('Starting client')
