@@ -11,7 +11,7 @@
   },
   "main": "app/background.js",
   "scripts": {
-    "distclean": "rm -Rf app dist dist-install dist-server dist-plugins",
+    "distclean": "rm -Rf app dist dist-install dist-server plugins",
     "prebuild": "yarn distclean && yarn prebuildinstall && yarn server && yarn plugins",
     "build": "echo '- Build' && nextron build && electron-builder install-app-deps",
     "dev": "yarn clean && yarn prebuild nextron",
@@ -36,7 +36,7 @@
     "serverserver": "babel server --extensions '.js,.ts' --out-dir dist-server/server",
     "serverservices": "babel tanatloc-ssr/src/services --config-file ./.babelrc --extensions '.js,.ts' --out-dir dist-server/tanatloc-ssr/src/services",
     "servertemplates": "babel tanatloc-ssr/templates --config-file ./.babelrc --extensions '.js,.ts' --copy-files --out-dir dist-server/tanatloc-ssr/templates",
-    "plugins": "echo '- Plugins' && babel tanatloc-ssr/plugins --config-file ./.babelrc --extensions '.js,.jsx,.ts,.tsx' --copy-files --out-dir dist-plugins"
+    "plugins": "echo '- Plugins' && babel tanatloc-ssr/plugins --config-file ./.babelrc --extensions '.js,.jsx,.ts,.tsx' --copy-files --out-dir plugins"
   },
   "dependencies": {
     "electron-serve": "1.1.0",
