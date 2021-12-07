@@ -13,17 +13,17 @@
   "scripts": {
     "distclean": "rm -Rf app dist dist-install dist-server dist-plugins",
     "prebuild": "yarn distclean && yarn prebuildinstall && yarn server && yarn plugins",
-    "build": "yarn prebuild && nextron build && electron-builder install-app-deps",
+    "build": "echo '- Build' && nextron build && electron-builder install-app-deps",
     "dev": "yarn clean && yarn prebuild nextron",
     "depcheck": "depcheck",
     "prettier": "prettier -l '**/*.{js,jsx,ts,tsx,json,md,css}'",
     "test": "jest --coverage --silent",
-    "prebuildinstall": "yarn prebuildinstallconfig && yarn prebuildinstallinstall && yarn prebuildinstalldatabase",
+    "prebuildinstall": "echo '- Install' && yarn prebuildinstallconfig && yarn prebuildinstallinstall && yarn prebuildinstalldatabase",
     "prebuildinstallconfig": "babel tanatloc-ssr/config --config-file ./.babelrc --extensions '.js,.ts' --out-dir dist-install/config",
     "prebuildinstalldatabase": "babel tanatloc-ssr/src/database --config-file ./.babelrc  --extensions '.js,.ts' --out-dir dist-install/src/database",
     "prebuildinstallinstall": "babel tanatloc-ssr/install --config-file ./.babelrc --extensions '.js,.ts' --out-dir dist-install/install",
     "prebuildinstallrun": "node dist-install/install",
-    "server": "yarn serverconfig && yarn servermodels && yarn servermodules && yarn serverplugins && yarn serverserver && yarn serverauth && yarn serverdatabase && yarn serverlib && yarn serverroute && yarn serverservices && yarn servertemplates",
+    "server": "echo '- Server' && yarn serverconfig && yarn servermodels && yarn servermodules && yarn serverplugins && yarn serverserver && yarn serverauth && yarn serverdatabase && yarn serverlib && yarn serverroute && yarn serverservices && yarn servertemplates",
     "serverauth": "babel tanatloc-ssr/src/auth --config-file ./.babelrc --extensions '.js,.ts' --out-dir dist-server/tanatloc-ssr/src/auth",
     "serverconfig": "babel tanatloc-ssr/config --config-file ./.babelrc --extensions '.js,.ts' --out-dir dist-server/tanatloc-ssr/config",
     "serverdatabase": "babel tanatloc-ssr/src/database --config-file ./.babelrc --extensions '.js,.ts' --out-dir dist-server/tanatloc-ssr/src/database",
@@ -36,7 +36,7 @@
     "serverserver": "babel server --extensions '.js,.ts' --out-dir dist-server/server",
     "serverservices": "babel tanatloc-ssr/src/services --config-file ./.babelrc --extensions '.js,.ts' --out-dir dist-server/tanatloc-ssr/src/services",
     "servertemplates": "babel tanatloc-ssr/templates --config-file ./.babelrc --extensions '.js,.ts' --copy-files --out-dir dist-server/tanatloc-ssr/templates",
-    "plugins": "babel tanatloc-ssr/plugins --config-file ./.plugins-babelrc --extensions '.js,.jsx,.ts,.tsx' --copy-files --out-dir dist-plugins"
+    "plugins": "echo '- Plugins' && babel tanatloc-ssr/plugins --config-file ./.babelrc --extensions '.js,.jsx,.ts,.tsx' --copy-files --out-dir dist-plugins"
   },
   "dependencies": {
     "electron-serve": "1.1.0",

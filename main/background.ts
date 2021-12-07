@@ -24,7 +24,7 @@ const start = async (): Promise<void> => {
   // Install
   try {
     console.info('Install')
-    await import('../dist-install/install/index')
+    await import('../dist-install/install')
   } catch (err) {
     console.error('Install error')
     console.error(err)
