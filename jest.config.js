@@ -6,7 +6,8 @@ module.exports = {
     '<rootDir>/coverage',
     '<rootDir>/dist',
     '<rootDir>/dist-install',
-    '<rootDir>/dist-server'
+    '<rootDir>/dist-server',
+    '<rootDir>/dist-plugins'
   ],
   testMatch: ['<rootDir>/**/*.test.ts'],
   transform: {

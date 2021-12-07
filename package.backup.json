@@ -1,7 +1,0 @@
-{
-  "prebuild": "rm -Rf dist-prebuild && yarn prebuildconfig && yarn prebuildinstall && yarn prebuilddatabase",
-  "prebuildconfig": "babel . --only tanatloc-ssr/config/,tanatloc-ssr/install/,tanatloc-ssr/src/database/ --config-file ./.babelrc --extensions '.ts,.js' --out-dir dist-prebuild",
-  "prebuildinstall": "babel . --only tanatloc-ssr/install/ --config-file ./.babelrc --extensions '.ts,.js' --out-dir dist-prebuild/install",
-  "prebuilddatabase": "babel . --only tanatloc-ssr/src/database/ --config-file ./.babelrc --extensions '.ts,.js' --out-dir dist-prebuild/src/database",
-  "prebuildrun": "node dist-prebuild/install"
-}
