@@ -35,7 +35,7 @@
     "serverserver": "babel server --extensions '.js,.ts' --out-dir dist-server/server",
     "serverservices": "babel tanatloc-ssr/src/services --config-file ./.babelrc --extensions '.js,.ts' --out-dir dist-server/tanatloc-ssr/src/services",
     "servertemplates": "babel tanatloc-ssr/templates --config-file ./.babelrc --extensions '.js,.ts' --copy-files --out-dir dist-server/tanatloc-ssr/templates",
-    "plugins": "babel tanatloc-ssr/plugins --config-file ./.babelrc --extensions '.js,.jsx,.ts,.tsx' --copy-files --out-dir plugins/"
+    "plugins": "babel tanatloc-ssr/plugins --config-file ./.babelrc-plugins --extensions '.js,.jsx,.ts,.tsx' --copy-files --out-dir dist-plugins"
   },
   "dependencies": {
     "electron-serve": "1.1.0",
