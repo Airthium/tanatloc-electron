@@ -5,10 +5,9 @@ on:
     branches:
       - master
 jobs:
-#   create-release:
-#     name: Create release
-#     runs-on: ubuntu-latest
-
+  create-release:
+    name: Create release
+    runs-on: ubuntu-latest
 #     outputs:
 #       version: ${{ steps.package_version.outputs.version }}
 #       upload_url: ${{ steps.create_release.outputs.upload_url }}
