@@ -1,5 +1,6 @@
 {
   "presets": ["@babel/preset-typescript"],
+  "ignore": ["**/*.test.js", "**/*.test.jsx", "**/*.test.ts", "**/*.test.tsx"],
   "plugins": [
     [
       "module-resolver",

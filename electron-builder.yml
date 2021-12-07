@@ -11,7 +11,7 @@ files:
       - package.json
 extraResources:
   [
-    { from: './tanatloc-ssr/plugins', to: 'plugins', filter: ['**/*'] },
+    { from: './dist-plugins', to: 'plugins', filter: ['**/*'] },
     { from: './tanatloc-ssr/templates', to: 'templates', filter: ['**/*'] }
   ]
 publish: null
