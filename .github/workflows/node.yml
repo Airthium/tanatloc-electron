@@ -22,10 +22,6 @@ jobs:
         run: yarn test || true
       - name: Prebuild
         run: yarn prebuild
-      - name: Server
-        run: yarn server
-      - name: Plugins
-        run: yarn plugins
       - name: SonarCloud scan
         uses: sonarsource/sonarcloud-github-action@master
         env:
