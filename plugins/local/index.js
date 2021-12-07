@@ -1,3 +1,3 @@
 /** @module Plugins.Local */
 
-export default {};
+export {}
