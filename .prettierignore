@@ -4,7 +4,7 @@ public
 
 dist-install
 dist-server
-dist-plugins
+plugins
 dist
 app
 
