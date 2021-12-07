@@ -1,11 +1,10 @@
 {
-  "presets": ["@babel/preset-typescript"],
-  "ignore": ["**/*.test.js", "**/*.test.jsx", "**/*.test.ts", "**/*.test.tsx"],
+  "presets": ["next/babel", "@babel/preset-typescript"],
   "plugins": [
     [
       "module-resolver",
       {
-        "root": ["."],
+        "root": ["./tanatloc-ssr"],
         "alias": {
           "@/config": "./tanatloc-ssr/config",
           "@/models": "./tanatloc-ssr/models",
