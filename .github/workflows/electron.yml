@@ -36,6 +36,9 @@ jobs:
     steps:
       - name: Check out Git repository
         uses: actions/checkout@main
+        with:
+          token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
+          submodules: recursive
 
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@main
@@ -66,6 +69,9 @@ jobs:
     steps:
       - name: Check out Git repository
         uses: actions/checkout@main
+        with:
+          token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
+          submodules: recursive
 
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@main
@@ -96,6 +102,9 @@ jobs:
     steps:
       - name: Check out Git repository
         uses: actions/checkout@main
+        with:
+          token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
+          submodules: recursive
 
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@main
