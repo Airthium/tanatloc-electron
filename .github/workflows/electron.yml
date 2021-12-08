@@ -26,7 +26,8 @@ jobs:
       - name: Get release
         id: get_release
         run: |
-          upload_url=$(curl -H "Authorization token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/Airthium/tanatloc-electron/releases/latest | jq -r '.upload_url')
+          UPLOAD_URL=$(curl -H "Authorization token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/Airthium/tanatloc-electron/releases/latest | jq -r '.upload_url')
+          echo "::set-output name=upload_url::$UPLOAD_URL"
 
   release-ubuntu:
     needs: get-release
