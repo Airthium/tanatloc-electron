@@ -1,6 +1,6 @@
 {
   "name": "tanatloc-electron",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha1",
   "private": true,
   "description": "Tanatloc",
   "repository": "git@github.com:Airthium/tanatloc-electron.git",
