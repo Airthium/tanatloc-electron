@@ -1,0 +1,32 @@
+{
+  "presets": [
+    "next/babel",
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": [
+          "."
+        ],
+        "alias": {
+          "@/config": "./tanatloc-ssr/tanatloc-ssr/config",
+          "@/models": "./tanatloc-ssr/tanatloc-ssr/models",
+          "@/templates": "./tanatloc-ssr/tanatloc-ssr/templates",
+          "@/plugins": "./tanatloc-ssr/tanatloc-ssr/plugins",
+          "@/api": "./tanatloc-ssr/src/tanatloc-ssr/api",
+          "@/auth": "./tanatloc-ssr/tanatloc-ssr/src/auth",
+          "@/components": "./tanatloc-ssr/tanatloc-ssr/src/components",
+          "@/database": "./tanatloc-ssr/tanatloc-ssr/src/database",
+          "@/lib": "./tanatloc-ssr/tanatloc-ssr/src/lib",
+          "@/pages": "./tanatloc-ssr/tanatloc-ssr/src/pages",
+          "@/route": "./tanatloc-ssr/tanatloc-ssr/src/route",
+          "@/services": "./tanatloc-ssr/tanatloc-ssr/src/services",
+          "@/store": "./tanatloc-ssr/tanatloc-ssr/src/store",
+          "@/styles": "./tanatloc-ssr/tanatloc-ssr/src/styles"
+        }
+      }
+    ]
+  ]
+}
