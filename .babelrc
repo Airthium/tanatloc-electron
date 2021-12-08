@@ -6,20 +6,20 @@
       {
         "root": ["./"],
         "alias": {
-          "@/config": "./tanatloc-ssr/config",
-          "@/models": "./tanatloc-ssr/models",
-          "@/templates": "./tanatloc-ssr/templates",
-          "@/plugins": "./tanatloc-ssr/plugins",
-          "@/api": "./tanatloc-ssr/src/api",
-          "@/auth": "./tanatloc-ssr/src/auth",
-          "@/components": "./tanatloc-ssr/src/components",
-          "@/database": "./tanatloc-ssr/src/database",
-          "@/lib": "./tanatloc-ssr/src/lib",
-          "@/pages": "./tanatloc-ssr/src/pages",
-          "@/route": "./tanatloc-ssr/src/route",
-          "@/services": "./tanatloc-ssr/src/services",
-          "@/store": "./tanatloc-ssr/src/store",
-          "@/styles": "./tanatloc-ssr/src/styles"
+          "@/config": "./tanatloc/config",
+          "@/models": "./tanatloc/models",
+          "@/templates": "./tanatloc/templates",
+          "@/plugins": "./tanatloc/plugins",
+          "@/api": "./tanatloc/src/api",
+          "@/auth": "./tanatloc/src/auth",
+          "@/components": "./tanatloc/src/components",
+          "@/database": "./tanatloc/src/database",
+          "@/lib": "./tanatloc/src/lib",
+          "@/pages": "./tanatloc/src/pages",
+          "@/route": "./tanatloc/src/route",
+          "@/services": "./tanatloc/src/services",
+          "@/store": "./tanatloc/src/store",
+          "@/styles": "./tanatloc/src/styles"
         }
       }
     ]

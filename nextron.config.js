@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   mainSrcDir: 'main',
-  rendererSrcDir: 'tanatloc-ssr',
+  rendererSrcDir: 'tanatloc',
 
   webpack: (defaultConfig) => {
     defaultConfig.module.rules.push({

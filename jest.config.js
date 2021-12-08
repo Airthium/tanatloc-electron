@@ -1,7 +1,7 @@
 module.exports = {
   rootDir: '.',
   testPathIgnorePatterns: [
-    '<rootDir>/tanatloc-ssr',
+    '<rootDir>/tanatloc',
     '<rootDir>/app',
     '<rootDir>/coverage',
     '<rootDir>/dist',
@@ -14,7 +14,7 @@ module.exports = {
     '^.+\\.(t|j)sx?$': ['@swc/jest']
   },
   coveragePathIgnorePatterns: [
-    '<rootDir>/tanatloc-ssr',
+    '<rootDir>/tanatloc',
     '<rootDir>/app',
     '<rootDir>/coverage',
     '<rootDir>/dist',

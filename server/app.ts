@@ -1,46 +1,46 @@
-/** ../tanatloc-ssr/srcmodule Server */
+/** ../tanatloc/srcmodule Server */
 
 import createError from 'http-errors'
 import express, { json, urlencoded } from 'express'
 import cors from 'cors'
 
-import avatar from '../tanatloc-ssr/src/route/avatar'
-import email from '../tanatloc-ssr/src/route/email'
-import geometries from '../tanatloc-ssr/src/route/geometries'
-import geometry from '../tanatloc-ssr/src/route/geometry'
-import geometryId from '../tanatloc-ssr/src/route/geometry/[id]'
-import geometryDownload from '../tanatloc-ssr/src/route/geometry/[id]/download'
-import geometryPart from '../tanatloc-ssr/src/route/geometry/[id]/part'
-import group from '../tanatloc-ssr/src/route/group'
-import groups from '../tanatloc-ssr/src/route/groups'
-import groupsId from '../tanatloc-ssr/src/route/groups/[id]'
-import link from '../tanatloc-ssr/src/route/link'
-import organization from '../tanatloc-ssr/src/route/organization'
-import organizations from '../tanatloc-ssr/src/route/organizations'
-import plugin from '../tanatloc-ssr/src/route/plugin'
-import plugins from '../tanatloc-ssr/src/route/plugins'
-import project from '../tanatloc-ssr/src/route/project'
-import projectId from '../tanatloc-ssr/src/route/project/[id]'
-import projectArchive from '../tanatloc-ssr/src/route/project/[id]/archive'
-import projects from '../tanatloc-ssr/src/route/projects'
-import result from '../tanatloc-ssr/src/route/result'
-import resultDownload from '../tanatloc-ssr/src/route/result/download'
-import resultArchive from '../tanatloc-ssr/src/route/result/archive'
-import simulation from '../tanatloc-ssr/src/route/simulation'
-import simulationId from '../tanatloc-ssr/src/route/simulation/[id]'
-import simulationIdRun from '../tanatloc-ssr/src/route/simulation/[id]/run'
-import simulationIdStop from '../tanatloc-ssr/src/route/simulation/[id]/stop'
-import simulationIdLog from '../tanatloc-ssr/src/route/simulation/[id]/log'
-import simulationIdTasks from '../tanatloc-ssr/src/route/simulation/[id]/tasks'
-import simulations from '../tanatloc-ssr/src/route/simulations'
-import system from '../tanatloc-ssr/src/route/system'
-import user from '../tanatloc-ssr/src/route/user'
-import userId from '../tanatloc-ssr/src/route/user/[id]'
-import userCheck from '../tanatloc-ssr/src/route/user/check'
-import users from '../tanatloc-ssr/src/route/users'
-import workspace from '../tanatloc-ssr/src/route/workspace'
-import { loginRoute } from '../tanatloc-ssr/src/route/login'
-import { logout } from '../tanatloc-ssr/src/route/logout'
+import avatar from '../tanatloc/src/route/avatar'
+import email from '../tanatloc/src/route/email'
+import geometries from '../tanatloc/src/route/geometries'
+import geometry from '../tanatloc/src/route/geometry'
+import geometryId from '../tanatloc/src/route/geometry/[id]'
+import geometryDownload from '../tanatloc/src/route/geometry/[id]/download'
+import geometryPart from '../tanatloc/src/route/geometry/[id]/part'
+import group from '../tanatloc/src/route/group'
+import groups from '../tanatloc/src/route/groups'
+import groupsId from '../tanatloc/src/route/groups/[id]'
+import link from '../tanatloc/src/route/link'
+import organization from '../tanatloc/src/route/organization'
+import organizations from '../tanatloc/src/route/organizations'
+import plugin from '../tanatloc/src/route/plugin'
+import plugins from '../tanatloc/src/route/plugins'
+import project from '../tanatloc/src/route/project'
+import projectId from '../tanatloc/src/route/project/[id]'
+import projectArchive from '../tanatloc/src/route/project/[id]/archive'
+import projects from '../tanatloc/src/route/projects'
+import result from '../tanatloc/src/route/result'
+import resultDownload from '../tanatloc/src/route/result/download'
+import resultArchive from '../tanatloc/src/route/result/archive'
+import simulation from '../tanatloc/src/route/simulation'
+import simulationId from '../tanatloc/src/route/simulation/[id]'
+import simulationIdRun from '../tanatloc/src/route/simulation/[id]/run'
+import simulationIdStop from '../tanatloc/src/route/simulation/[id]/stop'
+import simulationIdLog from '../tanatloc/src/route/simulation/[id]/log'
+import simulationIdTasks from '../tanatloc/src/route/simulation/[id]/tasks'
+import simulations from '../tanatloc/src/route/simulations'
+import system from '../tanatloc/src/route/system'
+import user from '../tanatloc/src/route/user'
+import userId from '../tanatloc/src/route/user/[id]'
+import userCheck from '../tanatloc/src/route/user/check'
+import users from '../tanatloc/src/route/users'
+import workspace from '../tanatloc/src/route/workspace'
+import { loginRoute } from '../tanatloc/src/route/login'
+import { logout } from '../tanatloc/src/route/logout'
 
 const app = express()
 app.disable('x-powered-by')
@@ -114,10 +114,10 @@ app.get('/api/logout', logout)
 
 /**
  * Catch 404 and forward to error handler
- * ../tanatloc-ssr/srcmemberof Server
- * ../tanatloc-ssr/srcparam req
- * ../tanatloc-ssr/srcparam res
- * ../tanatloc-ssr/srcparam next
+ * ../tanatloc/srcmemberof Server
+ * ../tanatloc/srcparam req
+ * ../tanatloc/srcparam res
+ * ../tanatloc/srcparam next
  */
 app.use((req, res, next) => {
   next(createError(404))
@@ -125,10 +125,10 @@ app.use((req, res, next) => {
 
 /**
  * Error handler
- * ../tanatloc-ssr/srcmemberof Server
- * ../tanatloc-ssr/srcparam req
- * ../tanatloc-ssr/srcparam res
- * ../tanatloc-ssr/srcparam next
+ * ../tanatloc/srcmemberof Server
+ * ../tanatloc/srcparam req
+ * ../tanatloc/srcparam res
+ * ../tanatloc/srcparam next
  */
 app.use((err, req, res, next) => {
   // set locals, only providing error in development

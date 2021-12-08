@@ -11,20 +11,20 @@
           "."
         ],
         "alias": {
-          "@/config": "./tanatloc-ssr/tanatloc-ssr/config",
-          "@/models": "./tanatloc-ssr/tanatloc-ssr/models",
-          "@/templates": "./tanatloc-ssr/tanatloc-ssr/templates",
-          "@/plugins": "./tanatloc-ssr/tanatloc-ssr/plugins",
-          "@/api": "./tanatloc-ssr/src/tanatloc-ssr/api",
-          "@/auth": "./tanatloc-ssr/tanatloc-ssr/src/auth",
-          "@/components": "./tanatloc-ssr/tanatloc-ssr/src/components",
-          "@/database": "./tanatloc-ssr/tanatloc-ssr/src/database",
-          "@/lib": "./tanatloc-ssr/tanatloc-ssr/src/lib",
-          "@/pages": "./tanatloc-ssr/tanatloc-ssr/src/pages",
-          "@/route": "./tanatloc-ssr/tanatloc-ssr/src/route",
-          "@/services": "./tanatloc-ssr/tanatloc-ssr/src/services",
-          "@/store": "./tanatloc-ssr/tanatloc-ssr/src/store",
-          "@/styles": "./tanatloc-ssr/tanatloc-ssr/src/styles"
+          "@/config": "./tanatloc/tanatloc/config",
+          "@/models": "./tanatloc/tanatloc/models",
+          "@/templates": "./tanatloc/tanatloc/templates",
+          "@/plugins": "./tanatloc/tanatloc/plugins",
+          "@/api": "./tanatloc/src/tanatloc/api",
+          "@/auth": "./tanatloc/tanatloc/src/auth",
+          "@/components": "./tanatloc/tanatloc/src/components",
+          "@/database": "./tanatloc/tanatloc/src/database",
+          "@/lib": "./tanatloc/tanatloc/src/lib",
+          "@/pages": "./tanatloc/tanatloc/src/pages",
+          "@/route": "./tanatloc/tanatloc/src/route",
+          "@/services": "./tanatloc/tanatloc/src/services",
+          "@/store": "./tanatloc/tanatloc/src/store",
+          "@/styles": "./tanatloc/tanatloc/src/styles"
         }
       }
     ]

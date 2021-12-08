@@ -15,7 +15,7 @@
     "isolatedModules": true
   },
   "exclude": [
-    "tanatloc-ssr/next.config.js",
+    "tanatloc/next.config.js",
     "app",
     "coverage",
     "dist",
