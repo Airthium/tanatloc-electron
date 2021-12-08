@@ -1,9 +1,8 @@
 name: Build and release electron
 
 on:
-  push
-  # release:
-  #   types: [published]
+  release:
+    types: [published]
 
 jobs:
   get-release:
@@ -31,101 +30,101 @@ jobs:
           echo $UPLOAD_URL
           echo "::set-output name=upload_url::$UPLOAD_URL"
 
-  # release-ubuntu:
-  #   needs: get-release
-  #   name: Build and release (Ubuntu)
-  #   runs-on: ubuntu-latest
+  release-ubuntu:
+    needs: get-release
+    name: Build and release (Ubuntu)
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #     - name: Check out Git repository
-  #       uses: actions/checkout@main
-  #       with:
-  #         token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
-  #         submodules: recursive
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@main
+        with:
+          token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
+          submodules: recursive
 
-  #     - name: Install Node.js, NPM and Yarn
-  #       uses: actions/setup-node@main
-  #       with:
-  #         node-version: 16
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@main
+        with:
+          node-version: 16
 
-  #     - name: Install
-  #       run: yarn install
+      - name: Install
+        run: yarn install
 
-  #     - name: Electron build
-  #       run: yarn build
+      - name: Electron build
+        run: yarn build
 
-  #     - name: Upload release
-  #       uses: actions/upload-release-asset@v1
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #       with:
-  #         upload_url: ${{ needs.get-release.outputs.upload_url }}
-  #         asset_path: ./dist/Tanatloc-${{ needs.get-release.outputs.version }}.AppImage
-  #         asset_name: Tanatloc-${{ needs.get-release.outputs.version }}.AppImage
-  #         asset_content_type: application/octet-stream
+      - name: Upload release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.get-release.outputs.upload_url }}
+          asset_path: ./dist/Tanatloc-${{ needs.get-release.outputs.version }}.AppImage
+          asset_name: Tanatloc-${{ needs.get-release.outputs.version }}.AppImage
+          asset_content_type: application/octet-stream
 
-  # release-macos:
-  #   needs: get-release
-  #   name: Build and release (MacOS)
-  #   runs-on: macos-latest
+  release-macos:
+    needs: get-release
+    name: Build and release (MacOS)
+    runs-on: macos-latest
 
-  #   steps:
-  #     - name: Check out Git repository
-  #       uses: actions/checkout@main
-  #       with:
-  #         token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
-  #         submodules: recursive
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@main
+        with:
+          token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
+          submodules: recursive
 
-  #     - name: Install Node.js, NPM and Yarn
-  #       uses: actions/setup-node@main
-  #       with:
-  #         node-version: 16
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@main
+        with:
+          node-version: 16
 
-  #     - name: Install
-  #       run: yarn install
+      - name: Install
+        run: yarn install
 
-  #     - name: Electron build
-  #       run: yarn build
+      - name: Electron build
+        run: yarn build
 
-  #     - name: Upload release
-  #       uses: actions/upload-release-asset@v1
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #       with:
-  #         upload_url: ${{ needs.get-release.outputs.upload_url }}
-  #         asset_path: ./dist/Tanatloc-${{ needs.get-release.outputs.version }}.dmg
-  #         asset_name: Tanatloc-${{ needs.get-release.outputs.version }}.dmg
-  #         asset_content_type: application/octet-stream
+      - name: Upload release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.get-release.outputs.upload_url }}
+          asset_path: ./dist/Tanatloc-${{ needs.get-release.outputs.version }}.dmg
+          asset_name: Tanatloc-${{ needs.get-release.outputs.version }}.dmg
+          asset_content_type: application/octet-stream
 
-  # release-windows:
-  #   needs: get-release
-  #   name: Build and release (Windows)
-  #   runs-on: windows-latest
+  release-windows:
+    needs: get-release
+    name: Build and release (Windows)
+    runs-on: windows-latest
 
-  #   steps:
-  #     - name: Check out Git repository
-  #       uses: actions/checkout@main
-  #       with:
-  #         token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
-  #         submodules: recursive
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@main
+        with:
+          token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
+          submodules: recursive
 
-  #     - name: Install Node.js, NPM and Yarn
-  #       uses: actions/setup-node@main
-  #       with:
-  #         node-version: 16
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@main
+        with:
+          node-version: 16
 
-  #     - name: Install
-  #       run: yarn install
+      - name: Install
+        run: yarn install
 
-  #     - name: Electron build
-  #       run: yarn build
+      - name: Electron build
+        run: yarn build
 
-  #     - name: Upload release
-  #       uses: actions/upload-release-asset@v1
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #       with:
-  #         upload_url: ${{ needs.get-release.outputs.upload_url }}
-  #         asset_path: "./dist/Tanatloc\ Setup\ ${{ needs.get-release.outputs.version }}.exe"
-  #         asset_name: "Tanatloc\ Setup\ ${{ needs.get-release.outputs.version }}.exe"
-  #         asset_content_type: application/octet-stream
+      - name: Upload release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.get-release.outputs.upload_url }}
+          asset_path: "./dist/Tanatloc\ Setup\ ${{ needs.get-release.outputs.version }}.exe"
+          asset_name: "Tanatloc\ Setup\ ${{ needs.get-release.outputs.version }}.exe"
+          asset_content_type: application/octet-stream
