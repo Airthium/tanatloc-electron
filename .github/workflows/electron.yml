@@ -49,7 +49,7 @@ jobs:
         run: yarn install
 
       - name: Electron build
-        run: yarn electronbuild
+        run: yarn build
 
       - name: Upload release
         uses: actions/upload-release-asset@v1
@@ -82,7 +82,7 @@ jobs:
         run: yarn install
 
       - name: Electron build
-        run: yarn electronbuild
+        run: yarn build
 
       - name: Upload release
         uses: actions/upload-release-asset@v1
@@ -115,7 +115,7 @@ jobs:
         run: yarn install
 
       - name: Electron build
-        run: yarn electronbuild
+        run: yarn build
 
       - name: Upload release
         uses: actions/upload-release-asset@v1
