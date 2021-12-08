@@ -51,7 +51,7 @@
     "@sentry/node": "6.16.0",
     "@swc/cli": "0.1.52",
     "@swc/core": "1.2.118",
-    "@swc/jest": "0.2.11",
+    "@swc/jest": "0.2.12",
     "@testing-library/react": "12.1.2",
     "@types/jest": "27.0.3",
     "antd": "4.17.2",
