@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@main
         with:
           token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
-          submodules: recursive
+          submodules: true
 
       - name: Version
         id: package_version
@@ -46,7 +46,7 @@ jobs:
         uses: actions/checkout@main
         with:
           token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
-          submodules: recursive
+          submodules: true
 
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@main
@@ -81,7 +81,7 @@ jobs:
         uses: actions/checkout@main
         with:
           token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
-          submodules: recursive
+          submodules: true
 
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@main
@@ -116,7 +116,7 @@ jobs:
         uses: actions/checkout@main
         with:
           token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
-          submodules: recursive
+          submodules: true
 
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@main

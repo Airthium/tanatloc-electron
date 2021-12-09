@@ -10,18 +10,24 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
-          submodules: recursive
+          submodules: true
+
       - uses: actions/setup-node@master
         with:
           node-version: '16.3.0'
+
       - name: Install
         run: yarn install
+
       - name: Lint
         run: yarn prettier
+
       - name: Tests
         run: yarn test || true
+
       - name: Prebuild
         run: yarn prebuild
+
       - name: SonarCloud scan
         uses: sonarsource/sonarcloud-github-action@master
         env:
