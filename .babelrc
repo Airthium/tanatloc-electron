@@ -4,7 +4,7 @@
     [
       "module-resolver",
       {
-        "root": ["./"],
+        "root": ["."],
         "alias": {
           "@/config": "./tanatloc/config",
           "@/models": "./tanatloc/models",
