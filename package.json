@@ -12,7 +12,7 @@
   "main": "app/background.js",
   "scripts": {
     "distclean": "rm -Rf app dist dist-install dist-server plugins",
-    "prebuild": "yarn distclean && yarn prebuildinstall && yarn server && yarn plugins && ls",
+    "prebuild": "yarn distclean && yarn prebuildinstall && yarn server && yarn plugins",
     "build": "echo '- Build' && yarn next telemetry disable && nextron build && electron-builder install-app-deps",
     "dev": "yarn clean && yarn prebuild nextron",
     "depcheck": "depcheck",

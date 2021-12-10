@@ -138,6 +138,11 @@ jobs:
       - name: Install
         run: yarn install
 
+      - name: Prebuild
+        run: |
+          yarn prebuild
+          ls
+
       - name: Electron build
         run: yarn build
         env:
