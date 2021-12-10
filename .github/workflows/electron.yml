@@ -23,7 +23,7 @@ jobs:
   #         git config --global user.name 'Github Actions bot'
   #         git config --global user.email 'bot@tanatloc.com'
   #         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-  #         git commit -am "Auto updated submodule" && git push
+  #         git commit -am "Auto updated submodule" --allow-empty && git push
 
   #     - name: Version
   #       id: package_version
@@ -142,8 +142,8 @@ jobs:
         run: |
           yarn prebuild
           ls
-          ls dist-isntall
-          ls dist-isntall/install
+          ls dist-install
+          ls dist-install/install
 
       - name: Electron build
         run: yarn build
