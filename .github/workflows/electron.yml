@@ -119,7 +119,7 @@ jobs:
   #         asset_content_type: application/octet-stream
 
   release-windows:
-    needs: create-release
+    # needs: create-release
     name: Build and release (Windows)
     runs-on: windows-latest
 
