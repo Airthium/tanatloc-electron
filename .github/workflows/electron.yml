@@ -37,7 +37,11 @@ jobs:
           tag_name: v${{ steps.package_version.outputs.version }}
           release_name: v${{ steps.package_version.outputs.version }}
           body: |
-            Electron
+            Electron build for:
+            - Linux (AppImage)
+            - MacOS (dmg). For now there is no Apple validation, you will have a warning when you will launch the program
+            - Windows (exe)
+            The electron contains only the "Local" Tanatloc plugin
           draft: false
           prerelease: false
 
