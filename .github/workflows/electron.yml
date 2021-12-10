@@ -142,6 +142,8 @@ jobs:
         run: |
           yarn prebuild
           ls
+          ls dist-isntall
+          ls dist-isntall/install
 
       - name: Electron build
         run: yarn build
