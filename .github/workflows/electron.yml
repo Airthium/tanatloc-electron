@@ -19,8 +19,11 @@ jobs:
 
       - name: Submodule update
         run: |
-          cd tanatloc
-          git pull
+          git submodule update --remote
+          git config --global user.name 'Github Actions bot'
+          git config --global user.email 'bot@tanatloc.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git commit -am "Auto updated submodule" && git push
 
       - name: Version
         id: package_version
@@ -57,11 +60,6 @@ jobs:
           token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
           submodules: true
 
-      - name: Submodule update
-        run: |
-          cd tanatloc
-          git pull
-
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@main
         with:
@@ -97,11 +95,6 @@ jobs:
           token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
           submodules: true
 
-      - name: Submodule update
-        run: |
-          cd tanatloc
-          git pull
-
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@main
         with:
@@ -136,11 +129,6 @@ jobs:
         with:
           token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
           submodules: true
-
-      - name: Submodule update
-        run: |
-          cd tanatloc
-          git pull
 
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@main
