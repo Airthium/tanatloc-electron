@@ -138,9 +138,6 @@ jobs:
       - name: Install
         run: yarn install
 
-      - name: Prebuild (Windows only)
-        run: yarn prebuild
-
       - name: Electron build
         run: yarn build
         env:
