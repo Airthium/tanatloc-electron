@@ -17,6 +17,11 @@ jobs:
           token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
           submodules: true
 
+      - name: Submodule update
+        run: |
+          cd tanatloc
+          git pull
+
       - name: Version
         id: package_version
         run: |
@@ -47,6 +52,11 @@ jobs:
         with:
           token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
           submodules: true
+
+      - name: Submodule update
+        run: |
+          cd tanatloc
+          git pull
 
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@main
@@ -83,6 +93,11 @@ jobs:
           token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
           submodules: true
 
+      - name: Submodule update
+        run: |
+          cd tanatloc
+          git pull
+
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@main
         with:
@@ -117,6 +132,11 @@ jobs:
         with:
           token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
           submodules: true
+
+      - name: Submodule update
+        run: |
+          cd tanatloc
+          git pull
 
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@main
