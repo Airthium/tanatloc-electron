@@ -32,7 +32,7 @@ depcheck.special.customBabel = async (fileName) => {
 }
 
 const options = {
-  ignoreMatches: ['@types/*', 'pg-native', 'three-to-glb'],
+  ignoreMatches: ['@types/*', 'pg-native', 'three-to-glb', 'typescript'],
   specials: [
     depcheck.special.babel,
     depcheck.special.bin,

@@ -9,3 +9,5 @@ dist
 app
 
 coverage
+
+yarn-error.log

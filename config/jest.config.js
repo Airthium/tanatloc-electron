@@ -1,5 +1,5 @@
 module.exports = {
-  rootDir: '.',
+  rootDir: '..',
   testPathIgnorePatterns: [
     '<rootDir>/tanatloc',
     '<rootDir>/app',
