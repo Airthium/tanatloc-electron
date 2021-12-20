@@ -20,13 +20,13 @@ jobs:
         run: yarn install
 
       - name: Lint
-        run: yarn prettier
+        run: yarn run prettier
 
       - name: Tests
-        run: yarn test || true
+        run: yarn run test || true
 
       - name: Prebuild
-        run: yarn prebuild
+        run: yarn run prebuild
 
       - name: SonarCloud scan
         uses: sonarsource/sonarcloud-github-action@master

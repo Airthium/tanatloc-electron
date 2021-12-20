@@ -3,13 +3,13 @@
 set -e
 
 # Install
-yarn
+yarn install
 
 # Lint
-yarn prettier
+yarn run prettier
 
 # Test
-yarn test | true
+yarn run test | true
 
 # Prebuild
-yarn prebuild
+yarn run prebuild

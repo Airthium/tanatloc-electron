@@ -67,5 +67,6 @@
     "pg-native": "file:./tanatloc/modules/pg-native/",
     "three-to-glb": "file:./tanatloc/modules/three-to-glb/",
     "typescript": "4.5.4"
-  }
+  },
+  "packageManager": "yarn@3.1.1"
 }
