@@ -65,11 +65,15 @@ jobs:
         with:
           node-version: 16
 
+      - uses: webfactory/ssh-agent@master
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
       - name: Install
         run: yarn install
 
       - name: Electron build
-        run: yarn run build
+        run: yarn run prebuild && yarn run build
         env:
           BUILD_VERSION: ${{ needs.create-release.outputs.version }}
 
@@ -100,11 +104,15 @@ jobs:
         with:
           node-version: 16
 
+      - uses: webfactory/ssh-agent@master
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
       - name: Install
         run: yarn install
 
       - name: Electron build
-        run: yarn run build
+        run: yarn run prebuild && yarn run build
         env:
           BUILD_VERSION: ${{ needs.create-release.outputs.version }}
 
@@ -135,11 +143,15 @@ jobs:
         with:
           node-version: 16
 
+      - uses: webfactory/ssh-agent@master
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
       - name: Install
         run: yarn run install
 
       - name: Electron build
-        run: yarn run build
+        run: yarn run prebuild && yarn run build
         env:
           BUILD_VERSION: ${{ needs.create-release.outputs.version }}
 

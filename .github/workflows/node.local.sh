@@ -2,14 +2,20 @@
 
 set -e
 
+# Clean
+git clean -xdf
+
 # Install
 yarn install
 
 # Lint
 yarn run prettier
 
+# Prebuild
+yarn run prebuild
+
 # Test
 yarn run test | true
 
-# Prebuild
-yarn run prebuild
+# Build
+BUILD_VERSION=test yarn build
