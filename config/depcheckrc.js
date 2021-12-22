@@ -3,29 +3,14 @@ const depcheck = require('depcheck')
 const { getContent } = require('depcheck/dist/utils/file')
 const { exit } = require('process')
 
-/**
- * Custom babel parser
- * @returns Deps array
- */
-depcheck.special.customBabel = async (fileName) => {
+depcheck.special.customPackage = async (fileName) => {
   const newDeps = []
 
-  if (
-    path.basename(fileName) === 'babelrc' ||
-    path.basename(fileName) === 'babelrc.plugins'
-  ) {
-    const babelrc = await getContent(fileName)
-    const babelrcJson = JSON.parse(babelrc)
+  if (path.basename(fileName) === 'package.json') {
+    const packageJson = require(fileName)
 
-    // Presets
-    babelrcJson.presets?.forEach((preset) => {
-      newDeps.push(preset)
-    })
-
-    // Plugins
-    babelrcJson.plugins?.forEach((plugin) => {
-      newDeps.push('babel-plugin-' + plugin[0])
-    })
+    newDeps.push(...Object.keys(packageJson.dependencies))
+    newDeps.push(...Object.keys(packageJson.devDependencies))
   }
 
   return newDeps
@@ -36,7 +21,8 @@ const options = {
   specials: [
     depcheck.special.babel,
     depcheck.special.bin,
-    depcheck.special.jest
+    depcheck.special.jest,
+    depcheck.special.customPackage
   ]
 }
 
