@@ -1,4 +1,5 @@
 {
+  "ignore": ["**/__tests__/**"],
   "presets": ["next/babel", "@babel/preset-typescript"],
   "plugins": [
     [
