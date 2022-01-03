@@ -28,7 +28,6 @@ const start = async (): Promise<void> => {
   } catch (err) {
     console.error('Install error')
     console.error(err)
-    app.quit()
   }
 
   // Server
