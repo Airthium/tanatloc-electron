@@ -2636,115 +2636,115 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core-android-arm-eabi@npm:1.2.125":
-  version: 1.2.125
-  resolution: "@swc/core-android-arm-eabi@npm:1.2.125"
+"@swc/core-android-arm-eabi@npm:1.2.126":
+  version: 1.2.126
+  resolution: "@swc/core-android-arm-eabi@npm:1.2.126"
   conditions: os=android & cpu=arm
   languageName: node
   linkType: hard
 
-"@swc/core-android-arm64@npm:1.2.125":
-  version: 1.2.125
-  resolution: "@swc/core-android-arm64@npm:1.2.125"
+"@swc/core-android-arm64@npm:1.2.126":
+  version: 1.2.126
+  resolution: "@swc/core-android-arm64@npm:1.2.126"
   conditions: os=android & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-arm64@npm:1.2.125":
-  version: 1.2.125
-  resolution: "@swc/core-darwin-arm64@npm:1.2.125"
+"@swc/core-darwin-arm64@npm:1.2.126":
+  version: 1.2.126
+  resolution: "@swc/core-darwin-arm64@npm:1.2.126"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-x64@npm:1.2.125":
-  version: 1.2.125
-  resolution: "@swc/core-darwin-x64@npm:1.2.125"
+"@swc/core-darwin-x64@npm:1.2.126":
+  version: 1.2.126
+  resolution: "@swc/core-darwin-x64@npm:1.2.126"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core-freebsd-x64@npm:1.2.125":
-  version: 1.2.125
-  resolution: "@swc/core-freebsd-x64@npm:1.2.125"
+"@swc/core-freebsd-x64@npm:1.2.126":
+  version: 1.2.126
+  resolution: "@swc/core-freebsd-x64@npm:1.2.126"
   conditions: os=freebsd & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm-gnueabihf@npm:1.2.125":
-  version: 1.2.125
-  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.2.125"
+"@swc/core-linux-arm-gnueabihf@npm:1.2.126":
+  version: 1.2.126
+  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.2.126"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-gnu@npm:1.2.125":
-  version: 1.2.125
-  resolution: "@swc/core-linux-arm64-gnu@npm:1.2.125"
+"@swc/core-linux-arm64-gnu@npm:1.2.126":
+  version: 1.2.126
+  resolution: "@swc/core-linux-arm64-gnu@npm:1.2.126"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-musl@npm:1.2.125":
-  version: 1.2.125
-  resolution: "@swc/core-linux-arm64-musl@npm:1.2.125"
+"@swc/core-linux-arm64-musl@npm:1.2.126":
+  version: 1.2.126
+  resolution: "@swc/core-linux-arm64-musl@npm:1.2.126"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-gnu@npm:1.2.125":
-  version: 1.2.125
-  resolution: "@swc/core-linux-x64-gnu@npm:1.2.125"
+"@swc/core-linux-x64-gnu@npm:1.2.126":
+  version: 1.2.126
+  resolution: "@swc/core-linux-x64-gnu@npm:1.2.126"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-musl@npm:1.2.125":
-  version: 1.2.125
-  resolution: "@swc/core-linux-x64-musl@npm:1.2.125"
+"@swc/core-linux-x64-musl@npm:1.2.126":
+  version: 1.2.126
+  resolution: "@swc/core-linux-x64-musl@npm:1.2.126"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core-win32-arm64-msvc@npm:1.2.125":
-  version: 1.2.125
-  resolution: "@swc/core-win32-arm64-msvc@npm:1.2.125"
+"@swc/core-win32-arm64-msvc@npm:1.2.126":
+  version: 1.2.126
+  resolution: "@swc/core-win32-arm64-msvc@npm:1.2.126"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-win32-ia32-msvc@npm:1.2.125":
-  version: 1.2.125
-  resolution: "@swc/core-win32-ia32-msvc@npm:1.2.125"
+"@swc/core-win32-ia32-msvc@npm:1.2.126":
+  version: 1.2.126
+  resolution: "@swc/core-win32-ia32-msvc@npm:1.2.126"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@swc/core-win32-x64-msvc@npm:1.2.125":
-  version: 1.2.125
-  resolution: "@swc/core-win32-x64-msvc@npm:1.2.125"
+"@swc/core-win32-x64-msvc@npm:1.2.126":
+  version: 1.2.126
+  resolution: "@swc/core-win32-x64-msvc@npm:1.2.126"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core@npm:1.2.125":
-  version: 1.2.125
-  resolution: "@swc/core@npm:1.2.125"
+"@swc/core@npm:1.2.126":
+  version: 1.2.126
+  resolution: "@swc/core@npm:1.2.126"
   dependencies:
     "@node-rs/helper": ^1.0.0
-    "@swc/core-android-arm-eabi": 1.2.125
-    "@swc/core-android-arm64": 1.2.125
-    "@swc/core-darwin-arm64": 1.2.125
-    "@swc/core-darwin-x64": 1.2.125
-    "@swc/core-freebsd-x64": 1.2.125
-    "@swc/core-linux-arm-gnueabihf": 1.2.125
-    "@swc/core-linux-arm64-gnu": 1.2.125
-    "@swc/core-linux-arm64-musl": 1.2.125
-    "@swc/core-linux-x64-gnu": 1.2.125
-    "@swc/core-linux-x64-musl": 1.2.125
-    "@swc/core-win32-arm64-msvc": 1.2.125
-    "@swc/core-win32-ia32-msvc": 1.2.125
-    "@swc/core-win32-x64-msvc": 1.2.125
+    "@swc/core-android-arm-eabi": 1.2.126
+    "@swc/core-android-arm64": 1.2.126
+    "@swc/core-darwin-arm64": 1.2.126
+    "@swc/core-darwin-x64": 1.2.126
+    "@swc/core-freebsd-x64": 1.2.126
+    "@swc/core-linux-arm-gnueabihf": 1.2.126
+    "@swc/core-linux-arm64-gnu": 1.2.126
+    "@swc/core-linux-arm64-musl": 1.2.126
+    "@swc/core-linux-x64-gnu": 1.2.126
+    "@swc/core-linux-x64-musl": 1.2.126
+    "@swc/core-win32-arm64-msvc": 1.2.126
+    "@swc/core-win32-ia32-msvc": 1.2.126
+    "@swc/core-win32-x64-msvc": 1.2.126
   dependenciesMeta:
     "@swc/core-android-arm-eabi":
       optional: true
@@ -2772,7 +2772,7 @@ __metadata:
       optional: true
     "@swc/core-win32-x64-msvc":
       optional: true
-  checksum: b617cc70c404f0757aa245f1958f98d9c998609073b2fb323ef8c9e0faa34c3c8d7ac934f829350d8b3eea8724f9a60b15251b673706270a0e2552e93c040eff
+  checksum: 9be1bddbb3e8332eca2e2ae706bdc016b1d9cad41a94c30da4c9096e32ff60bd77dc4b747d51362766fa9d08ecec2e9436251aad50dc8aa4f75495aad5f66b17
   languageName: node
   linkType: hard
 
@@ -10879,10 +10879,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pg-format@ssh://git@github.com:Airthium/node-pg-format.git":
-  version: 1.0.4
-  resolution: "pg-format@ssh://git@github.com:Airthium/node-pg-format.git#commit=f7a5340929efb6921d9754aad09a699caef2602c"
-  checksum: 2490bf6058e895f72e24ccb10965a39581de8846a5fa209f77279e3a008ba03002b12d906f712c9c060b403a254bd589988e842b211067c6e31d7e0cfbedfac0
+"pg-format@ssh://git@github.com:Airthium/pg-format.git#v1.0.5":
+  version: 1.0.5
+  resolution: "pg-format@ssh://git@github.com:Airthium/pg-format.git#commit=c2816c9857365df8bf9e41b0a4a4ffe77985a2f4"
+  checksum: 3ec7b2f275188f86dcef265d9fcdc3f913190228eb4b2228957183e22bad63173585f8f233c5e33d59144522c49fefc93e827950981cf74e0b877290e6c18171
   languageName: node
   linkType: hard
 
@@ -13311,7 +13311,7 @@ __metadata:
     "@sentry/browser": 6.16.1
     "@sentry/node": 6.16.1
     "@swc/cli": 0.1.55
-    "@swc/core": 1.2.125
+    "@swc/core": 1.2.126
     "@swc/jest": 0.2.15
     "@testing-library/react": 12.1.2
     "@types/archiver": 5.1.1
@@ -13365,7 +13365,7 @@ __metadata:
     passport: 0.5.2
     passport-local: 1.0.0
     pg: 8.7.1
-    pg-format: "ssh://git@github.com:Airthium/node-pg-format.git"
+    pg-format: "ssh://git@github.com:Airthium/pg-format.git#v1.0.5"
     pg-native: "ssh://git@github.com:Airthium/pg-native.git#main"
     prettier: 2.5.1
     prism-themes: 1.9.0
