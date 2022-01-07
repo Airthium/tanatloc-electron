@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "prebuild": "yarn distclean && yarn prebuildinstall && yarn server && yarn plugins",
-    "build": "echo '- Build' && yarn next telemetry disable && nextron build && electron-builder install-app-deps",
+    "build": "echo '- Build' && yarn next telemetry disable && NEXT_PUBLIC_SOURCE_BRANCH=$(git submodule foreach --quiet 'git rev-parse --abbrev-ref HEAD') NEXT_PUBLIC_SOURCE_COMMIT=$(git submodule foreach --quiet 'git rev-parse --short HEAD') nextron build && electron-builder install-app-deps",
     "depcheck": "node config/depcheckrc.js",
     "dev": "yarn prebuild && yarn nextron",
     "distclean": "rm -Rf app dist dist-install dist-server plugins",
