@@ -5,10 +5,21 @@ directories:
   output: dist
   buildResources: resources
 files:
+  # Global app
   - from: .
     filter:
       - app
       - package.json
+  # threejs assets
+  - from: node_modules/three/examples/js/libs/draco
+    to: app/three/libs/draco
+    filter: '**/*'
+
+  # Missing threejs dynamic require
+  - from: node_modules/three
+    to: node_modules/three
+    filter:
+      - examples
 extraResources:
   [
     { from: './plugins', to: 'plugins', filter: ['**/*'] },
