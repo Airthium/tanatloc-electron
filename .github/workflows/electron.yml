@@ -70,7 +70,9 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Install
-        run: YARN_CHECKSUM_BEHAVIOR=update yarn install
+        run: yarn install
+        env:
+          YARN_CHECKSUM_BEHAVIOR: update
 
       - name: Electron build
         run: yarn run prebuild && yarn run build
@@ -109,7 +111,9 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Install
-        run: YARN_CHECKSUM_BEHAVIOR=update yarn install
+        run: yarn install
+        env:
+          YARN_CHECKSUM_BEHAVIOR: update
 
       - name: Electron build
         run: yarn run prebuild && yarn run build
@@ -148,7 +152,9 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Install
-        run: YARN_CHECKSUM_BEHAVIOR=update yarn install
+        run: yarn install
+        env:
+          YARN_CHECKSUM_BEHAVIOR: update
 
       - name: Electron build
         run: yarn run prebuild && yarn run build
