@@ -14,6 +14,7 @@ extraResources:
     { from: './plugins', to: 'plugins', filter: ['**/*'] },
     { from: './tanatloc/templates', to: 'templates', filter: ['**/*'] }
   ]
+asar: false
 publish: null
 
 linux:

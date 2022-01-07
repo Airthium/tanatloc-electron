@@ -1,6 +1,5 @@
 const path = require('path')
 const depcheck = require('depcheck')
-const { getContent } = require('depcheck/dist/utils/file')
 const { exit } = require('process')
 
 depcheck.special.customPackage = async (fileName) => {

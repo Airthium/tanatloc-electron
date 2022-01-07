@@ -122,8 +122,8 @@ export default (
     ...options,
     ...state,
     webPreferences: {
-      nodeIntegration: true,
-      ...options.webPreferences
+      ...options.webPreferences,
+      nodeIntegration: true
     }
   })
 
