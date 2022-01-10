@@ -59,9 +59,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/cli@npm:7.16.7":
-  version: 7.16.7
-  resolution: "@babel/cli@npm:7.16.7"
+"@babel/cli@npm:7.16.8":
+  version: 7.16.8
+  resolution: "@babel/cli@npm:7.16.8"
   dependencies:
     "@nicolo-ribaudo/chokidar-2": 2.1.8-no-fsevents.3
     chokidar: ^3.4.0
@@ -82,7 +82,7 @@ __metadata:
   bin:
     babel: ./bin/babel.js
     babel-external-helpers: ./bin/babel-external-helpers.js
-  checksum: dc931ede61bd9f4af8a8dbe8dd2cb81e1aaf79a7655cf1cef60662a2895977ca91f3c2b47f693c038fa0625ace54c07dbf183e5cbd678cebd5313677ad650847
+  checksum: bb0cf50ff502a30e92918cf644192351023a9ef615acc3e7774abbd0327948d93e58ab3a8d31f52c18e2f04df8af10186b89421c28f4f0a2eee6b1ddce17a8ef
   languageName: node
   linkType: hard
 
@@ -3234,14 +3234,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/pg@npm:8.6.3":
-  version: 8.6.3
-  resolution: "@types/pg@npm:8.6.3"
+"@types/pg@npm:8.6.4":
+  version: 8.6.4
+  resolution: "@types/pg@npm:8.6.4"
   dependencies:
     "@types/node": "*"
     pg-protocol: "*"
     pg-types: ^2.2.0
-  checksum: aefe75d61148f301a1a0948399a9d89d4e1d85a70660ba4e4d5abc1663a2b25e68c3b66dd8e3afa42db7fe2bd8ce4474aad59b4275a8dc76700da496b049295b
+  checksum: cebc40d6f034ff5651a8415e38aeacf86925d6a7eebfd3d20a7db9e7935b0a376a81ecdfffcbeb54425344ecc9a5a8886955bcbb3501226521209900d7a57aef
   languageName: node
   linkType: hard
 
@@ -3963,9 +3963,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"antd@npm:4.18.2":
-  version: 4.18.2
-  resolution: "antd@npm:4.18.2"
+"antd@npm:4.18.3":
+  version: 4.18.3
+  resolution: "antd@npm:4.18.3"
   dependencies:
     "@ant-design/colors": ^6.0.0
     "@ant-design/icons": ^4.7.0
@@ -3988,7 +3988,7 @@ __metadata:
     rc-image: ~5.2.5
     rc-input-number: ~7.3.0
     rc-mentions: ~1.6.1
-    rc-menu: ~9.1.1
+    rc-menu: ~9.2.1
     rc-motion: ^2.4.4
     rc-notification: ~4.5.7
     rc-pagination: ~3.1.9
@@ -4000,7 +4000,7 @@ __metadata:
     rc-slider: ~9.7.4
     rc-steps: ~4.1.0
     rc-switch: ~3.2.0
-    rc-table: ~7.21.0
+    rc-table: ~7.22.2
     rc-tabs: ~11.10.0
     rc-textarea: ~0.3.0
     rc-tooltip: ~5.1.1
@@ -4013,7 +4013,7 @@ __metadata:
   peerDependencies:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
-  checksum: b33adc21055d87f34e5dd71aec31140024997c59180179678daf3fcc818342b1a23b49ca7660c99e5b3f8c840b58eafc3a18ac81301b0e6d62a305a81d8fdef8
+  checksum: c63c159a1e66b630b957b2ab9dc51550bca5cd44ff249baaf33e1c4a97976e3876d676df9e89c5a957e6bc549d6ce1f06ea72b1a9e9ee60aef78787ae8b286aa
   languageName: node
   linkType: hard
 
@@ -5989,11 +5989,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"depcheck@npm:1.4.2":
-  version: 1.4.2
-  resolution: "depcheck@npm:1.4.2"
+"depcheck@npm:1.4.3":
+  version: 1.4.3
+  resolution: "depcheck@npm:1.4.3"
   dependencies:
-    "@babel/parser": ^7.12.5
+    "@babel/parser": 7.16.4
     "@babel/traverse": ^7.12.5
     "@vue/compiler-sfc": ^3.0.5
     camelcase: ^6.2.0
@@ -6018,7 +6018,7 @@ __metadata:
     yargs: ^16.1.0
   bin:
     depcheck: bin/depcheck.js
-  checksum: a4fce9a0e35fa09cfb4b46f8aadde4e4f808e42bc5a9523cf70d9f52195702a2608cfa759fd96d9077f11c3bd78f77be4a4ca3f1ee0356ff3e71667bd00e6afa
+  checksum: 122631cab325707a55e26a8b530eb72c893bd481194100b1853ac2bc944b61320eb0e1ea0ff7e71724009cdfbd4057381d7bf868b9c5aad0c4207ac0bdca5e48
   languageName: node
   linkType: hard
 
@@ -10131,16 +10131,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-plugin-antd-less@npm:1.7.0":
-  version: 1.7.0
-  resolution: "next-plugin-antd-less@npm:1.7.0"
+"next-plugin-antd-less@npm:1.8.0":
+  version: 1.8.0
+  resolution: "next-plugin-antd-less@npm:1.8.0"
   dependencies:
     clone: ^2.1.2
     less: ^4.1.2
     less-loader: ^7
     loader-utils: ^3.2.0
     null-loader: ^4.0.1
-  checksum: 1300476223cb0a9b81c04b2ad44f7d54d3c957402a74736d718ce902c26d96ab306b359705ec9887c76c34382e11f9aa7164aa60a52efbcb28ce75facc901652
+  checksum: 696c88fdf96b10daea40d0b294533d8089ecc32f2ab147772161c599fca82c763eff2d57b3072f2ffed3c60eaddd260e3ac3807e940dea2c53c3e9270be0f466
   languageName: node
   linkType: hard
 
@@ -11606,9 +11606,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rc-menu@npm:~9.1.1":
-  version: 9.1.1
-  resolution: "rc-menu@npm:9.1.1"
+"rc-menu@npm:~9.2.1":
+  version: 9.2.1
+  resolution: "rc-menu@npm:9.2.1"
   dependencies:
     "@babel/runtime": ^7.10.1
     classnames: 2.x
@@ -11620,7 +11620,7 @@ __metadata:
   peerDependencies:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
-  checksum: 275b9de166ae4c5d0538f8aeeaff1e08e76d0081ce4c28f659bb65992accf3ad8f03a4943be51a64fdd549ca341f3b3a24b286580f17455a782f558a06bf30b8
+  checksum: d847ba3517c9f4dbfc21b3b2c49619a2fa5f24d2304ad33ccdcf4d0f96aad589df66b492708e88b66e7493bef26ff27c383e28d2b6e28d49b8e4f18041f289c5
   languageName: node
   linkType: hard
 
@@ -11805,9 +11805,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rc-table@npm:~7.21.0":
-  version: 7.21.1
-  resolution: "rc-table@npm:7.21.1"
+"rc-table@npm:~7.22.2":
+  version: 7.22.2
+  resolution: "rc-table@npm:7.22.2"
   dependencies:
     "@babel/runtime": ^7.10.1
     classnames: ^2.2.5
@@ -11817,7 +11817,7 @@ __metadata:
   peerDependencies:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
-  checksum: bb97d239a217075e8b203b3f8b0560cfe6eb601cf1e5136b71cb38b753e9e6e827c88042f1a91b90fbeac0a9b2a1902cfb733463e2bd31a91e8ae6b0a6046ce7
+  checksum: 2e5c781552c1495def09de47988ca1457489afcf2f3f669d7229c0e477581271bbb5a89b414c8af7dd0ad8719ce1b0156065f577c9cee1b1908b2a854ca2dc4b
   languageName: node
   linkType: hard
 
@@ -13316,7 +13316,7 @@ __metadata:
   resolution: "tanatloc-electron@workspace:."
   dependencies:
     "@ant-design/icons": 4.7.0
-    "@babel/cli": 7.16.7
+    "@babel/cli": 7.16.8
     "@babel/core": 7.16.7
     "@babel/preset-typescript": 7.16.7
     "@hapi/iron": 6.0.0
@@ -13336,7 +13336,7 @@ __metadata:
     "@types/jest": 27.4.0
     "@types/passport": 1.0.7
     "@types/passport-local": 1.0.34
-    "@types/pg": 8.6.3
+    "@types/pg": 8.6.4
     "@types/pg-format": 1.0.2
     "@types/prismjs": 1.16.6
     "@types/set-interval-async": 1.0.0
@@ -13344,14 +13344,14 @@ __metadata:
     "@types/three": 0.136.1
     "@types/url-join": 4.0.1
     "@types/uuid": 8.3.4
-    antd: 4.18.2
+    antd: 4.18.3
     archiver: 5.3.0
     babel-plugin-module-resolver: 4.1.0
     better-react-mathjax: 1.0.3
     cookie: 0.4.1
     cors: 2.8.5
     deep-object-diff: 1.1.0
-    depcheck: 1.4.2
+    depcheck: 1.4.3
     ejs: 3.1.6
     electron: 16.0.6
     electron-builder: 22.14.5
@@ -13372,7 +13372,7 @@ __metadata:
     mailersend: 1.3.1
     next: 12.0.7
     next-compose-plugins: 2.2.1
-    next-plugin-antd-less: 1.7.0
+    next-plugin-antd-less: 1.8.0
     nextron: 7.1.0
     node-fetch: 3.1.0
     passport: 0.5.2
