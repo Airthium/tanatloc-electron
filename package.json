@@ -41,9 +41,6 @@
     "test": "jest --config config/jest.config.js --coverage --silent",
     "workflow": ".github/workflows/node.local.sh"
   },
-  "resolutions": {
-    "depcheck/@babel/parser": "7.16.4"
-  },
   "dependencies": {
     "electron-serve": "1.1.0",
     "electron-store": "8.0.1",
