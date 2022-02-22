@@ -1,5 +1,3 @@
-const path = require('path')
-
 module.exports = {
   mainSrcDir: 'main',
   rendererSrcDir: 'tanatloc',
@@ -9,6 +7,10 @@ module.exports = {
       test: /\.ejs/,
       use: [{ loader: 'ignore-loader' }]
     })
+
+    defaultConfig.externals = {
+      sharp: 'commonjs sharp'
+    }
 
     return defaultConfig
   }
