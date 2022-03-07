@@ -44,7 +44,7 @@
   "dependencies": {
     "electron-serve": "1.1.0",
     "electron-store": "8.0.1",
-    "three-to-glb": "ssh://git@github.com:Airthium/three-to-glb.git#1.1.2"
+    "three-to-glb": "ssh://git@github.com:Airthium/three-to-glb.git#1.1.4"
   },
   "devDependencies": {
     "@ant-design/icons": "4.7.0",
