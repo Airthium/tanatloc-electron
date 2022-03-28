@@ -80,7 +80,6 @@
     "antd": "4.19.4",
     "archiver": "5.3.0",
     "babel-plugin-module-resolver": "4.1.0",
-    "better-react-mathjax": "2.0.0",
     "cookie": "0.4.2",
     "cors": "2.8.5",
     "deep-object-diff": "1.1.7",
