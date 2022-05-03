@@ -10,6 +10,13 @@ files:
     filter:
       - app
       - package.json
+
+  # three-to-glb
+  - from: node_modules/three-to-glb/dist
+    to: app/three-to-glb
+    filter:
+      - convert.js
+
   # threejs assets
   - from: node_modules/three/examples/js/libs/draco
     to: app/three/libs/draco

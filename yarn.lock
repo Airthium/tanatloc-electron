@@ -12060,7 +12060,7 @@ __metadata:
     swr: 1.3.0
     tar: 6.1.11
     three: 0.140.0
-    three-to-glb: "ssh://git@github.com:Airthium/three-to-glb.git#1.2.2"
+    three-to-glb: "ssh://git@github.com:Airthium/three-to-glb.git#1.2.3"
     typedoc: 0.22.15
     typedoc-plugin-airthium: "ssh://git@github.com:Airthium/typedoc-plugin-airthium.git#1.0.4"
     typescript: 4.6.4
@@ -12189,13 +12189,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"three-to-glb@ssh://git@github.com:Airthium/three-to-glb.git#1.2.2":
-  version: 1.2.2
-  resolution: "three-to-glb@ssh://git@github.com:Airthium/three-to-glb.git#commit=b5f9822f8e74d613858a612a5fa7872485861a9c"
+"three-to-glb@ssh://git@github.com:Airthium/three-to-glb.git#1.2.3":
+  version: 1.2.3
+  resolution: "three-to-glb@ssh://git@github.com:Airthium/three-to-glb.git#commit=f305af97edbc1f244be2ee8f2551079927cb7896"
   dependencies:
     three: 0.140.0
     vblob: 1.0.2
-  checksum: d9252df9085efe1115d8c9cd1d747c3b4b1949e45282fbf05f76152f71e2d7cdb741e6006ac6b319a267baedbb61318159392eed81e0555a678487b552f7aa5d
+  checksum: 64b2753a38cee66873016e73c818a316a9b784345347b77df8ca174a39ab72ea0218c122743671d5eae0e9b0f58ac6b53d88ca55f7444b49374370bce6d11d7f
   languageName: node
   linkType: hard
 
