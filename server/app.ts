@@ -46,6 +46,7 @@ import { loginRoute } from '../tanatloc/src/route/login'
 import { logout } from '../tanatloc/src/route/logout'
 
 // Initialize
+Object.defineProperty(global, 'tanatloc', { value: {}, configurable: true })
 init().catch((err) => {
   console.error('Initialize failed!')
   console.error(err)
