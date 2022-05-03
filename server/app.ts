@@ -1,8 +1,11 @@
-/** ../tanatloc/srcmodule Server */
+/** @module Server */
 
 import createError from 'http-errors'
-import express, { json, urlencoded } from 'express'
+import express, { json, Request, Response, urlencoded } from 'express'
 import cors from 'cors'
+
+import init from '../tanatloc/src/server/init'
+import clean from '../tanatloc/src/server/clean'
 
 import avatar from '../tanatloc/src/route/avatar'
 import email from '../tanatloc/src/route/email'
@@ -42,6 +45,32 @@ import workspace from '../tanatloc/src/route/workspace'
 import { loginRoute } from '../tanatloc/src/route/login'
 import { logout } from '../tanatloc/src/route/logout'
 
+// Initialize
+init().catch((err) => {
+  console.error('Initialize failed!')
+  console.error(err)
+
+  process.exit(1)
+})
+
+// Clean
+const handleExit = (code: number): void => {
+  console.info('> Server stopped')
+  clean()
+    .then(() => {
+      process.exit(code)
+    })
+    .catch((err) => {
+      console.error('Clean failed!')
+      console.error(err)
+
+      process.exit(1)
+    })
+}
+
+process.on('exit', (code) => handleExit(code))
+
+// App
 const app = express()
 app.disable('x-powered-by')
 
@@ -119,7 +148,7 @@ app.get('/api/logout', logout)
  * ../tanatloc/srcparam res
  * ../tanatloc/srcparam next
  */
-app.use((req, res, next) => {
+app.use((_: any, __: any, next) => {
   next(createError(404))
 })
 
@@ -130,7 +159,7 @@ app.use((req, res, next) => {
  * ../tanatloc/srcparam res
  * ../tanatloc/srcparam next
  */
-app.use((err, req, res, next) => {
+app.use((err: any, req: Request, res: Response) => {
   // set locals, only providing error in development
   res.locals.message = err.message
   res.locals.error = req.app.get('env') === 'development' ? err : {}

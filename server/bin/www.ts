@@ -1,6 +1,4 @@
-/**
- * Module dependencies.
- */
+/** @module Server.Bin */
 
 import app from '../app'
 import { createServer } from 'http'

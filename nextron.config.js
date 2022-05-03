@@ -2,7 +2,7 @@ module.exports = {
   mainSrcDir: 'main',
   rendererSrcDir: 'tanatloc',
 
-  webpack: (defaultConfig) => {
+  webpack: function (defaultConfig) {
     defaultConfig.module.rules.push({
       test: /\.ejs/,
       use: [{ loader: 'ignore-loader' }]

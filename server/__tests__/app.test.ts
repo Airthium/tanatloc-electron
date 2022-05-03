@@ -27,13 +27,13 @@ jest.mock('express', () => ({
         }
       }
     }),
-    get: jest.fn((param, callback) => {
+    get: jest.fn((_: any, callback: Function) => {
       callback()
     }),
-    all: jest.fn((param, callback) => {
+    all: jest.fn((_: any, callback: Function) => {
       callback()
     }),
-    post: jest.fn((param, callback) => {
+    post: jest.fn((_: any, callback: Function) => {
       callback()
     })
   }),

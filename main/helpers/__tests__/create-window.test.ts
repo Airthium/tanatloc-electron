@@ -9,7 +9,7 @@ jest.mock('electron', () => ({
       }
     }),
     getAllDisplays: () => ({
-      some: (callback) =>
+      some: (callback: Function) =>
         callback({
           bounds: {
             x: 200,
@@ -21,16 +21,16 @@ jest.mock('electron', () => ({
     })
   },
   BrowserWindow: class {
+    on = (_: any, callback: Function) => callback()
+    isMinimized = () => false
+    isMaximized = () => false
+    getPosition = () => []
+    getSize = () => []
     constructor() {
-      //@ts-ignore
-      this.on = (_, callback) => callback()
-      //@ts-ignore
+      this.on = (_: any, callback: Function) => callback()
       this.isMinimized = () => false
-      //@ts-ignore
       this.isMaximized = () => false
-      //@ts-ignore
       this.getPosition = () => []
-      //@ts-ignore
       this.getSize = () => []
     }
   }
@@ -40,10 +40,15 @@ jest.mock(
   'electron-store',
   () =>
     class {
+      set = jest.fn
+      get = () => ({
+        x: 0,
+        y: 0,
+        width: 0,
+        height: 0
+      })
       constructor() {
-        //@ts-ignore
         this.set = jest.fn
-        //@ts-ignore
         this.get = () => ({
           x: 300,
           y: 300,

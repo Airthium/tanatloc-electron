@@ -6,10 +6,10 @@ jest.mock('electron', () => ({
     getPath: jest.fn,
     whenReady: jest.fn,
     quit: jest.fn,
-    on: (_, callback) => callback()
+    on: (_: any, callback: Function) => callback()
   },
   ipcMain: {
-    on: (_, callback) => callback({ sender: { send: jest.fn } })
+    on: (_: any, callback: Function) => callback({ sender: { send: jest.fn } })
   }
 }))
 

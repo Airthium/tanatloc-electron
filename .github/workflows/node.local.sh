@@ -8,14 +8,17 @@ git clean -xdf
 # Install
 yarn install
 
-# Lint
-yarn run prettier
+# Depcheck
+yarn run depcheck | true
 
-# Prebuild
-yarn run prebuild
+# Lint
+yarn run prettier | true
 
 # Test
 yarn run test | true
+
+# Prebuild
+yarn run prebuild
 
 # Build
 BUILD_VERSION=test yarn build

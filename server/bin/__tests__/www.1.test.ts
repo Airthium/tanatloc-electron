@@ -5,7 +5,7 @@ jest.mock('http', () => ({
   createServer: () => ({
     address: () => ({}),
     listen: jest.fn(),
-    on: jest.fn((param, callback) => {
+    on: jest.fn((_: any, callback: Function) => {
       if (callback.length === 1) {
         try {
           callback({ syscall: 'not-listen' })

@@ -20,6 +20,10 @@ files:
     to: node_modules/three
     filter:
       - examples
+
+  # Mathjax
+  - from: node_modules/mathjax/es5
+    to: app/mathjax
 extraResources:
   [
     { from: './plugins', to: 'plugins', filter: ['**/*'] },
