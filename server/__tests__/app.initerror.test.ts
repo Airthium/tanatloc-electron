@@ -89,12 +89,10 @@ jest.mock('../../tanatloc/src/route/logout', () => ({
 }))
 
 describe('server/app', () => {
-  Object.defineProperty(process, 'exit', { value: jest.fn })
-  Object.defineProperty(process, 'on', {
-    value: (type: string, callback: (code: number) => {}) => {
-      if (type === 'exit') callback(10)
-    }
+  mockInit.mockImplementation(() => {
+    throw new Error('init error')
   })
+  Object.defineProperty(process, 'exit', { value: jest.fn })
 
   test('app', async () => {
     const app = await import('../app')

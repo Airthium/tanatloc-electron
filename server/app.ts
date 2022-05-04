@@ -160,7 +160,7 @@ app.use((_: any, __: any, next) => {
  * ../tanatloc/srcparam res
  * ../tanatloc/srcparam next
  */
-app.use((err: any, req: Request, res: Response) => {
+app.use((err: any, req: Request, res: Response, _next: Function) => {
   // set locals, only providing error in development
   res.locals.message = err.message
   res.locals.error = req.app.get('env') === 'development' ? err : {}

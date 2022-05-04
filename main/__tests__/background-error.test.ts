@@ -25,11 +25,11 @@ jest.mock('../helpers', () => ({
   })
 }))
 
-jest.mock('../../dist-install/install', () => () => {
+jest.mock('../../dist-install/install', () => {
   throw new Error('install error')
 })
 
-jest.mock('../../dist-server/server/bin/www', () => () => {
+jest.mock('../../dist-server/server/bin/www', () => {
   throw new Error('server error')
 })
 
