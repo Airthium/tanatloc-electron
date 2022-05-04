@@ -11,7 +11,7 @@ module.exports = {
   ],
   testMatch: ['<rootDir>/**/*.test.ts'],
   transform: {
-    '^.+\\.(t|j)sx?$': ['@swc/jest']
+    '^.+\\.ts?$': ['babel-jest', { presets: ['next/babel'] }]
   },
   coveragePathIgnorePatterns: [
     '<rootDir>/tanatloc',

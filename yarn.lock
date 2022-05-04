@@ -1690,15 +1690,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/create-cache-key-function@npm:^27.4.2":
-  version: 27.5.1
-  resolution: "@jest/create-cache-key-function@npm:27.5.1"
-  dependencies:
-    "@jest/types": ^27.5.1
-  checksum: a6c3a8c769aca6f66f5dc80f1c77e66980b4f213a6b2a15a92ba3595f032848a1261c06c9c798dcf2b672b1ffbefad5085af89d130548741c85ddbe0cf4284e7
-  languageName: node
-  linkType: hard
-
 "@jest/environment@npm:^28.0.2":
   version: 28.0.2
   resolution: "@jest/environment@npm:28.0.2"
@@ -1855,19 +1846,6 @@ __metadata:
     slash: ^3.0.0
     write-file-atomic: ^4.0.1
   checksum: 721a7cc946ce4f4026f0d2a98f89edd5ea404b45f4722e6e6337da57f90bfcc30c398a47f7fe4a8e315f13cafe5f28e0b87877deef12c3723d90df92d4f4d63f
-  languageName: node
-  linkType: hard
-
-"@jest/types@npm:^27.5.1":
-  version: 27.5.1
-  resolution: "@jest/types@npm:27.5.1"
-  dependencies:
-    "@types/istanbul-lib-coverage": ^2.0.0
-    "@types/istanbul-reports": ^3.0.0
-    "@types/node": "*"
-    "@types/yargs": ^16.0.0
-    chalk: ^4.0.0
-  checksum: d1f43cc946d87543ddd79d49547aab2399481d34025d5c5f2025d3d99c573e1d9832fa83cef25e9d9b07a8583500229d15bbb07b8e233d127d911d133e2f14b1
   languageName: node
   linkType: hard
 
@@ -2379,17 +2357,6 @@ __metadata:
   bin:
     swcx: run_swcx.js
   checksum: 7692d527d2b017a55a958ab68e574606bc1096f1ce6cd7c7fe5d0713d4b48eba38ca2760c8519b8e61679b3deed54d91a21e1f5ab0bc30731bb98bbeb87c0cc4
-  languageName: node
-  linkType: hard
-
-"@swc/jest@npm:0.2.20":
-  version: 0.2.20
-  resolution: "@swc/jest@npm:0.2.20"
-  dependencies:
-    "@jest/create-cache-key-function": ^27.4.2
-  peerDependencies:
-    "@swc/core": "*"
-  checksum: 160a2d0336c416ec38ad267892ba67696c853318b207cfc9924da09a3318345bc37ca255782764ef651399cb8c0e9976ebdf90284799acb6b0c45c5d8bc4edbc
   languageName: node
   linkType: hard
 
@@ -3003,15 +2970,6 @@ __metadata:
   version: 21.0.0
   resolution: "@types/yargs-parser@npm:21.0.0"
   checksum: b2f4c8d12ac18a567440379909127cf2cec393daffb73f246d0a25df36ea983b93b7e9e824251f959e9f928cbc7c1aab6728d0a0ff15d6145f66cec2be67d9a2
-  languageName: node
-  linkType: hard
-
-"@types/yargs@npm:^16.0.0":
-  version: 16.0.4
-  resolution: "@types/yargs@npm:16.0.4"
-  dependencies:
-    "@types/yargs-parser": "*"
-  checksum: caa21d2c957592fe2184a8368c8cbe5a82a6c2e2f2893722e489f842dc5963293d2f3120bc06fe3933d60a3a0d1e2eb269649fd6b1947fe1820f8841ba611dd9
   languageName: node
   linkType: hard
 
@@ -3885,7 +3843,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-jest@npm:28.0.3, babel-jest@npm:^28.0.3":
+"babel-jest@npm:^28.0.3":
   version: 28.0.3
   resolution: "babel-jest@npm:28.0.3"
   dependencies:
@@ -11991,7 +11949,6 @@ __metadata:
     "@sentry/node": 6.19.7
     "@swc/cli": 0.1.57
     "@swc/core": 1.2.174
-    "@swc/jest": 0.2.20
     "@testing-library/react": 13.1.1
     "@types/archiver": 5.3.1
     "@types/cookie": 0.5.1
@@ -12012,7 +11969,7 @@ __metadata:
     "@types/uuid": 8.3.4
     antd: 4.20.2
     archiver: 5.3.1
-    babel-jest: 28.0.3
+    babel-jest: ^28.0.3
     babel-plugin-module-resolver: 4.1.0
     cookie: 0.5.0
     cors: 2.8.5

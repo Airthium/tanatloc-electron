@@ -14,11 +14,12 @@ yarn run depcheck | true
 # Lint
 yarn run prettier | true
 
-# Test
-yarn run test | true
 
 # Prebuild
 yarn run prebuild
+
+# Test
+yarn run test | true
 
 # Build
 BUILD_VERSION=test yarn build
