@@ -21,10 +21,30 @@ const start = async (): Promise<void> => {
   console.info('Starting Tanatloc')
   await app.whenReady()
 
+  // Client
+  console.info('Starting client')
+  const mainWindow = createWindow('main', {
+    width: 1000,
+    height: 600
+  })
+  mainWindow.maximize()
+  if (isProd) {
+    await mainWindow.loadURL('app://./start.html')
+  }
+
   // Install
   try {
     console.info('Install')
     await import('../dist-install/install')
+
+    // Wait complete
+    const max = 100
+    let iter = 0
+    //@ts-ignore
+    while (!global.tanatloc.complete && iter < max) {
+      await new Promise((resolve) => setTimeout(resolve, 50))
+      iter++
+    }
   } catch (err) {
     console.error('Install error')
     console.error(err)
@@ -41,13 +61,6 @@ const start = async (): Promise<void> => {
   }
 
   // Client
-  console.info('Starting client')
-  const mainWindow = createWindow('main', {
-    width: 1000,
-    height: 600
-  })
-  mainWindow.maximize()
-
   if (isProd) {
     await mainWindow.loadURL('app://./index.html')
   } else {

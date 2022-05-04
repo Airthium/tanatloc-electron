@@ -13,9 +13,8 @@ jest.mock('electron', () => ({
   }
 }))
 
-jest.mock('electron-serve', () => () => {
-  // Empty
-})
+const mockLoadUrl = jest.fn()
+jest.mock('electron-serve', () => () => mockLoadUrl())
 
 jest.mock('../helpers', () => ({
   createWindow: () => ({
@@ -36,6 +35,7 @@ jest.mock('../../dist-server/server/bin/www', () => () => {
 })
 
 describe('main/background', () => {
+  Object.defineProperty(global, 'tanatloc', { value: { complete: true } })
   test('import', async () => {
     await import('../background')
   })

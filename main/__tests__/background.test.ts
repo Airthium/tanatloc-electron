@@ -35,8 +35,10 @@ jest.mock('../../dist-server/server/bin/www', () => () => {
 
 describe('main/background', () => {
   test('import', async () => {
+    Object.defineProperty(global, 'tanatloc', { value: { complete: false } })
     await import('../background')
-  })
+    await new Promise((resolve) => setTimeout(resolve, 6_000))
+  }, 10_000)
 })
 
 export {}
