@@ -98,7 +98,7 @@ app.all('/api/geometry/:id/part', geometryPart)
 app.all('/api/group', group)
 
 app.all('/api/groups', groups)
-app.all('/api/group/:id', groupsId)
+app.all('/api/groups/:id', groupsId)
 
 app.all('/api/link', link)
 
