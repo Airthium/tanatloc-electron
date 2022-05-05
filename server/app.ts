@@ -19,6 +19,7 @@ import groups from '../tanatloc/src/route/groups'
 import groupsId from '../tanatloc/src/route/groups/[id]'
 import link from '../tanatloc/src/route/link'
 import organization from '../tanatloc/src/route/organization'
+import organizationId from '../tanatloc/src/route/organization/[id]'
 import organizations from '../tanatloc/src/route/organizations'
 import plugin from '../tanatloc/src/route/plugin'
 import plugins from '../tanatloc/src/route/plugins'
@@ -102,14 +103,17 @@ app.all('/api/group/:id', groupsId)
 app.all('/api/link', link)
 
 app.all('/api/organization', organization)
+app.all('/api/organization/:id', organizationId)
+
 app.all('/api/organizations', organizations)
 
 app.all('/api/plugin', plugin)
+
 app.all('/api/plugins', plugins)
 
 app.all('/api/project', project)
-app.all('/api/project/:id/archive', projectArchive)
 app.all('/api/project/:id', projectId)
+app.all('/api/project/:id/archive', projectArchive)
 
 app.all('/api/projects', projects)
 
@@ -119,9 +123,9 @@ app.all('/api/result/archive', resultArchive)
 
 app.all('/api/simulation', simulation)
 app.all('/api/simulation/:id', simulationId)
+app.all('/api/simulation/:id/log', simulationIdLog)
 app.all('/api/simulation/:id/run', simulationIdRun)
 app.all('/api/simulation/:id/stop', simulationIdStop)
-app.all('/api/simulation/:id/log', simulationIdLog)
 app.all('/api/simulation/:id/tasks', simulationIdTasks)
 
 app.all('/api/simulations', simulations)
