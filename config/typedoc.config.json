@@ -1,0 +1,11 @@
+{
+  "name": "Tanatloc-electron documentation",
+  "tsconfig": "../tsconfig.json",
+  "entryPoints": ["../main", "../server"],
+  "exclude": ["../tanatloc/**"],
+  "plugin": "typedoc-plugin-airthium",
+  "theme": "airthium",
+  "entryPointStrategy": "expand",
+  "out": "../doc",
+  "readme": "../README.md"
+}

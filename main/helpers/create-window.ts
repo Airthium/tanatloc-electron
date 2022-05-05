@@ -1,3 +1,5 @@
+/** @module Main.Helpers.CreateWindow */
+
 import { screen, BrowserWindow } from 'electron'
 import Store from 'electron-store'
 

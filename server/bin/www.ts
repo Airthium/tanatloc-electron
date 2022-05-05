@@ -2,32 +2,12 @@
 
 import app from '../app'
 import { createServer } from 'http'
-
-/**
- * Get port from environment and store in Express.
- * @memberof Server
- */
-const port = normalizePort(process.env.PORT || '3000')
-app.set('port', port)
-
-/**
- * Create HTTP server.
- * @memberof Server
- */
-const server = createServer(app)
-
-/**
- * Listen on provided port, on all network interfaces.
- */
-server.listen(port)
-server.on('error', onError)
-server.on('listening', onListening)
+import { AddressInfo } from 'net'
 
 /**
  * Normalize a port into a number, string, or false.
- * @memberof Server
  */
-function normalizePort(val: string) {
+const normalizePort = (val: string) => {
   const p = parseInt(val, 10)
 
   if (isNaN(p)) {
@@ -44,10 +24,20 @@ function normalizePort(val: string) {
 }
 
 /**
- * Event listener for HTTP server "error" event.
- * @memberof Server
+ * Get port from environment and store in Express.
  */
-function onError(error: Error & { code: string; syscall: string }) {
+const port = normalizePort(process.env.PORT || '3000')
+app.set('port', port)
+
+/**
+ * Create HTTP server.
+ */
+const server = createServer(app)
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+const onError = (error: Error & { code: string; syscall: string }) => {
   if (error.syscall !== 'listen') {
     throw error
   }
@@ -71,10 +61,16 @@ function onError(error: Error & { code: string; syscall: string }) {
 
 /**
  * Event listener for HTTP server "listening" event.
- * @memberof Server
  */
-function onListening() {
-  const addr = server.address()
+const onListening = () => {
+  const addr = server.address() as string | AddressInfo
   const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port
   console.debug('Listening on ' + bind)
 }
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+server.listen(port)
+server.on('error', onError)
+server.on('listening', onListening)
