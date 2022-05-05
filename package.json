@@ -84,6 +84,7 @@
     "archiver": "5.3.1",
     "babel-jest": "28.0.3",
     "babel-plugin-module-resolver": "4.1.0",
+    "babel-preset-minify": "0.5.1",
     "cookie": "0.5.0",
     "cors": "2.8.5",
     "deep-object-diff": "1.1.7",

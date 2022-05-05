@@ -1,7 +1,9 @@
 {
+  "comments": false,
   "presets": [
     "next/babel",
-    "@babel/preset-typescript"
+    "@babel/preset-typescript",
+    "babel-preset-minify"
   ],
   "plugins": [
     [
