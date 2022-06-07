@@ -34,6 +34,7 @@ files:
 extraResources:
   [
     { from: './plugins', to: 'plugins', filter: ['**/*'] },
+    { from: './postprocessing', to: 'postprocessing', filter: ['**/*'] },
     { from: './tanatloc/templates', to: 'templates', filter: ['**/*'] }
   ]
 asar: false

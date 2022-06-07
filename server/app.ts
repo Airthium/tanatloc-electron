@@ -23,6 +23,7 @@ import organizationId from '../tanatloc/src/route/organization/[id]'
 import organizations from '../tanatloc/src/route/organizations'
 import plugin from '../tanatloc/src/route/plugin'
 import plugins from '../tanatloc/src/route/plugins'
+import postprocessing from '../tanatloc/src/route/postprocessing'
 import project from '../tanatloc/src/route/project'
 import projectId from '../tanatloc/src/route/project/[id]'
 import projectArchive from '../tanatloc/src/route/project/[id]/archive'
@@ -110,6 +111,8 @@ app.all('/api/organizations', organizations)
 app.all('/api/plugin', plugin)
 
 app.all('/api/plugins', plugins)
+
+app.all('/api/postprocessing', postprocessing)
 
 app.all('/api/project', project)
 app.all('/api/project/:id', projectId)

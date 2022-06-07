@@ -18,6 +18,8 @@ if (isProd) {
  * @description Start the installation script, the server and the electron window
  */
 const start = async (): Promise<void> => {
+  let complete = true
+
   console.info('Starting Tanatloc')
   await app.whenReady()
 
@@ -48,6 +50,8 @@ const start = async (): Promise<void> => {
   } catch (err) {
     console.error('Install error')
     console.error(err)
+    await mainWindow.loadURL('app://./error.html?electronStatusCode=100')
+    complete = false
   }
 
   // Server
@@ -57,16 +61,19 @@ const start = async (): Promise<void> => {
   } catch (err) {
     console.error('Server error')
     console.error(err)
-    app.quit()
+    await mainWindow.loadURL('app://./error.html?electronStatusCode=200')
+    complete = false
   }
 
-  // Client
-  if (isProd) {
-    await mainWindow.loadURL('app://./index.html')
-  } else {
-    const port = process.argv[2]
-    await mainWindow.loadURL(`http://localhost:${port}/`)
-    mainWindow.webContents.openDevTools()
+  // Normal start
+  if (complete) {
+    if (isProd) {
+      await mainWindow.loadURL('app://./index.html')
+    } else {
+      const port = process.argv[2]
+      await mainWindow.loadURL(`http://localhost:${port}/`)
+      mainWindow.webContents.openDevTools()
+    }
   }
 }
 start()
