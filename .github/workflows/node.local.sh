@@ -5,11 +5,11 @@ set -e
 # Clean
 git clean -xdf
 
-# Sync deps
-yarn sync-deps
-
 # Install
 yarn install
+
+# Sync deps
+yarn sync-deps
 
 # Depcheck
 yarn run depcheck | true
