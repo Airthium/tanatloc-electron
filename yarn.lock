@@ -135,29 +135,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:7.18.2, @babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3":
-  version: 7.18.2
-  resolution: "@babel/core@npm:7.18.2"
-  dependencies:
-    "@ampproject/remapping": ^2.1.0
-    "@babel/code-frame": ^7.16.7
-    "@babel/generator": ^7.18.2
-    "@babel/helper-compilation-targets": ^7.18.2
-    "@babel/helper-module-transforms": ^7.18.0
-    "@babel/helpers": ^7.18.2
-    "@babel/parser": ^7.18.0
-    "@babel/template": ^7.16.7
-    "@babel/traverse": ^7.18.2
-    "@babel/types": ^7.18.2
-    convert-source-map: ^1.7.0
-    debug: ^4.1.0
-    gensync: ^1.0.0-beta.2
-    json5: ^2.2.1
-    semver: ^6.3.0
-  checksum: 14a4142c12e004cd2477b7610408d5788ee5dd821ee9e4de204cbb72d9c399d858d9deabc3d49914d5d7c2927548160c19bdc7524b1a9f6acc1ec96a8d9848dd
-  languageName: node
-  linkType: hard
-
 "@babel/core@npm:7.18.5":
   version: 7.18.5
   resolution: "@babel/core@npm:7.18.5"
@@ -178,6 +155,29 @@ __metadata:
     json5: ^2.2.1
     semver: ^6.3.0
   checksum: e20c3d69a07eb564408d611b827c2f5db56f05f1ca7cb3046f3823a1cf6b13c032f02d4b8ffe1e4593699e86e0f25ca1aee6228486c1ebea48d21aaeb28e6718
+  languageName: node
+  linkType: hard
+
+"@babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3":
+  version: 7.18.2
+  resolution: "@babel/core@npm:7.18.2"
+  dependencies:
+    "@ampproject/remapping": ^2.1.0
+    "@babel/code-frame": ^7.16.7
+    "@babel/generator": ^7.18.2
+    "@babel/helper-compilation-targets": ^7.18.2
+    "@babel/helper-module-transforms": ^7.18.0
+    "@babel/helpers": ^7.18.2
+    "@babel/parser": ^7.18.0
+    "@babel/template": ^7.16.7
+    "@babel/traverse": ^7.18.2
+    "@babel/types": ^7.18.2
+    convert-source-map: ^1.7.0
+    debug: ^4.1.0
+    gensync: ^1.0.0-beta.2
+    json5: ^2.2.1
+    semver: ^6.3.0
+  checksum: 14a4142c12e004cd2477b7610408d5788ee5dd821ee9e4de204cbb72d9c399d858d9deabc3d49914d5d7c2927548160c19bdc7524b1a9f6acc1ec96a8d9848dd
   languageName: node
   linkType: hard
 
@@ -5064,7 +5064,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"conf@npm:^10.0.3, conf@npm:^10.1.2":
+"conf@npm:^10.1.2":
   version: 10.1.2
   resolution: "conf@npm:10.1.2"
   dependencies:
@@ -5938,16 +5938,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron-store@npm:8.0.1":
-  version: 8.0.1
-  resolution: "electron-store@npm:8.0.1"
-  dependencies:
-    conf: ^10.0.3
-    type-fest: ^1.0.2
-  checksum: 3d708598c554c55ede73569879c9e538b4a644a693af9e5fd49d3c091e1ee6d2a32b6a4d6a1834a4f116a59724a7263ddebd42ded1e15119303b3132c4194a38
-  languageName: node
-  linkType: hard
-
 "electron-store@npm:8.0.2":
   version: 8.0.2
   resolution: "electron-store@npm:8.0.2"
@@ -5962,19 +5952,6 @@ __metadata:
   version: 1.4.147
   resolution: "electron-to-chromium@npm:1.4.147"
   checksum: a714da8ac6842887e98886026b8eeaee0d2fd6d57f5707b0fc2a2916c1b9d026ca8deeef529fd3b069e96f719495a7467b01a508b881fd90d95aa204a7a92000
-  languageName: node
-  linkType: hard
-
-"electron@npm:19.0.3":
-  version: 19.0.3
-  resolution: "electron@npm:19.0.3"
-  dependencies:
-    "@electron/get": ^1.14.1
-    "@types/node": ^16.11.26
-    extract-zip: ^1.0.3
-  bin:
-    electron: cli.js
-  checksum: 9f1a310a9e18b228f6702871b18ebb12ea1b87250833dfb17ddc3ce23120e73763a23c46b9a84e39c63666bea52323fb08a7e2faebd142fb9aa519eccf125e90
   languageName: node
   linkType: hard
 
@@ -10507,15 +10484,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.6.2":
-  version: 2.6.2
-  resolution: "prettier@npm:2.6.2"
-  bin:
-    prettier: bin-prettier.js
-  checksum: 48d08dde8e9fb1f5bccdd205baa7f192e9fc8bc98f86e1b97d919de804e28c806b0e6cc685e4a88211aa7987fa9668f30baae19580d87ced3ed0f2ec6572106f
-  languageName: node
-  linkType: hard
-
 "prettier@npm:2.7.0":
   version: 2.7.0
   resolution: "prettier@npm:2.7.0"
@@ -12526,7 +12494,7 @@ __metadata:
   dependencies:
     "@ant-design/icons": 4.7.0
     "@babel/cli": 7.17.10
-    "@babel/core": 7.18.2
+    "@babel/core": 7.18.5
     "@babel/preset-typescript": 7.17.12
     "@hapi/iron": 7.0.0
     "@sentry/browser": 7.1.1
@@ -12563,10 +12531,10 @@ __metadata:
     deep-object-diff: 1.1.7
     depcheck: 1.4.3
     ejs: 3.1.8
-    electron: 19.0.3
+    electron: 19.0.4
     electron-builder: 23.0.3
     electron-serve: 1.1.0
-    electron-store: 8.0.1
+    electron-store: 8.0.2
     email-addresses: 5.0.0
     eslint: 8.17.0
     eslint-config-next: 12.1.6
@@ -12595,7 +12563,7 @@ __metadata:
     pg: 8.7.3
     pg-format: "https://github.com/Airthium/pg-format.git#1.0.8"
     pg-native: "https://github.com/Airthium/pg-native.git#3.0.0"
-    prettier: 2.6.2
+    prettier: 2.7.0
     prop-types: 15.8.1
     react: 18.1.0
     react-dom: 18.1.0
@@ -13035,13 +13003,6 @@ __metadata:
   version: 0.21.3
   resolution: "type-fest@npm:0.21.3"
   checksum: e6b32a3b3877f04339bae01c193b273c62ba7bfc9e325b8703c4ee1b32dc8fe4ef5dfa54bf78265e069f7667d058e360ae0f37be5af9f153b22382cd55a9afe0
-  languageName: node
-  linkType: hard
-
-"type-fest@npm:^1.0.2":
-  version: 1.4.0
-  resolution: "type-fest@npm:1.4.0"
-  checksum: b011c3388665b097ae6a109a437a04d6f61d81b7357f74cbcb02246f2f5bd72b888ae33631b99871388122ba0a87f4ff1c94078e7119ff22c70e52c0ff828201
   languageName: node
   linkType: hard
 
