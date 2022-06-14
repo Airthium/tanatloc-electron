@@ -5,6 +5,7 @@ public
 dist-install
 dist-server
 plugins
+postprocessing
 dist
 app
 
