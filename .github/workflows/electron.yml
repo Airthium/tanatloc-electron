@@ -79,10 +79,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAG: v${{ steps.package_version.outputs.version }}
         run: |
-          RES=`curl -H "Accept: application/vnd.github.v3+json" -H "Authorization: token ${GITHUB_TOKEN}" https://api.github.com/repos/Airthium/tanatloc-electron/releases/tags/${TAG}`
-          echo $RES
-          UPLOAD_URL=`echo $RES | jq .upload_url`
-          echo UPLOAD_URL
+          UPLOAD_URL=`curl -H "Accept: application/vnd.github.v3+json" -H "Authorization: token ${GITHUB_TOKEN}" https://api.github.com/repos/Airthium/tanatloc-electron/releases/tags/${TAG} | jq .upload_url`
           echo "::set-output name=upload_url::$UPLOAD_URL"
 
   # release-ubuntu:
