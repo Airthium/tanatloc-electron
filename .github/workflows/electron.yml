@@ -82,11 +82,9 @@ jobs:
 
       - name: Upload release
         uses: AButler/upload-release-assets@v2.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           files: './dist/Tanatloc-${{ needs.create-release.outputs.version }}.AppImage'
-          repo-token: ${{ GITHUB_TOKEN }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
           release-tag: v${{ needs.create-release.outputs.version }}
 
   release-macos:
@@ -123,11 +121,9 @@ jobs:
 
       - name: Upload release
         uses: AButler/upload-release-assets@v2.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           files: './dist/Tanatloc-${{ needs.create-release.outputs.version }}.dmg'
-          repo-token: ${{ GITHUB_TOKEN }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
           release-tag: v${{ needs.create-release.outputs.version }}
 
   release-windows:
@@ -164,9 +160,7 @@ jobs:
 
       - name: Upload release
         uses: AButler/upload-release-assets@v2.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           files: './dist/Tanatloc.Setup.${{ needs.create-release.outputs.version }}.exe'
-          repo-token: ${{ GITHUB_TOKEN }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
           release-tag: v${{ needs.create-release.outputs.version }}
