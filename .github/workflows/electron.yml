@@ -70,6 +70,7 @@ jobs:
         id: package_version
         run: |
           VERSION=`cat tanatloc/package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | tr -d '[[:space:]]'`
+          echo $VERSION
           echo "::set-output name=version::$VERSION"
 
       - name: Get release
