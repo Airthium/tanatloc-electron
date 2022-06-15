@@ -50,6 +50,7 @@ jobs:
 
   get-release:
     needs: create-release
+    if: always() && (needs.create-release == 'failure')
     name: Get release
     runs-on: ubuntu-latest
 
