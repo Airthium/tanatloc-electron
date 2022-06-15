@@ -3,54 +3,54 @@ name: Build and release electron
 on: workflow_dispatch
 
 jobs:
-  create-release:
-    name: Create release
-    runs-on: ubuntu-latest
+  # create-release:
+  #   name: Create release
+  #   runs-on: ubuntu-latest
 
-    outputs:
-      version: ${{ steps.package_version.outputs.version }}
-      upload_url: ${{ steps.create_release.outputs.upload_url }}
-    steps:
-      - name: Check out Git repository
-        uses: actions/checkout@main
-        with:
-          token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
-          submodules: true
+  #   outputs:
+  #     version: ${{ steps.package_version.outputs.version }}
+  #     upload_url: ${{ steps.create_release.outputs.upload_url }}
+  #   steps:
+  #     - name: Check out Git repository
+  #       uses: actions/checkout@main
+  #       with:
+  #         token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
+  #         submodules: true
 
-      - name: Submodule update
-        run: |
-          git submodule update --remote
-          git config --global user.name 'Github Actions bot'
-          git config --global user.email 'bot@tanatloc.com'
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git commit -am "Auto updated submodule" --allow-empty && git push
+  #     - name: Submodule update
+  #       run: |
+  #         git submodule update --remote
+  #         git config --global user.name 'Github Actions bot'
+  #         git config --global user.email 'bot@tanatloc.com'
+  #         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+  #         git commit -am "Auto updated submodule" --allow-empty && git push
 
-      - name: Version
-        id: package_version
-        run: |
-          VERSION=`cat tanatloc/package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | tr -d '[[:space:]]'`
-          echo "::set-output name=version::$VERSION"
+  #     - name: Version
+  #       id: package_version
+  #       run: |
+  #         VERSION=`cat tanatloc/package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | tr -d '[[:space:]]'`
+  #         echo "::set-output name=version::$VERSION"
 
-      - name: Create release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: v${{ steps.package_version.outputs.version }}
-          release_name: v${{ steps.package_version.outputs.version }}
-          body: |
-            Electron build for:
-            - Linux (AppImage)
-            - MacOS (dmg). For now there is no Apple validation, you will have a warning when you will launch the program
-            - Windows (exe)
-            The electron contains only the "Local" Tanatloc plugin
-          draft: false
-          prerelease: false
+  #     - name: Create release
+  #       id: create_release
+  #       uses: actions/create-release@v1
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #       with:
+  #         tag_name: v${{ steps.package_version.outputs.version }}
+  #         release_name: v${{ steps.package_version.outputs.version }}
+  #         body: |
+  #           Electron build for:
+  #           - Linux (AppImage)
+  #           - MacOS (dmg). For now there is no Apple validation, you will have a warning when you will launch the program
+  #           - Windows (exe)
+  #           The electron contains only the "Local" Tanatloc plugin
+  #         draft: false
+  #         prerelease: false
 
   get-release:
-    needs: create-release
-    if: always() && (needs.create-release.result == 'failure')
+    # needs: create-release
+    # if: always() && (needs.create-release.result == 'failure')
     name: Get release
     runs-on: ubuntu-latest
 
@@ -79,10 +79,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAG: v${{ steps.package_version.outputs.version }}
         run: |
-          RES=`curl -H "Accept: application/vnd.github.v3+json" -H "Authorization: Bearer ${GH_TOKEN}" https://api.github.com/repos/Airthium/tanatloc-electron/releases/tags/${TAG}`
+          RES=`curl -H "Accept: application/vnd.github.v3+json" -H "Authorization: token ${GITHUB_TOKEN}" https://api.github.com/repos/Airthium/tanatloc-electron/releases/tags/${TAG}`
           echo $RES
           UPLOAD_URL=`echo $RES | jq .upload_url`
-          echo $UPLOAD_URL
+          echo UPLOAD_URL
           echo "::set-output name=upload_url::$UPLOAD_URL"
 
   # release-ubuntu:
