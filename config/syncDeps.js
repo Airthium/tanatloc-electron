@@ -30,6 +30,8 @@ const syncDeps = () => {
   const tanatlocPackage = require('../tanatloc/package.json')
 
   const keys = Object.keys(tanatlocPackage.devDependencies)
+  const deps = []
+  const devDeps = []
   for (let i = 0; i < keys.length; i++) {
     const key = Object.keys(tanatlocPackage.devDependencies)[i]
     if (base.includes(key)) {
@@ -39,16 +41,22 @@ const syncDeps = () => {
     const dep = tanatlocPackage.devDependencies[key]
     try {
       if (key === 'sharp') {
-        console.info(`Install ${key}@${dep}...`)
-        const res = execSync(`yarn add ${key}@${dep}`)
-        console.log(res.toString())
+        console.info(`Add ${key}@${dep}...`)
+        deps.push(`${key}@${dep}`)
       } else {
-        console.info(`Install ${key}@${dep}... (dev)`)
-        const res = execSync(`yarn add --dev ${key}@${dep}`)
-        console.log(res.toString())
+        console.info(`Add ${key}@${dep}... (dev)`)
+        devDeps.push(`${key}@${dep}`)
       }
     } catch (err) {}
   }
+
+  try {
+    const depsRes = execSync('yarn add ' + deps.join(' '))
+    console.log(depsRes.toString())
+
+    const devDepsRes = execSync('yarn add --dev ' + devDeps.join(' '))
+    console.log(devDepsRes.toString())
+  } catch (err) {}
 }
 
 syncDeps()
