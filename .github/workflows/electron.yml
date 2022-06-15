@@ -58,7 +58,7 @@ jobs:
       upload_url: ${{ steps.get_release.outputs.upload_url }}
     steps:
       - name: Install
-        run: apt install jq
+        run: sudo apt install -y jq
 
       - name: Check out Git repository
         uses: actions/checkout@main
