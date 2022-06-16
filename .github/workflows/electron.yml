@@ -18,7 +18,7 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@main
         with:
-          token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
+          token: ${{ secrets.TANATLOC_AS_SUBMODULE }}
           submodules: true
 
       - name: Version
@@ -59,7 +59,7 @@ jobs:
         - name: Check out Git repository
           uses: actions/checkout@main
           with:
-            token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
+            token: ${{ secrets.TANATLOC_AS_SUBMODULE }}
             submodules: true
 
         - name: Install Node.js, NPM and Yarn
