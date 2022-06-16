@@ -1,6 +1,10 @@
 name: Build and release electron
 
-on: workflow_dispatch
+on:
+  workflow_run:
+    workflows: ['Submodule update']
+    types:
+      - completed
 
 jobs:
   create-release:
@@ -16,14 +20,6 @@ jobs:
         with:
           token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
           submodules: true
-
-      - name: Submodule update
-        run: |
-          git submodule update --remote
-          git config --global user.name 'Github Actions bot'
-          git config --global user.email 'bot@tanatloc.com'
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git commit -am "Auto updated submodule" --allow-empty && git push
 
       - name: Version
         id: package_version
@@ -49,119 +45,41 @@ jobs:
           draft: false
           prerelease: false
 
-  release-ubuntu:
+  release:
     needs: create-release
-    if: always()
-    name: Build and release (Ubuntu)
-    runs-on: ubuntu-latest
+    os-matrix:
+      strategy:
+        matrix:
+          os: [ubuntu-latest, macos-latest, windows-latest]
 
-    steps:
-      - name: Check out Git repository
-        uses: actions/checkout@main
-        with:
-          token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
-          submodules: true
+      name: Build and release ${{ matrix.os }}
+      runs-on: ${{ matrix.os }}
 
-      - name: Install Node.js, NPM and Yarn
-        uses: actions/setup-node@main
-        with:
-          node-version: 16
+      steps:
+        - name: Check out Git repository
+          uses: actions/checkout@main
+          with:
+            token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
+            submodules: true
 
-      - uses: webfactory/ssh-agent@master
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        - name: Install Node.js, NPM and Yarn
+          uses: actions/setup-node@main
+          with:
+            node-version: 16
 
-      - name: Install
-        run: yarn install
-        env:
-          YARN_CHECKSUM_BEHAVIOR: update
+        - name: Install
+          run: yarn install
+          env:
+            YARN_CHECKSUM_BEHAVIOR: update
 
-      - name: Electron build
-        run: yarn run prebuild && yarn run build
-        env:
-          BUILD_VERSION: ${{ needs.create-release.outputs.version }}
+        - name: Electron build
+          run: yarn run prebuild && yarn run build
+          env:
+            BUILD_VERSION: ${{ needs.create-release.outputs.version }}
 
-      - name: Upload release
-        uses: AButler/upload-release-assets@v2.0
-        with:
-          files: './dist/Tanatloc-${{ needs.create-release.outputs.version }}.AppImage'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          release-tag: v${{ needs.create-release.outputs.version }}
-
-  release-macos:
-    needs: create-release
-    if: always()
-    name: Build and release (MacOS)
-    runs-on: macos-latest
-
-    steps:
-      - name: Check out Git repository
-        uses: actions/checkout@main
-        with:
-          token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
-          submodules: true
-
-      - name: Install Node.js, NPM and Yarn
-        uses: actions/setup-node@main
-        with:
-          node-version: 16
-
-      - uses: webfactory/ssh-agent@master
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-      - name: Install
-        run: yarn install
-        env:
-          YARN_CHECKSUM_BEHAVIOR: update
-
-      - name: Electron build
-        run: yarn run prebuild && yarn run build
-        env:
-          BUILD_VERSION: ${{ needs.create-release.outputs.version }}
-
-      - name: Upload release
-        uses: AButler/upload-release-assets@v2.0
-        with:
-          files: './dist/Tanatloc-${{ needs.create-release.outputs.version }}.dmg'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          release-tag: v${{ needs.create-release.outputs.version }}
-
-  release-windows:
-    needs: create-release
-    if: always()
-    name: Build and release (Windows)
-    runs-on: windows-latest
-
-    steps:
-      - name: Check out Git repository
-        uses: actions/checkout@main
-        with:
-          token: ${{ secrets.TANATLOC_SSR_AS_SUBMODULE }}
-          submodules: true
-
-      - name: Install Node.js, NPM and Yarn
-        uses: actions/setup-node@main
-        with:
-          node-version: 16
-
-      - uses: webfactory/ssh-agent@master
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-      - name: Install
-        run: yarn install
-        env:
-          YARN_CHECKSUM_BEHAVIOR: update
-
-      - name: Electron build
-        run: yarn run prebuild && yarn run build
-        env:
-          BUILD_VERSION: ${{ needs.create-release.outputs.version }}
-
-      - name: Upload release
-        uses: AButler/upload-release-assets@v2.0
-        with:
-          files: './dist/Tanatloc.Setup.${{ needs.create-release.outputs.version }}.exe'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          release-tag: v${{ needs.create-release.outputs.version }}
+        - name: Upload release
+          uses: AButler/upload-release-assets@v2.0
+          with:
+            files: './dist/Tanatloc-${{ needs.create-release.outputs.version }}.${{ (matrix.os == "ubuntu-latest") && AppImage || (matrix.os == "macos-latest") && dmg || (matrix.os == "ubuntu-latest") && exe }}'
+            repo-token: ${{ secrets.GITHUB_TOKEN }}
+            release-tag: v${{ needs.create-release.outputs.version }}

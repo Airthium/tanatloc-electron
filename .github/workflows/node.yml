@@ -16,10 +16,6 @@ jobs:
         with:
           node-version: '16.3.0'
 
-      - uses: webfactory/ssh-agent@master
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
       - name: Install
         run: YARN_CHECKSUM_BEHAVIOR=update yarn install
 
