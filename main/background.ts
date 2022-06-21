@@ -68,7 +68,7 @@ const start = async (): Promise<void> => {
   // Normal start
   if (complete) {
     if (isProd) {
-      await mainWindow.loadURL('app://./dashoard.html')
+      await mainWindow.loadURL('app://./index.html')
     } else {
       const port = process.argv[2]
       await mainWindow.loadURL(`http://localhost:${port}/`)
