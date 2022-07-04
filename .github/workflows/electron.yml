@@ -47,39 +47,39 @@ jobs:
 
   release:
     needs: create-release
-    os-matrix:
-      strategy:
-        matrix:
-          os: [ubuntu-latest, macos-latest, windows-latest]
 
-      name: Build and release ${{ matrix.os }}
-      runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
 
-      steps:
-        - name: Check out Git repository
-          uses: actions/checkout@main
-          with:
-            token: ${{ secrets.GITHUB_TOKEN }}
-            submodules: true
+    name: Build and release ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
 
-        - name: Install Node.js, NPM and Yarn
-          uses: actions/setup-node@main
-          with:
-            node-version: 16
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          submodules: true
 
-        - name: Install
-          run: yarn install
-          env:
-            YARN_CHECKSUM_BEHAVIOR: update
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@main
+        with:
+          node-version: 16
 
-        - name: Electron build
-          run: yarn run prebuild && yarn run build
-          env:
-            BUILD_VERSION: ${{ needs.create-release.outputs.version }}
+      - name: Install
+        run: yarn install
+        env:
+          YARN_CHECKSUM_BEHAVIOR: update
 
-        - name: Upload release
-          uses: AButler/upload-release-assets@v2.0
-          with:
-            files: './dist/Tanatloc-${{ needs.create-release.outputs.version }}.${{ (matrix.os == "ubuntu-latest") && AppImage || (matrix.os == "macos-latest") && dmg || (matrix.os == "ubuntu-latest") && exe }}'
-            repo-token: ${{ secrets.GITHUB_TOKEN }}
-            release-tag: v${{ needs.create-release.outputs.version }}
+      - name: Electron build
+        run: yarn run prebuild && yarn run build
+        env:
+          BUILD_VERSION: ${{ needs.create-release.outputs.version }}
+
+      - name: Upload release
+        uses: AButler/upload-release-assets@v2.0
+        with:
+          files: './dist/Tanatloc-${{ needs.create-release.outputs.version }}.${{ (matrix.os == "ubuntu-latest") && AppImage || (matrix.os == "macos-latest") && dmg || (matrix.os == "ubuntu-latest") && exe }}'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          release-tag: v${{ needs.create-release.outputs.version }}
