@@ -50,10 +50,24 @@ jobs:
 
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os:
+          [
+            {
+              version: ubuntu-latest,
+              build: './dist/Tanatloc-${{ needs.create-release.outputs.version }}.AppImage'
+            },
+            {
+              version: macos-latest,
+              build: './dist/Tanatloc-${{ needs.create-release.outputs.version }}.dmg'
+            },
+            {
+              version: windows-latest,
+              build: './dist/Tanatloc.Setup.${{ needs.create-release.outputs.version }}.exe'
+            }
+          ]
 
-    name: Build and release ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
+    name: Build and release ${{ matrix.os.version }}
+    runs-on: ${{ matrix.os.version }}
 
     steps:
       - name: Check out Git repository
@@ -80,6 +94,6 @@ jobs:
       - name: Upload release
         uses: AButler/upload-release-assets@v2.0
         with:
-          files: './dist/Tanatloc-${{ needs.create-release.outputs.version }}.${{ (matrix.os == "ubuntu-latest") && AppImage || (matrix.os == "macos-latest") && dmg || (matrix.os == "ubuntu-latest") && exe }}'
+          files: matrix.os.build
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           release-tag: v${{ needs.create-release.outputs.version }}
