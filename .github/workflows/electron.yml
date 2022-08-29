@@ -86,6 +86,9 @@ jobs:
         env:
           YARN_CHECKSUM_BEHAVIOR: update
 
+      - name: Sync
+        run: yarn sync-deps
+
       - name: Electron build
         run: yarn run prebuild && yarn run build
         env:
