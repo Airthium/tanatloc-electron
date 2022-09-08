@@ -22,7 +22,7 @@ Electron builder from [Tanatloc](https://github.com/Airthium/tanatloc)
 
 ## App
 
-Get the latest app for Linux, MacOS or Windows in the [release](https://github.com/Airthium/tanatloc-electron/releases/latest) and start it.
+Get the latest app for Linux, MacOS or Windows in the [release section](https://github.com/Airthium/tanatloc-electron/releases/latest).
 
 <ins>Note:</ins> On Linux, you must allow execution of the AppImage file using
 
