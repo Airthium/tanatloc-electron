@@ -10,21 +10,25 @@ Electron builder from [Tanatloc](https://github.com/Airthium/tanatloc)
 - [Docker](https://www.docker.com/)
   Follow the Docker installation instruction at https://docs.docker.com/get-docker/
 
-- [tanatloc/worker](https://hub.docker.com/repository/docker/tanatloc/worker/tags)
-  Pull the latest tanatloc/worker docker
+- [postgres docker](https://hub.docker.com/_/postgres)
+  Pull the latest postgres docker
 
-  - Using docker desktop:
-    TODO
-  - Using command line:
-    ```shell
-    docker pull tanatloc/worker
-    ```
+  ```shell
+  docker pull postgres
+  ```
+
+- [tanatloc/worker docker](https://hub.docker.com/repository/docker/tanatloc/worker/tags)
+  Pull the latest tanatloc/worker docker
+  ```shell
+  docker pull tanatloc/worker
+  ```
 
 ## App
 
 Get the latest app for Linux, MacOS or Windows in the [release](https://github.com/Airthium/tanatloc-electron/releases/latest) and start it.
 
-The default login in:
+<ins>Remark:</ins> On Linux, you must allow execution of the AppImage file using
 
-- email: `admin`
-- password: `password`
+```shell
+chmod +x ./Tanatloc-x.x.x.AppImage
+```
