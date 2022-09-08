@@ -4,7 +4,7 @@
   "private": true,
   "description": "Tanatloc",
   "repository": "git@github.com:Airthium/tanatloc-electron.git",
-  "license": "UNLICENSED",
+  "license": "AGPL-3.0-or-later",
   "author": {
     "name": "Airthium",
     "url": "https://github.com/orgs/Airthium/people"
