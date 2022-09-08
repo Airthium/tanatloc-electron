@@ -4,9 +4,6 @@ Electron builder from [Tanatloc](https://github.com/Airthium/tanatloc)
 
 ## Requirements
 
-- [PostgreSQL](https://www.postgresql.org/)
-  Follow the PostgreSQL installation instruction at https://www.postgresql.org/download/
-
 - [Docker](https://www.docker.com/)
   Follow the Docker installation instruction at https://docs.docker.com/get-docker/
 
