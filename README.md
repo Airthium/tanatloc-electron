@@ -1,3 +1,5 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Airthium_tanatloc-electron&metric=alert_status&token=85c07e6adc99ad2869724619d99df9057777451c)](https://sonarcloud.io/summary/new_code?id=Airthium_tanatloc-electron)
+
 # Tanatloc electron
 
 Electron builder from [Tanatloc](https://github.com/Airthium/tanatloc)
