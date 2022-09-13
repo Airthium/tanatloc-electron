@@ -31,7 +31,10 @@ const start = async (): Promise<void> => {
   })
   mainWindow.maximize()
   if (isProd) {
-    await mainWindow.loadURL('app://./start.html')
+    await mainWindow.loadURL(
+      'app://./start.html?status=' +
+        encodeURIComponent('First start can be long')
+    )
   }
 
   // Install
