@@ -4,9 +4,6 @@ import createError from 'http-errors'
 import express, { json, Request, Response, urlencoded } from 'express'
 import cors from 'cors'
 
-import init from '../tanatloc/src/server/init'
-import clean from '../tanatloc/src/server/clean'
-
 import avatar from '../tanatloc/src/route/avatar'
 import email from '../tanatloc/src/route/email'
 import geometries from '../tanatloc/src/route/geometries'
@@ -46,32 +43,6 @@ import users from '../tanatloc/src/route/users'
 import workspace from '../tanatloc/src/route/workspace'
 import { loginRoute } from '../tanatloc/src/route/login'
 import { logout } from '../tanatloc/src/route/logout'
-
-// Initialize
-Object.defineProperty(global, 'tanatloc', { value: {}, configurable: true })
-init().catch((err) => {
-  console.error('Initialize failed!')
-  console.error(err)
-
-  process.exit(1)
-})
-
-// Clean
-const handleExit = (code: number): void => {
-  console.info('> Server stopped')
-  clean()
-    .then(() => {
-      process.exit(code)
-    })
-    .catch((err) => {
-      console.error('Clean failed!')
-      console.error(err)
-
-      process.exit(1)
-    })
-}
-
-process.on('exit', (code) => handleExit(code))
 
 // App
 const app = express()
@@ -151,10 +122,7 @@ app.get('/api/logout', logout)
 
 /**
  * Catch 404 and forward to error handler
- * ../tanatloc/srcmemberof Server
- * ../tanatloc/srcparam req
- * ../tanatloc/srcparam res
- * ../tanatloc/srcparam next
+ * @param next Next
  */
 app.use((_: any, __: any, next) => {
   next(createError(404))
@@ -162,10 +130,9 @@ app.use((_: any, __: any, next) => {
 
 /**
  * Error handler
- * ../tanatloc/srcmemberof Server
- * ../tanatloc/srcparam req
- * ../tanatloc/srcparam res
- * ../tanatloc/srcparam next
+ * @param req Request
+ * @param res Response
+ * @param next Next
  */
 app.use((err: any, req: Request, res: Response, _next: Function) => {
   // set locals, only providing error in development

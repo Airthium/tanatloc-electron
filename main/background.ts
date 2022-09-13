@@ -37,7 +37,8 @@ const start = async (): Promise<void> => {
   // Install
   try {
     console.info('Install')
-    await import('../dist-install/install')
+    const install = await import('../dist-install/install')
+    await install.default()
 
     // Wait complete
     const max = 100
@@ -47,21 +48,26 @@ const start = async (): Promise<void> => {
       await new Promise((resolve) => setTimeout(resolve, 50))
       iter++
     }
-  } catch (err) {
+  } catch (err: any) {
     console.error('Install error')
-    console.error(err)
-    await mainWindow.loadURL('app://./error.html?electronStatusCode=100')
+    await mainWindow.loadURL(
+      'app://./error.html?electronStatusCode=100&err=' +
+        encodeURIComponent(err.message)
+    )
     complete = false
   }
 
   // Server
   try {
     console.info('Starting server')
-    await import('../dist-server/server/bin/www')
-  } catch (err) {
+    const server = await import('../dist-server/server/bin/www')
+    await server.default()
+  } catch (err: any) {
     console.error('Server error')
-    console.error(err)
-    await mainWindow.loadURL('app://./error.html?electronStatusCode=200')
+    await mainWindow.loadURL(
+      'app://./error.html?electronStatusCode=200&err=' +
+        encodeURIComponent(err.message)
+    )
     complete = false
   }
 

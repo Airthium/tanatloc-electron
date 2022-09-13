@@ -20,7 +20,7 @@ export interface IWindowState {
 export default (
   windowName: string,
   options: { width: number; height: number; webPreferences?: {} }
-): any => {
+): BrowserWindow => {
   const key = 'window-state'
   const name = `window-state-${windowName}`
   const store = new Store()
@@ -30,7 +30,7 @@ export default (
     height: options.height
   }
   let state = {}
-  let win: any
+  let win: BrowserWindow
 
   /**
    * Restore store
