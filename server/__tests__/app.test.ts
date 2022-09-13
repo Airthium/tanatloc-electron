@@ -40,12 +40,6 @@ jest.mock('express', () => ({
 }))
 jest.mock('cors', () => jest.fn())
 
-const mockInit = jest.fn()
-jest.mock('../../tanatloc/src/server/init', () => async () => mockInit())
-
-const mockClean = jest.fn()
-jest.mock('../../tanatloc/src/server/clean', () => async () => mockClean())
-
 jest.mock('../../tanatloc/src/route/login', () => ({
   loginRoute: jest.fn()
 }))
