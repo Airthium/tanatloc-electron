@@ -2,6 +2,8 @@
 
 import { app, ipcMain } from 'electron'
 import serve from 'electron-serve'
+import fixPath from 'fix-path'
+
 import { createWindow } from './helpers'
 
 const isProd: boolean = process.env.NODE_ENV === 'production'
@@ -22,6 +24,9 @@ const start = async (): Promise<void> => {
 
   console.info('Starting Tanatloc')
   await app.whenReady()
+
+  // Fix path
+  fixPath()
 
   // Client
   console.info('Starting client')

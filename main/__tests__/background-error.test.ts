@@ -15,6 +15,8 @@ jest.mock('electron-serve', () => () => {
   // Empty
 })
 
+jest.mock('fix-path', () => () => undefined)
+
 jest.mock('../helpers', () => ({
   createWindow: () => ({
     maximize: jest.fn,

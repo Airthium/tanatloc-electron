@@ -107,7 +107,7 @@ const www = async () => {
 
   server.on('error', (e: any) => {
     if (e.code === 'EADDRINUSE') {
-      console.log('Address in use, retrying...')
+      console.warn('Address in use, retrying...')
       setTimeout(() => {
         server.close()
         server.listen(+port + 1)
