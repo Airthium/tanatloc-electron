@@ -40,6 +40,7 @@ describe('main/background', () => {
   Object.defineProperty(global, 'tanatloc', { value: { complete: true } })
   test('import', async () => {
     await import('../background')
+    await new Promise((resolve) => setTimeout(resolve, 2000))
   })
 })
 

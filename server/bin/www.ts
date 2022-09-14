@@ -7,11 +7,17 @@ import { AddressInfo } from 'net'
 import init from '../../tanatloc/src/server/init'
 import clean from '../../tanatloc/src/server/clean'
 
-const www = async () => {
+const www = async (
+  status: string[],
+  setStatus: (status: string[]) => Promise<void>
+) => {
+  status.push('Starting server')
+  await setStatus(status)
+
   // Initialize
   Object.defineProperty(global, 'tanatloc', { value: {}, configurable: true })
   try {
-    await init()
+    await init(status, setStatus)
   } catch (err: any) {
     console.error('Initialization failed!')
     console.error(err)
@@ -95,7 +101,8 @@ const www = async () => {
   const onListening = () => {
     const addr = server.address() as string | AddressInfo
     const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port
-    console.debug('Listening on ' + bind)
+
+    status.push('Listening on ' + bind)
   }
 
   /**
@@ -104,16 +111,6 @@ const www = async () => {
   server.listen(port)
   server.on('error', onError)
   server.on('listening', onListening)
-
-  server.on('error', (e: any) => {
-    if (e.code === 'EADDRINUSE') {
-      console.warn('Address in use, retrying...')
-      setTimeout(() => {
-        server.close()
-        server.listen(+port + 1)
-      }, 1000)
-    }
-  })
 }
 
 export default www

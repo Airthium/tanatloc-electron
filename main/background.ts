@@ -28,6 +28,9 @@ const start = async (): Promise<void> => {
   // Fix path
   fixPath()
 
+  // Status
+  let status: string[] = []
+
   // Client
   console.info('Starting client')
   const mainWindow = createWindow('main', {
@@ -35,18 +38,27 @@ const start = async (): Promise<void> => {
     height: 600
   })
   mainWindow.maximize()
-  if (isProd) {
-    await mainWindow.loadURL(
-      'app://./start.html?status=' +
-        encodeURIComponent('First start can be long')
-    )
+  const setStatus = async (status: string[]) => {
+    if (isProd) {
+      try {
+        console.log(status)
+        await mainWindow.loadURL(
+          'app://./start.html?status=' + encodeURIComponent(status.join(';'))
+        )
+        // BUG: must wait after loadURL
+        await new Promise((resolve) => setTimeout(resolve, 1000))
+      } catch (err) {}
+    }
   }
+
+  status.push('Starting client')
+  await setStatus(status)
 
   // Install
   try {
     console.info('Install')
     const install = await import('../dist-install/install')
-    await install.default()
+    await install.default(status, setStatus)
 
     // Wait complete
     const max = 100
@@ -69,7 +81,7 @@ const start = async (): Promise<void> => {
   try {
     console.info('Starting server')
     const server = await import('../dist-server/server/bin/www')
-    await server.default()
+    await server.default(status, setStatus)
   } catch (err: any) {
     console.error('Server error')
     await mainWindow.loadURL(
