@@ -7,17 +7,17 @@ import { AddressInfo } from 'net'
 import init from '../../tanatloc/src/server/init'
 import clean from '../../tanatloc/src/server/clean'
 
-const www = async (
-  status: string[],
-  setStatus: (status: string[]) => Promise<void>
-) => {
-  status.push('Starting server')
-  await setStatus(status)
+const www = async ({
+  addStatus
+}: {
+  addStatus: (status: string) => Promise<void>
+}): Promise<void> => {
+  addStatus('Starting server')
 
   // Initialize
   Object.defineProperty(global, 'tanatloc', { value: {}, configurable: true })
   try {
-    await init(status, setStatus)
+    await init({ addStatus })
   } catch (err: any) {
     console.error('Initialization failed!')
     console.error(err)
@@ -102,7 +102,7 @@ const www = async (
     const addr = server.address() as string | AddressInfo
     const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port
 
-    status.push('Listening on ' + bind)
+    console.log('Listening on ' + bind)
   }
 
   /**

@@ -30,6 +30,7 @@ const start = async (): Promise<void> => {
 
   // Status
   let status: string[] = []
+  let errors: string[] = []
 
   // Client
   console.info('Starting client')
@@ -38,27 +39,37 @@ const start = async (): Promise<void> => {
     height: 600
   })
   mainWindow.maximize()
-  const setStatus = async (status: string[]) => {
-    if (isProd) {
-      try {
-        console.log(status)
-        await mainWindow.loadURL(
-          'app://./start.html?status=' + encodeURIComponent(status.join(';'))
-        )
-        // BUG: must wait after loadURL
-        await new Promise((resolve) => setTimeout(resolve, 1000))
-      } catch (err) {}
-    }
+
+  const addStatus = async (aStatus: string): Promise<void> => {
+    status.push(aStatus)
+    await loadStart()
   }
 
-  status.push('Starting client')
-  await setStatus(status)
+  const addError = async (anError: string): Promise<void> => {
+    errors.push(anError)
+    await loadStart()
+  }
+
+  const loadStart = async (): Promise<void> => {
+    try {
+      await mainWindow.loadURL(
+        'app://./start.html?status=' +
+          encodeURIComponent(status.join(';')) +
+          '&err=' +
+          encodeURIComponent(errors.join(';'))
+      )
+      // BUG: must wait after loadURL
+      await new Promise((resolve) => setTimeout(resolve, 1000))
+    } catch (err) {}
+  }
+
+  await addStatus('Starting client')
 
   // Install
   try {
     console.info('Install')
     const install = await import('../dist-install/install')
-    await install.default(status, setStatus)
+    await install.default({ addStatus, addError })
 
     // Wait complete
     const max = 100
@@ -70,26 +81,23 @@ const start = async (): Promise<void> => {
     }
   } catch (err: any) {
     console.error('Install error')
-    await mainWindow.loadURL(
-      'app://./error.html?electronStatusCode=100&err=' +
-        encodeURIComponent(err.message)
-    )
+    await addError('Install error')
+    await addError(err.message)
     complete = false
   }
 
   // Server
-  try {
-    console.info('Starting server')
-    const server = await import('../dist-server/server/bin/www')
-    await server.default(status, setStatus)
-  } catch (err: any) {
-    console.error('Server error')
-    await mainWindow.loadURL(
-      'app://./error.html?electronStatusCode=200&err=' +
-        encodeURIComponent(err.message)
-    )
-    complete = false
-  }
+  if (complete)
+    try {
+      console.info('Starting server')
+      const server = await import('../dist-server/server/bin/www')
+      await server.default({ addStatus })
+    } catch (err: any) {
+      console.error('Server error')
+      await addError('Server error')
+      await addError(err.message)
+      complete = false
+    }
 
   // Normal start
   if (complete) {
