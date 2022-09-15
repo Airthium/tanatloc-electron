@@ -61,7 +61,7 @@ describe('server/bin/www', () => {
       throw new Error('clean error')
     })
     try {
-      await www([], async () => undefined)
+      await www({ addStatus: async () => undefined })
     } catch (err) {}
   })
 
@@ -70,12 +70,12 @@ describe('server/bin/www', () => {
       throw new Error('clean error')
     })
     try {
-      await www([], async () => undefined)
+      await www({ addStatus: async () => undefined })
     } catch (err) {}
   })
 
   test('www', async () => {
-    await www([], async () => undefined)
+    await www({ addStatus: async () => undefined })
   })
 })
 

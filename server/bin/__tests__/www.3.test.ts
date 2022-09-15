@@ -22,7 +22,7 @@ Object.defineProperty(process, 'env', { value: { PORT: -1 } })
 
 describe('server/bin/www', () => {
   test('www', async () => {
-    www([], async () => undefined)
+    await www({ addStatus: async () => undefined })
   })
 })
 

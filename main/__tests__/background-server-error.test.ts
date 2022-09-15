@@ -27,8 +27,8 @@ jest.mock('../helpers', () => ({
   })
 }))
 
-jest.mock('../../dist-install/install', () => {
-  throw new Error('install error')
+jest.mock('../../dist-install/install', () => () => {
+  // Empty
 })
 
 jest.mock('../../dist-server/server/bin/www', () => {
@@ -37,8 +37,10 @@ jest.mock('../../dist-server/server/bin/www', () => {
 
 describe('main/background', () => {
   test('import', async () => {
+    Object.defineProperty(global, 'tanatloc', { value: { complete: true } })
     await import('../background')
-  })
+    await new Promise((resolve) => setTimeout(resolve, 5_000))
+  }, 10_000)
 })
 
 export {}

@@ -1,5 +1,3 @@
-Object.defineProperty(process.env, 'NODE_ENV', { value: 'production' })
-
 jest.mock('electron', () => ({
   app: {
     setPath: jest.fn,
@@ -13,8 +11,9 @@ jest.mock('electron', () => ({
   }
 }))
 
-const mockLoadUrl = jest.fn()
-jest.mock('electron-serve', () => () => mockLoadUrl())
+jest.mock('electron-serve', () => () => {
+  // Empty
+})
 
 jest.mock('fix-path', () => () => undefined)
 
@@ -28,8 +27,8 @@ jest.mock('../helpers', () => ({
   })
 }))
 
-jest.mock('../../dist-install/install', () => () => {
-  // Empty
+jest.mock('../../dist-install/install', () => {
+  throw new Error('install error')
 })
 
 jest.mock('../../dist-server/server/bin/www', () => () => {
@@ -37,7 +36,6 @@ jest.mock('../../dist-server/server/bin/www', () => () => {
 })
 
 describe('main/background', () => {
-  Object.defineProperty(global, 'tanatloc', { value: { complete: true } })
   test('import', async () => {
     await import('../background')
     await new Promise((resolve) => setTimeout(resolve, 5_000))
