@@ -7,6 +7,28 @@ import { AddressInfo } from 'net'
 import init from '../../tanatloc/src/server/init'
 import clean from '../../tanatloc/src/server/clean'
 
+/**
+ * Normalize a port into a number, string, or false.
+ */
+const normalizePort = (val: string): boolean | number | string => {
+  const p = parseInt(val, 10)
+
+  if (isNaN(p)) {
+    // named pipe
+    return val
+  }
+
+  if (p >= 0) {
+    // port number
+    return p
+  }
+
+  return false
+}
+
+/**
+ * www
+ */
 const www = async ({
   addStatus
 }: {
@@ -39,25 +61,6 @@ const www = async ({
   }
 
   process.on('exit', (code) => handleExit(code))
-
-  /**
-   * Normalize a port into a number, string, or false.
-   */
-  const normalizePort = (val: string) => {
-    const p = parseInt(val, 10)
-
-    if (isNaN(p)) {
-      // named pipe
-      return val
-    }
-
-    if (p >= 0) {
-      // port number
-      return p
-    }
-
-    return false
-  }
 
   /**
    * Get port from environment and store in Express.
