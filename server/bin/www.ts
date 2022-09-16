@@ -84,12 +84,13 @@ const www = async ({
     switch (error.code) {
       case 'EACCES':
         console.error(bind + ' requires elevated privileges')
-        process.exit(1)
-        break
+        throw new Error(
+          'Server error: ' + bind + ' requires elevated privileges'
+        )
       case 'EADDRINUSE':
         console.error(bind + ' is already in use')
-        process.exit(1)
-        break
+        throw new Error('Server error: ' + bind + ' is already in use')
+
       default:
         throw error
     }

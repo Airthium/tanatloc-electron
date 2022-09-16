@@ -43,7 +43,7 @@
     "prebuild:plugins": "echo '- Plugins' && babel tanatloc/plugins --config-file ./config/babelrc.plugins --extensions .ts,.tsx --out-dir plugins --ignore '**/__tests__/**' --copy-files --no-copy-ignored",
     "prebuild:postprocessing": "echo '- Postprocessing' && babel tanatloc/postprocessing --config-file ./config/babelrc.plugins --extensions .ts,.tsx --out-dir postprocessing --ignore '**/__tests__/**' --copy-files --no-copy-ignored",
     "dev": "yarn nextron",
-    "build": "echo '- Build' && yarn next telemetry disable && NEXT_PUBLIC_SOURCE_BRANCH=$(git submodule foreach --quiet 'git rev-parse --abbrev-ref HEAD') NEXT_PUBLIC_SOURCE_COMMIT=$(git submodule foreach --quiet 'git rev-parse --short HEAD') nextron build && electron-builder install-app-deps",
+    "build": "echo '- Build' && yarn next telemetry disable && NEXT_PUBLIC_SOURCE_BRANCH=$(git submodule foreach --quiet 'git rev-parse --abbrev-ref HEAD') NEXT_PUBLIC_SOURCE_COMMIT=$(git submodule foreach --quiet 'git rev-parse --short HEAD') NEXT_PUBLIC_SERVER_MODE=frontpage nextron build && electron-builder install-app-deps",
     "workflow": ".github/workflows/node.local.sh"
   },
   "dependencies": {
