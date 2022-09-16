@@ -3,33 +3,41 @@ import www from '../www'
 jest.mock('../../app', () => ({
   set: jest.fn()
 }))
-jest.mock('http', () => ({
-  createServer: () => ({
-    address: () => ({}),
-    close: jest.fn(),
-    listen: jest.fn(),
-    on: jest.fn((_: any, callback: Function) => {
-      if (callback.length === 1) {
-        try {
-          callback({ syscall: 'not-listen' })
-        } catch (err) {
-          console.error(err)
-        }
 
-        try {
-          callback({ syscall: 'listen' })
-        } catch (err) {
-          console.error(err)
-        }
+jest.mock('http', () => {
+  let count = 0
+  return {
+    createServer: () => ({
+      address: () => ({}),
+      close: jest.fn(),
+      listen: jest.fn(),
+      on: jest.fn((_: any, callback: Function) => {
+        if (callback.length === 1) {
+          try {
+            callback({ syscall: 'not-listen' })
+          } catch (err) {
+            console.error(err)
+          }
 
-        callback({ syscall: 'listen', code: 'EACCES' })
-        callback({ syscall: 'listen', code: 'EADDRINUSE' })
-      } else {
-        callback({})
-      }
+          try {
+            callback({ syscall: 'listen' })
+          } catch (err) {
+            console.error(err)
+          }
+
+          if (count === 0) {
+            count++
+            callback({ syscall: 'listen', code: 'EACCES' })
+          } else {
+            callback({ syscall: 'listen', code: 'EADDRINUSE' })
+          }
+        } else {
+          callback({})
+        }
+      })
     })
-  })
-}))
+  }
+})
 
 const mockInit = jest.fn()
 jest.mock('../../../tanatloc/src/server/init', () => async () => mockInit())
@@ -75,7 +83,13 @@ describe('server/bin/www', () => {
   })
 
   test('www', async () => {
-    await www({ addStatus: async () => undefined })
+    try {
+      await www({ addStatus: async () => undefined })
+    } catch (err) {}
+
+    try {
+      await www({ addStatus: async () => undefined })
+    } catch (err) {}
   })
 })
 
