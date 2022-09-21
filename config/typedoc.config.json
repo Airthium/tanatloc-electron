@@ -3,7 +3,7 @@
   "tsconfig": "../tsconfig.json",
   "entryPoints": ["../main", "../server"],
   "exclude": ["../tanatloc/**"],
-  "plugin": "typedoc-plugin-airthium",
+  "plugin": "@airthium/typedoc-plugin-airthium",
   "theme": "airthium",
   "entryPointStrategy": "expand",
   "out": "../doc",

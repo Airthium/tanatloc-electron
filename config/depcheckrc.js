@@ -11,7 +11,7 @@ depcheck.special.customTypedoc = async (fileName) => {
 
     if (packageJson.scripts.doc) {
       newDeps.push('typedoc')
-      newDeps.push('typedoc-plugin-airthium')
+      newDeps.push('@airthium/typedoc-plugin-airthium')
     }
   }
 
