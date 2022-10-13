@@ -90,6 +90,9 @@ jobs:
         run: yarn dist
         env:
           BUILD_VERSION: ${{ needs.create-release.outputs.version }}
+          NEXT_PUBLIC_SOURCE_BRANCH: $(git submodule foreach --quiet 'git rev-parse --abbrev-ref HEAD')
+          NEXT_PUBLIC_SOURCE_COMMIT: $(git submodule foreach --quiet 'git rev-parse --short HEAD')
+          NEXT_PUBLIC_SERVER_MODE: frontpage
 
       - name: Upload release
         uses: AButler/upload-release-assets@v2.0
