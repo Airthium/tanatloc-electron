@@ -39,7 +39,7 @@
     "build-server:plugins": "echo - Src/plugins && babel tanatloc/plugins --extensions .ts,.tsx --config-file ./server/.babelrc --out-dir dist-server/tanatloc/plugins --ignore '**/__tests__/**' --copy-files --no-copy-ignored",
     "build-server:postprocessing": "echo - Src/postprocessing && babel tanatloc/postprocessing --extensions .ts --config-file ./server/.babelrc --out-dir dist-server/tanatloc/postprocessing --ignore '**/__tests__/**' --copy-files --no-copy-ignored",
     "build": "yarn pre-build && yarn build-install && yarn build-server && yarn build-renderer && yarn build-electron",
-    "dist": "NEXT_PUBLIC_SOURCE_BRANCH=$(git submodule foreach --quiet 'git rev-parse --abbrev-ref HEAD') NEXT_PUBLIC_SOURCE_COMMIT=$(git submodule foreach --quiet 'git rev-parse --short HEAD') NEXT_PUBLIC_SERVER_MODE=frontpage yarn build && echo Build application && BUILD_VERSION=test electron-builder"
+    "dist": "NEXT_PUBLIC_SOURCE_BRANCH=$(git submodule foreach --quiet 'git rev-parse --abbrev-ref HEAD') NEXT_PUBLIC_SOURCE_COMMIT=$(git submodule foreach --quiet 'git rev-parse --short HEAD') NEXT_PUBLIC_SERVER_MODE=frontpage yarn build && echo Build application && electron-builder"
   },
   "dependencies": {
     "@airthium/pg-format": "2.0.1",
