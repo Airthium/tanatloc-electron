@@ -49,7 +49,7 @@ depcheck.special.customPackage = async () => {
 }
 
 const options = {
-  ignoreMatches: ['@types/*', 'typescript'],
+  ignoreMatches: ['@types/*', '@babel/runtime'],
   specials: [
     depcheck.special.babel,
     depcheck.special.bin,
@@ -75,12 +75,6 @@ depcheck(process.cwd(), options, (unused) => {
     console.error(unused.devDependencies)
     console.error()
     error++
-  }
-
-  if (Object.keys(unused.missing).length) {
-    console.warn('Missing dependencies:')
-    console.warn(unused.missing)
-    console.warn()
   }
 
   if (error) exit(1)

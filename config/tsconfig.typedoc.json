@@ -13,7 +13,7 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "baseUrl": "./tanatloc",
+    "baseUrl": "../tanatloc",
     "paths": {
       "@/config": ["config"],
       "@/config/*": ["config/*"],
@@ -47,17 +47,11 @@
       "@/styles/*": ["src/styles/*"]
     }
   },
-  "include": ["**/*.ts"],
-  "exclude": [
-    "tanatloc/next.config.js",
-    "app",
-    "coverage",
-    "dist",
-    "dist-install",
-    "dist-server",
-    "doc",
-    "node_modules",
-    "plugins",
-    "public"
+  "include": [
+    "../electron-src/**/*.ts",
+    "../esm_commonjs/*.js",
+    "../install/**/*.ts",
+    "../server/**/*.ts",
+    "../tanatloc/*.d.ts"
   ]
 }

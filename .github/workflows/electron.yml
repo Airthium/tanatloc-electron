@@ -86,11 +86,8 @@ jobs:
         env:
           YARN_CHECKSUM_BEHAVIOR: update
 
-      - name: Sync
-        run: yarn sync-deps
-
       - name: Electron build
-        run: yarn run prebuild && yarn run build
+        run: yarn dist
         env:
           BUILD_VERSION: ${{ needs.create-release.outputs.version }}
 

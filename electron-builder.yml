@@ -1,26 +1,25 @@
 appId: com.tanatloc.app
 productName: Tanatloc
-copyright: Copyright © 2021 Airthium
+copyright: Copyright © ${new Date().getYear()} Airthium
 directories:
   output: dist
   buildResources: resources
+
+# Files
 files:
-  # Global app
+  # Package.json
   - from: .
     filter:
-      - app
+      - main
       - package.json
 
-  # three-to-glb
-  - from: node_modules/three-to-glb/dist
-    to: app/three-to-glb
-    filter:
-      - convert.js
+  # Renderer
+  - from: renderer
+    to: renderer
 
   # threejs assets
   - from: node_modules/three/examples/js/libs/draco
-    to: app/three/libs/draco
-    filter: '**/*'
+    to: renderer/three/libs/draco
 
   # Missing threejs dynamic require
   - from: node_modules/three
@@ -30,13 +29,16 @@ files:
 
   # Mathjax
   - from: node_modules/mathjax/es5
-    to: app/mathjax
-extraResources:
-  [
-    { from: './plugins', to: 'plugins', filter: ['**/*'] },
-    { from: './postprocessing', to: 'postprocessing', filter: ['**/*'] },
-    { from: './tanatloc/templates', to: 'templates', filter: ['**/*'] }
+    to: renderer/mathjax
+
+# Extra ressources
+extraResources: [
+    # Install
+    { from: 'dist-install', to: 'app/install' },
+    # Server
+    { from: 'dist-server', to: 'app/server' }
   ]
+
 asar: false
 publish: null
 
@@ -52,6 +54,8 @@ appImage:
 
 dmg:
   artifactName: Tanatloc-${env.BUILD_VERSION}.dmg
+  title: 'Tanatloc ${env.BUILD_VERSION}'
+  backgroundColor: '#fad114'
 
 nsis:
   artifactName: Tanatloc.Setup.${env.BUILD_VERSION}.exe

@@ -1,14 +1,14 @@
-node_modules
+/node_modules
 
-public
+/doc
 
-dist-install
-dist-server
-plugins
-postprocessing
-dist
-app
+/coverage
+/public
 
-coverage
+/dist
+/dist-install
+/dist-server
+/main
+/renderer
 
-tanatloc
+/tanatloc

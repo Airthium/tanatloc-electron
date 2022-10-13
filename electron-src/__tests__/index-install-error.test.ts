@@ -27,17 +27,25 @@ jest.mock('../helpers', () => ({
   })
 }))
 
-jest.mock('../../dist-install/install', () => {
-  throw new Error('install error')
-})
+jest.mock(
+  '../../install/install/index.js',
+  () => {
+    throw new Error('install error')
+  },
+  { virtual: true }
+)
 
-jest.mock('../../dist-server/server/bin/www', () => () => {
-  // Empty
-})
+jest.mock(
+  '../../server/server/bin/www.js',
+  () => () => {
+    // Empty
+  },
+  { virtual: true }
+)
 
 describe('main/background', () => {
   test('import', async () => {
-    await import('../background')
+    await import('..')
     await new Promise((resolve) => setTimeout(resolve, 5_000))
   }, 10_000)
 })

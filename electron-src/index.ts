@@ -1,23 +1,16 @@
 /** @module Main */
 
-import { app, ipcMain } from 'electron'
+import { app } from 'electron'
 import serve from 'electron-serve'
 import fixPath from 'fix-path'
 
 import { createWindow } from './helpers'
 
-const isProd: boolean = process.env.NODE_ENV === 'production'
-
-if (isProd) {
-  serve({ directory: 'app' })
-} else {
-  app.setPath('userData', `${app.getPath('userData')} (development)`)
-}
+// Serve renderer
+serve({ directory: 'renderer' })
 
 /**
- * Start electron
- * @memberof Electron
- * @description Start the installation script, the server and the electron window
+ * Start
  */
 const start = async (): Promise<void> => {
   let complete = true
@@ -36,7 +29,11 @@ const start = async (): Promise<void> => {
   console.info('Starting client')
   const mainWindow = createWindow('main', {
     width: 1000,
-    height: 600
+    height: 600,
+    webPreferences: {
+      nodeIntegration: false,
+      contextIsolation: false
+    }
   })
   mainWindow.maximize()
 
@@ -68,7 +65,8 @@ const start = async (): Promise<void> => {
   // Install
   try {
     console.info('Install')
-    const install = await import('../dist-install/install')
+    //@ts-ignore
+    const install = await import('../install/install/index.js')
     await install.default({ addStatus, addError })
 
     // Wait complete
@@ -84,13 +82,15 @@ const start = async (): Promise<void> => {
     await addError('Install error')
     await addError(err.message)
     complete = false
+    console.log(err)
   }
 
   // Server
   if (complete)
     try {
       console.info('Starting server')
-      const server = await import('../dist-server/server/bin/www')
+      //@ts-ignore
+      const server = await import('../server/server/bin/www.js')
       await server.default({ addStatus })
     } catch (err: any) {
       console.error('Server error')
@@ -101,25 +101,11 @@ const start = async (): Promise<void> => {
 
   // Normal start
   if (complete) {
-    if (isProd) {
-      await mainWindow.loadURL('app://./index.html')
-    } else {
-      const port = process.argv[2]
-      await mainWindow.loadURL(`http://localhost:${port}/`)
-      mainWindow.webContents.openDevTools()
-    }
+    await mainWindow.loadURL(`app://./index.html`)
   }
 }
 start()
 
 app.on('window-all-closed', () => {
   app.quit()
-})
-
-ipcMain.on('ping-pong', (event, arg) => {
-  event.sender.send('ping-pong', `[ipcMain] "${arg}" received asynchronously.`)
-})
-
-ipcMain.on('ping-pong-sync', (event, arg) => {
-  event.returnValue = `[ipcMain] "${arg}" received synchronously.`
 })

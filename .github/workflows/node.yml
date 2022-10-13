@@ -14,22 +14,19 @@ jobs:
 
       - uses: actions/setup-node@master
         with:
-          node-version: '16.3.0'
+          node-version: '16'
 
       - name: Install
         run: YARN_CHECKSUM_BEHAVIOR=update yarn install
 
-      - name: Sync
-        run: yarn sync-deps
+      - name: Depcheck
+        run: yarn depcheck
 
       - name: Lint
-        run: yarn run prettier
-
-      - name: Prebuild
-        run: yarn run prebuild
+        run: yarn prettier
 
       - name: Tests
-        run: yarn run test || true
+        run: yarn test || true
 
       - name: SonarCloud scan
         uses: sonarsource/sonarcloud-github-action@master

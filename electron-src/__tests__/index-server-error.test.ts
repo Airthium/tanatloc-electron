@@ -27,18 +27,26 @@ jest.mock('../helpers', () => ({
   })
 }))
 
-jest.mock('../../dist-install/install', () => () => {
-  // Empty
-})
+jest.mock(
+  '../../install/install/index.js',
+  () => () => {
+    // Empty
+  },
+  { virtual: true }
+)
 
-jest.mock('../../dist-server/server/bin/www', () => {
-  throw new Error('server error')
-})
+jest.mock(
+  '../../server/server/bin/www.js',
+  () => {
+    throw new Error('server error')
+  },
+  { virtual: true }
+)
 
 describe('main/background', () => {
   test('import', async () => {
     Object.defineProperty(global, 'tanatloc', { value: { complete: true } })
-    await import('../background')
+    await import('..')
     await new Promise((resolve) => setTimeout(resolve, 5_000))
   }, 10_000)
 })

@@ -1,15 +1,10 @@
 {
-  "presets": [
-    "next/babel",
-    "@babel/preset-typescript"
-  ],
+  "presets": ["next/babel", "@babel/preset-typescript"],
   "plugins": [
     [
       "module-resolver",
       {
-        "root": [
-          "."
-        ],
+        "root": ["."],
         "alias": {
           "@/config": "./tanatloc/config",
           "@/models": "./tanatloc/models",
