@@ -18,22 +18,26 @@ const dependencies = [
  */
 const checkPackage = async (dir) => {
   console.info(' - Check package', dir)
-  const pkgFile = path.join('./node_modules', dir, 'package.json')
-  const pkg = JSON.parse(await fs.readFile(pkgFile))
+  try {
+    const pkgFile = path.join('./node_modules', dir, 'package.json')
+    const pkg = JSON.parse(await fs.readFile(pkgFile))
 
-  if (pkg.type === 'commonjs') return
+    if (pkg.type === 'commonjs') return
 
-  console.info('  + Convert package...')
+    console.info('  + Convert package...')
 
-  // Transpile files
-  await transpileFiles(dir)
+    // Transpile files
+    await transpileFiles(dir)
 
-  // Update package.json
-  pkg.type = 'commonjs'
-  await fs.writeFile(pkgFile, JSON.stringify(pkg, null, '\t'))
+    // Update package.json
+    pkg.type = 'commonjs'
+    await fs.writeFile(pkgFile, JSON.stringify(pkg, null, '\t'))
 
-  // Check dependencies
-  await checkDependencies(pkg.dependencies)
+    // Check dependencies
+    await checkDependencies(pkg.dependencies)
+  } catch (err) {
+    console.info('   Failed')
+  }
 }
 
 /**
