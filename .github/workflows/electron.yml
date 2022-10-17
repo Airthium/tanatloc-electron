@@ -47,6 +47,7 @@ jobs:
 
   release:
     needs: create-release
+    continue-on-error: true
 
     strategy:
       matrix:
