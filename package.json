@@ -41,9 +41,6 @@
     "build": "yarn pre-build && yarn build-install && yarn build-server && yarn build-renderer && yarn build-electron",
     "dist": "yarn build && echo Build application && electron-builder"
   },
-  "build": {
-    "afterSign": "build/notarize.js"
-  },
   "dependencies": {
     "@airthium/pg-format": "2.0.1",
     "@babel/runtime": "7.19.4",
