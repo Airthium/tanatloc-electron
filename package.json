@@ -41,6 +41,9 @@
     "build": "yarn pre-build && yarn build-install && yarn build-server && yarn build-renderer && yarn build-electron",
     "dist": "yarn build && echo Build application && electron-builder"
   },
+  "build": {
+    "afterSign": "build/notarize.js"
+  },
   "dependencies": {
     "@airthium/pg-format": "2.0.1",
     "@babel/runtime": "7.19.4",
@@ -105,6 +108,7 @@
     "depcheck": "1.4.3",
     "electron": "21.1.1",
     "electron-builder": "23.6.0",
+    "electron-notarize": "1.2.1",
     "email-addresses": "5.0.0",
     "eslint": "8.25.0",
     "eslint-config-next": "12.3.1",
