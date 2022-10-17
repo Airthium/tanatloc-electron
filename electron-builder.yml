@@ -1,5 +1,4 @@
 appId: com.tanatloc.app
-productFilename: Tanatloc
 productName: Tanatloc
 copyright: Copyright © ${new Date().getYear()} Airthium
 directories:
