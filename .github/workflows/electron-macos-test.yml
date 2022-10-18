@@ -3,8 +3,6 @@ on: [push]
 
 jobs:
   release:
-    needs: create-release
-
     name: Build and release
     runs-on: macos-latest
 
