@@ -1,4 +1,5 @@
 name: Build and release electron
+on: [push]
 
 jobs:
   release:
