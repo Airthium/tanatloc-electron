@@ -52,7 +52,6 @@ mac:
   #gatekeeperAssess: false
   #entitlements: build/entitlements.mac.plist
   #entitlementsInherit: build/entitlements.mac.plist
-  sign: false
 
 win:
   target: nsis
@@ -64,6 +63,7 @@ dmg:
   artifactName: Tanatloc-${env.BUILD_VERSION}.dmg
   title: Tanatloc ${env.BUILD_VERSION}
   backgroundColor: #fad114
+  sign: false
 
 nsis:
   artifactName: Tanatloc.Setup.${env.BUILD_VERSION}.exe
