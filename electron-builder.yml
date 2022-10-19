@@ -43,6 +43,8 @@ asar: false
 publish: null
 #afterSign: build/notarize.js
 
+WIN_CSC_LINK: ${env.WIN_CSC_LINK}
+
 linux:
   target: AppImage
 

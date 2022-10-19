@@ -1,0 +1,33 @@
+name: Build and release electron
+
+jobs:
+  release:
+    name: Build and release
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@main
+        with:
+          token: ${{ secrets.TANATLOC_AS_SUBMODULE }}
+          submodules: true
+
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@main
+        with:
+          node-version: 16
+
+      - name: Install
+        run: yarn install
+        env:
+          YARN_CHECKSUM_BEHAVIOR: update
+
+      - name: Electron build
+        run: yarn dist
+        env:
+          BUILD_VERSION: test
+          NEXT_PUBLIC_SOURCE_BRANCH: $(git submodule foreach --quiet 'git rev-parse --abbrev-ref HEAD')
+          NEXT_PUBLIC_SOURCE_COMMIT: $(git submodule foreach --quiet 'git rev-parse --short HEAD')
+          NEXT_PUBLIC_SERVER_MODE: frontpage
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
