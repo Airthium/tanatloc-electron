@@ -1,4 +1,4 @@
-name: [TEST] Build and release electron Windows
+name: TEST Build and release electron Windows
 on: workflow_dispatch
 
 jobs:
