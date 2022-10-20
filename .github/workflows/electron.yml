@@ -96,6 +96,7 @@ jobs:
           NEXT_PUBLIC_SERVER_MODE: frontpage
           APPLE_ID: ${{ secrets.APPLE_ID }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+          WIN_CSC_LINK: ${{ secrets.WIN_CSC_LINK }}
 
       - name: Upload release
         uses: AButler/upload-release-assets@v2.0

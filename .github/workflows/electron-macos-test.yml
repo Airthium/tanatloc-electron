@@ -1,4 +1,5 @@
-name: Build and release electron
+name: [TEST] Build and release MacOS electron
+on: workflow_dispatch
 
 jobs:
   release:

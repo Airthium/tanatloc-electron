@@ -1,5 +1,5 @@
-name: Build and release electron
-on: [push]
+name: [TEST] Build and release electron Windows
+on: workflow_dispatch
 
 jobs:
   release:
@@ -33,10 +33,3 @@ jobs:
           APPLE_ID: ${{ secrets.APPLE_ID }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
           WIN_CSC_LINK: ${{ secrets.WIN_CSC_LINK }}
-
-      - name: Upload release
-        uses: AButler/upload-release-assets@v2.0
-        with:
-          files: ./dist/Tanatloc.Setup.test-sign.exe
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          release-tag: v1.1.1
