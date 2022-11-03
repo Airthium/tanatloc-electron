@@ -63,7 +63,6 @@ dmg:
   artifactName: Tanatloc-${env.BUILD_VERSION}.dmg
   title: Tanatloc ${env.BUILD_VERSION}
   backgroundColor: #fad114
-  sign: false
 
 nsis:
   artifactName: Tanatloc.Setup.${env.BUILD_VERSION}.exe
