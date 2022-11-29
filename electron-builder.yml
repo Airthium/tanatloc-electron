@@ -61,7 +61,7 @@ appImage:
 
 dmg:
   artifactName: Tanatloc-${env.BUILD_VERSION}.dmg
-  title: Tanatloc ${env.BUILD_VERSION}
+  title: Tanatloc
   backgroundColor: #fad114
 
 nsis:
