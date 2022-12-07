@@ -59,7 +59,7 @@ jest.mock(
     }
 )
 
-describe('main/helpers/create-window', () => {
+describe('electron-src/helpers/create-window', () => {
   test('call', () => {
     createWindow('name', { width: 1000, height: 1000 })
   })

@@ -43,7 +43,7 @@ jest.mock(
   { virtual: true }
 )
 
-describe('main/background', () => {
+describe('electron-src/background', () => {
   test('import', async () => {
     Object.defineProperty(global, 'tanatloc', { value: { complete: false } })
     await import('..')

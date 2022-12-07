@@ -43,7 +43,7 @@ jest.mock(
   { virtual: true }
 )
 
-describe('main/background', () => {
+describe('electron-src/background', () => {
   test('import', async () => {
     await import('..')
     await new Promise((resolve) => setTimeout(resolve, 5_000))
