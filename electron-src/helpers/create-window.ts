@@ -3,8 +3,6 @@
 import { screen, BrowserWindow } from 'electron'
 import Store from 'electron-store'
 
-console.log(screen)
-
 export interface IWindowState {
   x: number
   y: number

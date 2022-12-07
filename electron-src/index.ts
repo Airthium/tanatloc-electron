@@ -82,7 +82,7 @@ const start = async (): Promise<void> => {
     await addError('Install error')
     await addError(err.message)
     complete = false
-    console.log(err)
+    console.error(err)
   }
 
   // Server
