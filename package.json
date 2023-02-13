@@ -42,7 +42,7 @@
     "dist": "yarn build && echo Build application && electron-builder"
   },
   "dependencies": {
-    "@airthium/pg-format": "2.0.4",
+    "@airthium/pg-format": "2.0.5",
     "@babel/runtime": "7.20.13",
     "@hapi/iron": "7.0.1",
     "@sentry/node": "7.37.1",
@@ -71,7 +71,7 @@
     "uuid": "9.0.0"
   },
   "devDependencies": {
-    "@airthium/typedoc-plugin-airthium": "1.0.18",
+    "@airthium/typedoc-plugin-airthium": "1.0.19",
     "@ant-design/icons": "5.0.1",
     "@babel/cli": "7.20.7",
     "@babel/preset-typescript": "7.18.6",
