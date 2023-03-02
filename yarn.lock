@@ -12,7 +12,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@airthium/extract-json-from-string@npm:^1.0.2":
+"@airthium/extract-json-from-string@npm:1.0.2":
   version: 1.0.2
   resolution: "@airthium/extract-json-from-string@npm:1.0.2"
   checksum: 7bf73b058c0d1f6bb4671a357e72c7d4c80eb984e608eeb06394bd0fb50ace19a9e1012fedf6d80d6bfa851a3a289e3fa8f4333b00201d886a1df02b8f78487f
@@ -10545,7 +10545,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "tanatloc-electron@workspace:."
   dependencies:
-    "@airthium/extract-json-from-string": ^1.0.2
+    "@airthium/extract-json-from-string": 1.0.2
     "@airthium/pg-format": 2.0.6
     "@airthium/typedoc-plugin-airthium": 1.0.20
     "@ant-design/icons": 5.0.1
