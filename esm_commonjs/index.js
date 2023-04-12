@@ -9,7 +9,8 @@ const dependencies = [
   'url-join',
   'fix-path',
   '@airthium/pg-format',
-  'node-fetch'
+  'node-fetch',
+  '@airthium/extract-json-from-string'
 ]
 
 /**
