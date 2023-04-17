@@ -23,7 +23,8 @@ jest.mock('../helpers', () => ({
     maximize: jest.fn,
     loadURL: jest.fn,
     webContents: {
-      openDevTools: jest.fn
+      openDevTools: jest.fn,
+      send: jest.fn
     }
   })
 }))

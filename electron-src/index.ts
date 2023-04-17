@@ -3,6 +3,7 @@
 import { app } from 'electron'
 import serve from 'electron-serve'
 import fixPath from 'fix-path'
+import path from 'path'
 
 import { createWindow } from './helpers'
 
@@ -31,36 +32,32 @@ const start = async (): Promise<void> => {
     width: 1000,
     height: 600,
     webPreferences: {
-      nodeIntegration: false,
-      contextIsolation: false
+      preload: path.join(__dirname, './helpers/preload.js')
     }
   })
   mainWindow.maximize()
 
-  const addStatus = async (aStatus: string): Promise<void> => {
-    status.push(aStatus)
-    await loadStart()
+  /**
+   * Add status
+   * @param aStatus Status
+   */
+  const addStatus = (aStatus: string): void => {
+    status.unshift(aStatus)
+    mainWindow.webContents.send('update-status', status)
   }
 
-  const addError = async (anError: string): Promise<void> => {
-    errors.push(anError)
-    await loadStart()
+  /**
+   * Add error
+   * @param anError Error
+   */
+  const addError = (anError: string): void => {
+    errors.unshift(anError)
+    mainWindow.webContents.send('update-errors', errors)
   }
 
-  const loadStart = async (): Promise<void> => {
-    try {
-      await mainWindow.loadURL(
-        'app://./start.html?status=' +
-          encodeURIComponent(status.join(';')) +
-          '&err=' +
-          encodeURIComponent(errors.join(';'))
-      )
-      // BUG: must wait after loadURL
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-    } catch (err) {}
-  }
-
-  await addStatus('Starting client')
+  // Start
+  await mainWindow.loadURL('app://./start.html')
+  addStatus('Starting client')
 
   // Install
   try {
@@ -79,8 +76,8 @@ const start = async (): Promise<void> => {
     }
   } catch (err: any) {
     console.error('Install error')
-    await addError('Install error')
-    await addError(err.message)
+    addError('Install error')
+    addError(err.message)
     complete = false
     console.error(err)
   }
@@ -94,14 +91,14 @@ const start = async (): Promise<void> => {
       await server.default({ addStatus })
     } catch (err: any) {
       console.error('Server error')
-      await addError('Server error')
-      await addError(err.message)
+      addError('Server error')
+      addError(err.message)
       complete = false
     }
 
   // Normal start
   if (complete) {
-    await mainWindow.loadURL(`app://./index.html`)
+    await mainWindow.loadURL(`app://./dashboard.html`)
   }
 }
 start()

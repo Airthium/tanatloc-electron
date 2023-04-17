@@ -14,6 +14,7 @@ jest.mock('@swc/core', () => {
 
 jest.mock('fs', () => {
   let readFileCount = 0
+  let writeFileCount = 0
   let readdirCount = 0
   return {
     promises: {
@@ -28,7 +29,10 @@ jest.mock('fs', () => {
           return JSON.stringify({ type: 'commonjs' })
         else return JSON.stringify({ type: 'module' })
       },
-      writeFile: async () => undefined,
+      writeFile: async () => {
+        writeFileCount++
+        if (writeFileCount === 3) throw new Error('writeFile error')
+      },
       readdir: async () => {
         readdirCount++
         if (readdirCount <= 2)
