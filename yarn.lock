@@ -12,17 +12,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@airthium/extract-json-from-string@npm:1.0.10":
-  version: 1.0.10
-  resolution: "@airthium/extract-json-from-string@npm:1.0.10"
-  checksum: c90c4625ff5d1922a4631a83f9e3c6932e81545842be0db6f37228e4389ea60d269cf74180aefae2b2dad0055ebe282a87b1f240616335151da4e03b572e4b62
+"@airthium/extract-json-from-string@npm:1.0.12":
+  version: 1.0.12
+  resolution: "@airthium/extract-json-from-string@npm:1.0.12"
+  checksum: c7c2167fd76abe436e2a27c91758c5ac39cad511ed02570f6affc53212361bd4c760383241b8f09f16b38d383ce776b6e3b4d0d756ed8e0f9a6f36e86c5e0f68
   languageName: node
   linkType: hard
 
-"@airthium/pg-format@npm:2.0.15":
-  version: 2.0.15
-  resolution: "@airthium/pg-format@npm:2.0.15"
-  checksum: 5c396a4095d25e48c886765153ba0cc9c6f86955c0907740957f876f9a140859083aa4a0e2f37538c4934aa72552344706c9547e83143e87d1877c6d3aa9f417
+"@airthium/pg-format@npm:2.0.16":
+  version: 2.0.16
+  resolution: "@airthium/pg-format@npm:2.0.16"
+  checksum: cbea52e9279466dc2c5bc2b0fb8e88d0e4295ec95fe8e60ea6eb70848beb41b337af89a359a47db70021dcf64d28453b73a14c1822760d8a5f42eecee19fbf8b
   languageName: node
   linkType: hard
 
@@ -1533,90 +1533,90 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-arm64@npm:1.3.57":
-  version: 1.3.57
-  resolution: "@swc/core-darwin-arm64@npm:1.3.57"
+"@swc/core-darwin-arm64@npm:1.3.58":
+  version: 1.3.58
+  resolution: "@swc/core-darwin-arm64@npm:1.3.58"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-x64@npm:1.3.57":
-  version: 1.3.57
-  resolution: "@swc/core-darwin-x64@npm:1.3.57"
+"@swc/core-darwin-x64@npm:1.3.58":
+  version: 1.3.58
+  resolution: "@swc/core-darwin-x64@npm:1.3.58"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm-gnueabihf@npm:1.3.57":
-  version: 1.3.57
-  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.3.57"
+"@swc/core-linux-arm-gnueabihf@npm:1.3.58":
+  version: 1.3.58
+  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.3.58"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-gnu@npm:1.3.57":
-  version: 1.3.57
-  resolution: "@swc/core-linux-arm64-gnu@npm:1.3.57"
+"@swc/core-linux-arm64-gnu@npm:1.3.58":
+  version: 1.3.58
+  resolution: "@swc/core-linux-arm64-gnu@npm:1.3.58"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-musl@npm:1.3.57":
-  version: 1.3.57
-  resolution: "@swc/core-linux-arm64-musl@npm:1.3.57"
+"@swc/core-linux-arm64-musl@npm:1.3.58":
+  version: 1.3.58
+  resolution: "@swc/core-linux-arm64-musl@npm:1.3.58"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-gnu@npm:1.3.57":
-  version: 1.3.57
-  resolution: "@swc/core-linux-x64-gnu@npm:1.3.57"
+"@swc/core-linux-x64-gnu@npm:1.3.58":
+  version: 1.3.58
+  resolution: "@swc/core-linux-x64-gnu@npm:1.3.58"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-musl@npm:1.3.57":
-  version: 1.3.57
-  resolution: "@swc/core-linux-x64-musl@npm:1.3.57"
+"@swc/core-linux-x64-musl@npm:1.3.58":
+  version: 1.3.58
+  resolution: "@swc/core-linux-x64-musl@npm:1.3.58"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@swc/core-win32-arm64-msvc@npm:1.3.57":
-  version: 1.3.57
-  resolution: "@swc/core-win32-arm64-msvc@npm:1.3.57"
+"@swc/core-win32-arm64-msvc@npm:1.3.58":
+  version: 1.3.58
+  resolution: "@swc/core-win32-arm64-msvc@npm:1.3.58"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-win32-ia32-msvc@npm:1.3.57":
-  version: 1.3.57
-  resolution: "@swc/core-win32-ia32-msvc@npm:1.3.57"
+"@swc/core-win32-ia32-msvc@npm:1.3.58":
+  version: 1.3.58
+  resolution: "@swc/core-win32-ia32-msvc@npm:1.3.58"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@swc/core-win32-x64-msvc@npm:1.3.57":
-  version: 1.3.57
-  resolution: "@swc/core-win32-x64-msvc@npm:1.3.57"
+"@swc/core-win32-x64-msvc@npm:1.3.58":
+  version: 1.3.58
+  resolution: "@swc/core-win32-x64-msvc@npm:1.3.58"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core@npm:1.3.57":
-  version: 1.3.57
-  resolution: "@swc/core@npm:1.3.57"
+"@swc/core@npm:1.3.58":
+  version: 1.3.58
+  resolution: "@swc/core@npm:1.3.58"
   dependencies:
-    "@swc/core-darwin-arm64": 1.3.57
-    "@swc/core-darwin-x64": 1.3.57
-    "@swc/core-linux-arm-gnueabihf": 1.3.57
-    "@swc/core-linux-arm64-gnu": 1.3.57
-    "@swc/core-linux-arm64-musl": 1.3.57
-    "@swc/core-linux-x64-gnu": 1.3.57
-    "@swc/core-linux-x64-musl": 1.3.57
-    "@swc/core-win32-arm64-msvc": 1.3.57
-    "@swc/core-win32-ia32-msvc": 1.3.57
-    "@swc/core-win32-x64-msvc": 1.3.57
+    "@swc/core-darwin-arm64": 1.3.58
+    "@swc/core-darwin-x64": 1.3.58
+    "@swc/core-linux-arm-gnueabihf": 1.3.58
+    "@swc/core-linux-arm64-gnu": 1.3.58
+    "@swc/core-linux-arm64-musl": 1.3.58
+    "@swc/core-linux-x64-gnu": 1.3.58
+    "@swc/core-linux-x64-musl": 1.3.58
+    "@swc/core-win32-arm64-msvc": 1.3.58
+    "@swc/core-win32-ia32-msvc": 1.3.58
+    "@swc/core-win32-x64-msvc": 1.3.58
   peerDependencies:
     "@swc/helpers": ^0.5.0
   dependenciesMeta:
@@ -1643,7 +1643,7 @@ __metadata:
   peerDependenciesMeta:
     "@swc/helpers":
       optional: true
-  checksum: 4e900d05f8ea8fe7051d06b90bcedf13edd1305f9f2d50d0cbe3b28256a0f1512488c0f3fece6e9b5413e3bc8dc9c7e559c2bb384676aaf80971661e89d39241
+  checksum: 34e5a1046aab51e55b35b966e54de8f1bcdef2535c297d76a9b0e38cba126599c24b5062c9c6ce9d4c6b5745c91e8a2eda596fe39ab27093459e8aa2934cf387
   languageName: node
   linkType: hard
 
@@ -10677,8 +10677,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "tanatloc-electron@workspace:."
   dependencies:
-    "@airthium/extract-json-from-string": 1.0.10
-    "@airthium/pg-format": 2.0.15
+    "@airthium/extract-json-from-string": 1.0.12
+    "@airthium/pg-format": 2.0.16
     "@airthium/typedoc-plugin-airthium": 1.1.5
     "@ant-design/icons": 5.0.1
     "@babel/cli": 7.21.5
@@ -10688,7 +10688,7 @@ __metadata:
     "@hapi/iron": 7.0.1
     "@sentry/browser": 7.51.2
     "@sentry/node": 7.51.2
-    "@swc/core": 1.3.57
+    "@swc/core": 1.3.58
     "@testing-library/react": 14.0.0
     "@types/archiver": 5.3.2
     "@types/cookie": 0.5.1
