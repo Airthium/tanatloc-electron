@@ -39,6 +39,7 @@ import system from '../tanatloc/src/route/system'
 import user from '../tanatloc/src/route/user'
 import userId from '../tanatloc/src/route/user/[id]'
 import userCheck from '../tanatloc/src/route/user/check'
+import userModel from '../tanatloc/src/route/userModel'
 import users from '../tanatloc/src/route/users'
 import workspace from '../tanatloc/src/route/workspace'
 import { loginRoute } from '../tanatloc/src/route/login'
@@ -109,6 +110,8 @@ app.all('/api/system', system)
 app.all('/api/user', user)
 app.all('/api/user/:id', userId)
 app.post('/api/user/check', userCheck)
+
+app.all('/api/userModel', userModel)
 
 app.all('/api/users', users)
 

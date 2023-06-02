@@ -31,6 +31,10 @@ files:
   - from: node_modules/mathjax/es5
     to: renderer/mathjax
 
+  # Templates
+  - from: tanatloc/templates
+    to: renderer/templates
+
 # Extra ressources
 extraResources: [
     # Install
