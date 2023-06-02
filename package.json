@@ -128,5 +128,8 @@
     "typedoc": "0.24.7",
     "typescript": "5.0.4"
   },
+  "resolutions": {
+    "@types/react": "18.2.7"
+  },
   "packageManager": "yarn@3.5.1"
 }

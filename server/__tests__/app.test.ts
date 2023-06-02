@@ -78,6 +78,7 @@ jest.mock('../../tanatloc/src/route/system', () => jest.fn())
 jest.mock('../../tanatloc/src/route/user', () => jest.fn())
 jest.mock('../../tanatloc/src/route/user/[id]', () => jest.fn())
 jest.mock('../../tanatloc/src/route/user/check', () => jest.fn())
+jest.mock('../../tanatloc/src/route/userModel', () => jest.fn())
 jest.mock('../../tanatloc/src/route/users', () => jest.fn())
 jest.mock('../../tanatloc/src/route/workspace', () => jest.fn())
 jest.mock('../../tanatloc/src/route/logout', () => ({
