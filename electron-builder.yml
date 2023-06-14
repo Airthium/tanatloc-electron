@@ -38,12 +38,14 @@ files:
 # Extra ressources
 extraResources: [
     # Install
-    { from: 'dist-install', to: 'app/install' },
+    { from: 'dist-install', to: 'extra/install' },
     # Server
-    { from: 'dist-server', to: 'app/server' }
+    { from: 'dist-server', to: 'extra/server' },
+    # node_modules
+    { from: 'node_modules', to: 'extra/node_modules' }
   ]
 
-asar: false
+asar: true
 publish: null
 afterSign: build/notarize.js
 
@@ -62,6 +64,7 @@ win:
 
 appImage:
   artifactName: Tanatloc-${env.BUILD_VERSION}.AppImage
+  category: Science
 
 dmg:
   artifactName: Tanatloc-${env.BUILD_VERSION}.dmg

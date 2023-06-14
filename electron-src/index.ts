@@ -63,7 +63,7 @@ const start = async (): Promise<void> => {
   try {
     console.info('Install')
     //@ts-ignore
-    const install = await import('../install/install/index.js')
+    const install = await import('../../extra/install/install/index.js')
     await install.default({ addStatus, addError })
 
     // Wait complete
@@ -87,7 +87,7 @@ const start = async (): Promise<void> => {
     try {
       console.info('Starting server')
       //@ts-ignore
-      const server = await import('../server/server/bin/www.js')
+      const server = await import('../../extra/server/server/bin/www.js')
       await server.default({ addStatus })
     } catch (err: any) {
       console.error('Server error')
