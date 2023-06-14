@@ -101,7 +101,7 @@ const start = async (): Promise<void> => {
     await mainWindow.loadURL(`app://./dashboard.html`)
   }
 }
-start()
+start().catch(console.error)
 
 app.on('window-all-closed', () => {
   app.quit()

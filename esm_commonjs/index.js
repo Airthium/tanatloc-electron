@@ -1,3 +1,5 @@
+//@ts-check
+
 /** @module ESM-CommonJS */
 
 const swc = require('@swc/core')
@@ -21,7 +23,8 @@ const checkPackage = async (dir) => {
   console.info(' - Check package', dir)
   try {
     const pkgFile = path.join('./node_modules', dir, 'package.json')
-    const pkg = JSON.parse(await fs.readFile(pkgFile))
+    const pkgFileContent = await fs.readFile(pkgFile)
+    const pkg = JSON.parse(pkgFileContent.toString())
 
     if (pkg.type === 'commonjs') return
 
@@ -112,4 +115,7 @@ const main = async () => {
   for (const dependency of dependencies) await checkPackage(dependency)
 }
 
-main()
+main().catch((err) => {
+  console.log(err)
+  throw err
+})
