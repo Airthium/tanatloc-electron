@@ -79,7 +79,7 @@ jobs:
 
       - name: Submodule update
         run: |
-          git submodule update --init --recursive
+          git submodule update --remote
 
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@main
