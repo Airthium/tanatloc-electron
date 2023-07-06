@@ -77,6 +77,10 @@ jobs:
           token: ${{ secrets.TANATLOC_AS_SUBMODULE }}
           submodules: true
 
+      - name: Submodule update
+        run: |
+          git submodule update --init --recursive
+
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@main
         with:
