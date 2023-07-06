@@ -128,7 +128,7 @@
   },
   "resolutions": {
     "@types/react": "18.2.14",
-    "@electron/notarize": "2.1.0"
+    "@electron/notarize": "1.2.4"
   },
   "packageManager": "yarn@3.6.1"
 }
