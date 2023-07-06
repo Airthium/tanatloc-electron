@@ -78,7 +78,7 @@
     "@ant-design/icons": "5.1.4",
     "@babel/cli": "7.22.5",
     "@babel/preset-typescript": "7.22.5",
-    "@electron/notarize": "2.1.0",
+    "@electron/notarize": "1.2.4",
     "@sentry/browser": "7.57.0",
     "@swc/core": "1.3.67",
     "@testing-library/react": "14.0.0",
