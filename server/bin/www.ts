@@ -60,7 +60,7 @@ const www = async ({
     }
   }
 
-  process.on('exit', (code) => handleExit(code))
+  process.on('exit', (code) => handleExit(code).catch(console.error))
 
   /**
    * Get port from environment and store in Express.
@@ -103,7 +103,7 @@ const www = async ({
    * Event listener for HTTP server "listening" event.
    */
   const onListening = () => {
-    const addr = server.address() as string | AddressInfo
+    const addr = server.address()!
     const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port
 
     console.log('Listening on ' + bind)
