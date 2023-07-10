@@ -2,7 +2,6 @@
 
 import app from '../app'
 import { createServer } from 'http'
-import { AddressInfo } from 'net'
 
 import init from '../../tanatloc/src/server/init'
 import clean from '../../tanatloc/src/server/clean'
@@ -60,7 +59,9 @@ const www = async ({
     }
   }
 
-  process.on('exit', (code) => handleExit(code).catch(console.error))
+  process.on('exit', (code) => {
+    handleExit(code).catch(console.error)
+  })
 
   /**
    * Get port from environment and store in Express.
