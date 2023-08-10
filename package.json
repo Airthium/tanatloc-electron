@@ -19,10 +19,11 @@
     "pre-build": "node esm_commonjs/index.js",
     "build-renderer": "echo Build renderer && next build tanatloc && next export -o renderer tanatloc",
     "build-electron": "echo Build electron && tsc -p electron-src",
-    "build-install": "echo Build install && yarn build-install:config && yarn build-install:database && yarn build-install:init && yarn build-install:install",
+    "build-install": "echo Build install && yarn build-install:config && yarn build-install:database && yarn build-install:init && yarn build-install:package && yarn build-install:install",
     "build-install:config": "echo - Config && babel tanatloc/config/db.ts --extensions .ts --config-file ./install/.babelrc --out-dir dist-install/config && babel tanatloc/config/storage.ts --extensions .ts --config-file ./install/.babelrc --out-dir dist-install/config",
     "build-install:database": "echo - Database && babel tanatloc/src/database/index.ts --extensions .ts --config-file ./install/.babelrc --out-dir dist-install/src/database",
     "build-install:init": "echo - Init && babel tanatloc/src/server/init/database.ts --extensions .ts --config-file ./install/.babelrc --out-dir dist-install/src/server/init",
+    "build-install:package": "echo - Package.json && babel tanatloc/package.json --out-dir dist-install --copy-files",
     "build-install:install": "echo - Install && babel tanatloc/install --extensions .ts --config-file ./install/.babelrc --out-dir dist-install/install --ignore '**/__tests__/**'",
     "build-server": "echo Build server && yarn build-server:server && yarn build-server:config && yarn build-server:src && yarn build-server:models && yarn build-server:plugins && yarn build-server:templates && yarn build-server:postprocessing",
     "build-server:server": "echo - Server && babel server --extensions .ts --config-file ./server/.babelrc --out-dir dist-server/server --ignore '**/__tests__/**'",
@@ -42,8 +43,9 @@
     "dist": "yarn build && echo Build application && electron-builder"
   },
   "dependencies": {
-    "@airthium/extract-json-from-string": "1.0.22",
-    "@airthium/pg-format": "2.0.27",
+    "@airthium/extract-json-from-string": "1.0.23",
+    "@airthium/pg-format": "2.0.28",
+    "@airthium/tanatloc-formula-validator": "1.0.5",
     "@babel/runtime": "7.22.6",
     "@hapi/iron": "7.0.1",
     "@sentry/node": "7.61.1",
@@ -73,7 +75,7 @@
     "uuid": "9.0.0"
   },
   "devDependencies": {
-    "@airthium/deep-object-diff": "1.0.4",
+    "@airthium/deep-object-diff": "1.0.5",
     "@airthium/typedoc-plugin-airthium": "1.1.9",
     "@ant-design/icons": "5.2.5",
     "@babel/cli": "7.22.9",
