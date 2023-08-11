@@ -23,7 +23,7 @@
     "build-install:config": "echo - Config && babel tanatloc/config/db.ts --extensions .ts --config-file ./install/.babelrc --out-dir dist-install/config && babel tanatloc/config/storage.ts --extensions .ts --config-file ./install/.babelrc --out-dir dist-install/config",
     "build-install:database": "echo - Database && babel tanatloc/src/database/index.ts --extensions .ts --config-file ./install/.babelrc --out-dir dist-install/src/database",
     "build-install:init": "echo - Init && babel tanatloc/src/server/init/database.ts --extensions .ts --config-file ./install/.babelrc --out-dir dist-install/src/server/init",
-    "build-install:package": "echo - Package.json && babel tanatloc/package.json --out-dir dist-install --copy-files",
+    "build-install:package": "echo - Package.json && node install/package.js",
     "build-install:install": "echo - Install && babel tanatloc/install --extensions .ts --config-file ./install/.babelrc --out-dir dist-install/install --ignore '**/__tests__/**'",
     "build-server": "echo Build server && yarn build-server:server && yarn build-server:config && yarn build-server:src && yarn build-server:models && yarn build-server:plugins && yarn build-server:templates && yarn build-server:postprocessing",
     "build-server:server": "echo - Server && babel server --extensions .ts --config-file ./server/.babelrc --out-dir dist-server/server --ignore '**/__tests__/**'",
