@@ -25,7 +25,7 @@
     "build-install:init": "echo - Init && babel tanatloc/src/server/init/database.ts --extensions .ts --config-file ./install/.babelrc --out-dir dist-install/src/server/init",
     "build-install:package": "echo - Package.json && node install/package.js",
     "build-install:install": "echo - Install && babel tanatloc/install --extensions .ts --config-file ./install/.babelrc --out-dir dist-install/install --ignore '**/__tests__/**'",
-    "build-server": "echo Build server && yarn build-server:server && yarn build-server:config && yarn build-server:src && yarn build-server:models && yarn build-server:plugins && yarn build-server:templates && yarn build-server:postprocessing",
+    "build-server": "echo Build server && yarn build-server:server && yarn build-server:config && yarn build-server:src && yarn build-server:models && yarn build-server:plugins && yarn build-server:mathjax && yarn build-server:templates && yarn build-server:postprocessing",
     "build-server:server": "echo - Server && babel server --extensions .ts --config-file ./server/.babelrc --out-dir dist-server/server --ignore '**/__tests__/**'",
     "build-server:config": "echo - Config && babel tanatloc/config/*.ts --extensions .ts --config-file ./server/.babelrc --out-dir dist-server/tanatloc/config",
     "build-server:src": "yarn build-server:src:auth && yarn build-server:src:database && yarn build-server:src:lib && yarn build-server:src:route && yarn build-server:src:server && yarn build-server:src:services",
@@ -38,6 +38,7 @@
     "build-server:models": "echo - Src/models && babel tanatloc/models --extensions .ts --config-file ./server/.babelrc --out-dir dist-server/tanatloc/models --ignore '**/__tests__/**'",
     "build-server:templates": "echo - Src/templates && babel tanatloc/templates --extensions .ts --config-file ./server/.babelrc --out-dir dist-server/tanatloc/templates --ignore '**/__tests__/**' --copy-files --no-copy-ignored",
     "build-server:plugins": "echo - Src/plugins && babel tanatloc/plugins --extensions .ts,.tsx --config-file ./server/.babelrc --out-dir dist-server/tanatloc/plugins --ignore '**/__tests__/**' --copy-files --no-copy-ignored",
+    "build-server:mathjax": "echo - Src/components/assets/mathjax && babel tanatloc/src/components/assets/mathjax --extensions .ts,.tsx --config-file ./server/.babelrc --out-dir dist-server/tanatloc/src/components/assets/mathjax --ignore '**/__tests__/**' --copy-files --no-copy-ignored",
     "build-server:postprocessing": "echo - Src/postprocessing && babel tanatloc/postprocessing --extensions .ts --config-file ./server/.babelrc --out-dir dist-server/tanatloc/postprocessing --ignore '**/__tests__/**' --copy-files --no-copy-ignored",
     "build": "yarn pre-build && yarn build-install && yarn build-server && yarn build-renderer && yarn build-electron",
     "dist": "yarn build && echo Build application && electron-builder"
