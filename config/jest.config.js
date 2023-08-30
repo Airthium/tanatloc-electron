@@ -2,7 +2,6 @@ module.exports = {
   rootDir: '..',
   testMatch: ['<rootDir>/**/*.test.*'],
   testPathIgnorePatterns: [
-    '<rootDir>/build',
     '<rootDir>/dist',
     '<rootDir>/dist-install',
     '<rootDir>/dist-server',
