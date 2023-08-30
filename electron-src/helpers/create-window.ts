@@ -81,10 +81,13 @@ export default (
    */
   const resetToDefaults = (): IWindowState => {
     const bounds = screen.getPrimaryDisplay().bounds
-    return Object.assign({}, defaultSize, {
-      x: (bounds.width - defaultSize.width) / 2,
-      y: (bounds.height - defaultSize.height) / 2
-    })
+    return {
+      ...defaultSize,
+      ...{
+        x: (bounds.width - defaultSize.width) / 2,
+        y: (bounds.height - defaultSize.height) / 2
+      }
+    }
   }
 
   /**

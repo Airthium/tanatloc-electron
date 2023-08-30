@@ -30,7 +30,7 @@ jest.mock('../helpers', () => ({
 }))
 
 jest.mock(
-  '../../install/install/index.js',
+  '../../../extra/install/install/index.js',
   () => () => {
     // Empty
   },
@@ -38,7 +38,7 @@ jest.mock(
 )
 
 jest.mock(
-  '../../server/server/bin/www.js',
+  '../../../extra/server/server/bin/www.js',
   () => () => {
     // Empty
   },

@@ -115,7 +115,4 @@ const main = async () => {
   for (const dependency of dependencies) await checkPackage(dependency)
 }
 
-main().catch((err) => {
-  console.log(err)
-  throw err
-})
+main().catch(console.error)
