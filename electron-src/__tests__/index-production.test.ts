@@ -16,6 +16,10 @@ jest.mock('electron', () => ({
 const mockLoadUrl = jest.fn()
 jest.mock('electron-serve', () => () => mockLoadUrl())
 
+jest.mock('@sentry/electron', () => ({
+  init: jest.fn
+}))
+
 jest.mock('fix-path', () => () => undefined)
 
 jest.mock('../helpers', () => ({
