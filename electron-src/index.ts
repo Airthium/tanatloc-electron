@@ -4,8 +4,15 @@ import { app } from 'electron'
 import serve from 'electron-serve'
 import fixPath from 'fix-path'
 import path from 'path'
+import * as Sentry from '@sentry/electron'
 
 import { createWindow } from './helpers'
+
+// Sentry
+if (process.env.NODE_ENV === 'production')
+  Sentry.init({
+    dsn: 'https://3bb27cb32e55433696022ba93cb32430@o394613.ingest.sentry.io/5428383'
+  })
 
 // Serve renderer
 serve({ directory: 'renderer' })
@@ -36,6 +43,7 @@ const start = async (): Promise<void> => {
     }
   })
   mainWindow.maximize()
+  if (process.env.NODE_ENV === 'production') mainWindow.removeMenu()
 
   /**
    * Add status

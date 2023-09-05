@@ -126,9 +126,10 @@ export default (
   win = new BrowserWindow({
     ...options,
     ...state,
+    title: 'Tanatloc',
     webPreferences: {
       ...options.webPreferences,
-      nodeIntegration: true
+      nodeIntegration: false
     }
   })
 
