@@ -44,9 +44,9 @@
     "dist": "yarn build && echo Build application && electron-builder"
   },
   "dependencies": {
-    "@airthium/extract-json-from-string": "1.0.26",
-    "@airthium/pg-format": "2.0.31",
-    "@airthium/tanatloc-formula-validator": "1.0.10",
+    "@airthium/extract-json-from-string": "1.0.27",
+    "@airthium/pg-format": "2.0.32",
+    "@airthium/tanatloc-formula-validator": "1.0.11",
     "@babel/runtime": "7.22.15",
     "@hapi/iron": "7.0.1",
     "@sentry/electron": "4.10.0",
