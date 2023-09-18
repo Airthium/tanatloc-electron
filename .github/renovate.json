@@ -13,7 +13,7 @@
       "groupSlug": "all"
     }
   ],
-  "ignoreDeps": ["@swc/core", "next"],
+  "ignoreDeps": ["next"],
   "lockFileMaintenance": {
     "enabled": false
   }
