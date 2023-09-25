@@ -2361,30 +2361,30 @@ __metadata:
   linkType: hard
 
 "@types/scheduler@npm:*":
-  version: 0.16.3
-  resolution: "@types/scheduler@npm:0.16.3"
-  checksum: 2b0aec39c24268e3ce938c5db2f2e77f5c3dd280e05c262d9c2fe7d890929e4632a6b8e94334017b66b45e4f92a5aa42ba3356640c2a1175fa37bef2f5200767
+  version: 0.16.4
+  resolution: "@types/scheduler@npm:0.16.4"
+  checksum: a57b0f10da1b021e6bd5eeef8a1917dd3b08a8715bd8029e2ded2096d8f091bb1bb1fef2d66e139588a983c4bfbad29b59e48011141725fa83c76e986e1257d7
   languageName: node
   linkType: hard
 
 "@types/send@npm:*":
-  version: 0.17.1
-  resolution: "@types/send@npm:0.17.1"
+  version: 0.17.2
+  resolution: "@types/send@npm:0.17.2"
   dependencies:
     "@types/mime": ^1
     "@types/node": "*"
-  checksum: 10b620a5960058ef009afbc17686f680d6486277c62f640845381ec4baa0ea683fdd77c3afea4803daf5fcddd3fb2972c8aa32e078939f1d4e96f83195c89793
+  checksum: 1ff5b1bd6a4f6fdc6402c7024781ff5dbd0e1f51a43c69529fb67c710943c7416d2f0d77c57c70fccf6616f25f838f32f960284526e408d4edae2e91e1fce95a
   languageName: node
   linkType: hard
 
 "@types/serve-static@npm:*":
-  version: 1.15.2
-  resolution: "@types/serve-static@npm:1.15.2"
+  version: 1.15.3
+  resolution: "@types/serve-static@npm:1.15.3"
   dependencies:
     "@types/http-errors": "*"
     "@types/mime": "*"
     "@types/node": "*"
-  checksum: 15c261dbfc57890f7cc17c04d5b22b418dfa0330c912b46c5d8ae2064da5d6f844ef7f41b63c7f4bbf07675e97ebe6ac804b032635ec742ae45d6f1274259b3e
+  checksum: afa52252f0ba94cdb5391e80f23e17fd629bdf2a31be8876e2c4490312ed6b0570822dd7de7cea04c9002049e207709563568b7f4ee10bb9f456321db1e83e40
   languageName: node
   linkType: hard
 
