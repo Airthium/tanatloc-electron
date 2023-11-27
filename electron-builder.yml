@@ -14,7 +14,7 @@ files:
       - package.json
 
   # Renderer
-  - from: renderer
+  - from: tanatloc/renderer
     to: renderer
 
   # threejs assets

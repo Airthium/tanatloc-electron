@@ -16,7 +16,6 @@
 /dist-install
 /dist-server
 /main
-/renderer
 
 # misc
 .DS_Store

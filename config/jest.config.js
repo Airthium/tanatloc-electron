@@ -6,7 +6,6 @@ module.exports = {
     '<rootDir>/dist-install',
     '<rootDir>/dist-server',
     '<rootDir>/main',
-    '<rootDir>/renderer',
     '<rootDir>/tanatloc'
   ],
   transform: {
