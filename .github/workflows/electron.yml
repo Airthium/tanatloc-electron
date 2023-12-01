@@ -85,6 +85,9 @@ jobs:
         with:
           node-version: '18.x'
 
+      - name: Corepack
+        run: corepack enable
+
       - name: Install
         run: yarn install
         env:
@@ -106,7 +109,7 @@ jobs:
           WIN_CSC_KEY_PASSWORD: ''
 
       - name: Upload release
-        uses: AButler/upload-release-assets@master
+        uses: AButler/upload-release-assets@v2.0.x
         with:
           files: ${{ matrix.os.build }}
           repo-token: ${{ secrets.GITHUB_TOKEN }}
