@@ -16,6 +16,9 @@ jobs:
         with:
           node-version: '18.x'
 
+      - name: Corepack
+        run: corepack enable
+
       - name: Install
         run: YARN_CHECKSUM_BEHAVIOR=update yarn install
 
