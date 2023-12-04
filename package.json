@@ -77,9 +77,9 @@
     "uuid": "9.0.1"
   },
   "devDependencies": {
-    "@airthium/deep-object-diff": "1.0.20",
-    "@airthium/tanatloc-3d": "1.0.8",
-    "@airthium/typedoc-plugin-airthium": "1.1.24",
+    "@airthium/deep-object-diff": "1.0.21",
+    "@airthium/tanatloc-3d": "1.0.9",
+    "@airthium/typedoc-plugin-airthium": "1.1.25",
     "@ant-design/icons": "5.2.6",
     "@babel/cli": "7.23.4",
     "@babel/preset-typescript": "7.23.3",
