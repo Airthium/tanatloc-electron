@@ -3,19 +3,19 @@
 set -e
 
 # Clean
-git clean -xdf
+#git clean -xdf
 
 # Install
 yarn install
 
 # Depcheck
-yarn run depcheck | true
+yarn run depcheck
 
 # Lint
-yarn run prettier | true
+yarn run prettier
 
 # Test
-yarn run test | true
+yarn run test
 
 # Build
 BUILD_VERSION=test yarn dist

@@ -78,7 +78,7 @@
   },
   "devDependencies": {
     "@airthium/deep-object-diff": "1.0.23",
-    "@airthium/tanatloc-3d": "1.1.1",
+    "@airthium/tanatloc-3d": "1.1.4",
     "@airthium/typedoc-plugin-airthium": "1.1.26",
     "@ant-design/icons": "5.2.6",
     "@babel/cli": "7.23.4",
@@ -101,7 +101,6 @@
     "@types/set-interval-async": "1.0.3",
     "@types/sharp": "0.31.1",
     "@types/tar": "6.1.10",
-    "@types/three": "0.160.0",
     "@types/url-join": "4.0.3",
     "@types/uuid": "9.0.7",
     "ajv": "8.12.0",
@@ -126,7 +125,6 @@
     "react-dom": "18.2.0",
     "recharts": "2.10.3",
     "swr": "2.2.4",
-    "three": "0.160.0",
     "typedoc": "0.25.7",
     "typescript": "5.3.3"
   },
