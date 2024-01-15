@@ -2,9 +2,6 @@
 
 set -e
 
-# Clean
-#git clean -xdf
-
 # Install
 yarn install
 
