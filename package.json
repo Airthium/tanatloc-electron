@@ -45,8 +45,8 @@
   },
   "dependencies": {
     "@airthium/extract-json-from-string": "1.0.45",
-    "@airthium/pg-format": "2.0.50",
-    "@airthium/tanatloc-formula-validator": "1.0.29",
+    "@airthium/pg-format": "2.0.51",
+    "@airthium/tanatloc-formula-validator": "1.0.30",
     "@babel/runtime": "7.23.9",
     "@hapi/iron": "7.0.1",
     "@sentry/electron": "4.17.0",
@@ -77,8 +77,8 @@
     "uuid": "9.0.1"
   },
   "devDependencies": {
-    "@airthium/deep-object-diff": "1.0.27",
-    "@airthium/tanatloc-3d": "1.1.9",
+    "@airthium/deep-object-diff": "1.0.28",
+    "@airthium/tanatloc-3d": "1.1.10",
     "@airthium/typedoc-plugin-airthium": "1.1.30",
     "@ant-design/icons": "5.2.6",
     "@babel/cli": "7.23.9",
