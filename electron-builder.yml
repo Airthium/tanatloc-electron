@@ -47,7 +47,6 @@ extraResources: [
 
 asar: true
 publish: null
-afterSign: build/notarize.js
 
 linux:
   target: AppImage

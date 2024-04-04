@@ -1,3 +1,6 @@
+// TODO CHECK
+// Probably not used anymore
+
 const { notarize } = require('@electron/notarize')
 
 /**
