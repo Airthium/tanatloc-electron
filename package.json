@@ -111,7 +111,7 @@
     "electron": "30.0.1",
     "electron-builder": "24.13.3",
     "email-addresses": "5.0.0",
-    "eslint": "9.1.0",
+    "eslint": "8.57.0",
     "eslint-config-next": "14.2.2",
     "html-react-parser": "5.1.10",
     "ignore-loader": "0.1.2",
