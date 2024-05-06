@@ -7,6 +7,8 @@ const { promises: fs } = require('fs')
 const path = require('path')
 
 const dependencies = [
+  'electron-serve',
+  'electron-store',
   'is-docker',
   'url-join',
   'fix-path',
