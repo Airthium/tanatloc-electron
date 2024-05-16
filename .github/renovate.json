@@ -13,7 +13,7 @@
       "groupSlug": "all"
     }
   ],
-  "ignoreDeps": ["eslint"],
+  "ignoreDeps": ["eslint", "electron-serve", "electron-store"],
   "lockFileMaintenance": {
     "enabled": false
   }
