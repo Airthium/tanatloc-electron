@@ -15,6 +15,10 @@ jest.mock('electron-serve', () => () => {
   // Empty
 })
 
+jest.mock('@sentry/electron/main', () => ({
+  init: jest.fn
+}))
+
 jest.mock('fix-path', () => () => undefined)
 
 jest.mock('../helpers', () => ({

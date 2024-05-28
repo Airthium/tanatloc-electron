@@ -4,7 +4,7 @@ import { app } from 'electron'
 import serve from 'electron-serve'
 import fixPath from 'fix-path'
 import path from 'path'
-import * as Sentry from '@sentry/electron'
+import * as Sentry from '@sentry/electron/main'
 
 import { createWindow } from './helpers'
 

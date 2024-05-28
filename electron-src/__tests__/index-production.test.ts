@@ -16,7 +16,7 @@ jest.mock('electron', () => ({
 const mockLoadUrl = jest.fn()
 jest.mock('electron-serve', () => () => mockLoadUrl())
 
-jest.mock('@sentry/electron', () => ({
+jest.mock('@sentry/electron/main', () => ({
   init: jest.fn
 }))
 
