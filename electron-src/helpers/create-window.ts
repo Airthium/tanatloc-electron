@@ -24,7 +24,6 @@ export default (
   const key = 'window-state'
   const name = `window-state-${windowName}`
   const store = new Store()
-  //@ts-ignore TODO
   store.set('name', name)
   const defaultSize = {
     width: options.width,
@@ -38,7 +37,6 @@ export default (
    * @memberof Electron
    * @returns Store
    */
-  //@ts-ignore TODO
   const restore = (): any => store.get(key, defaultSize)
 
   /**
@@ -120,7 +118,6 @@ export default (
     if (!win.isMinimized() && !win.isMaximized()) {
       Object.assign(state, getCurrentPosition())
     }
-    //@ts-ignore TODO
     store.set(key, state)
   }
 
