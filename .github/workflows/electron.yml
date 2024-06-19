@@ -57,7 +57,7 @@ jobs:
               build: './dist/Tanatloc-${{ needs.create-release.outputs.version }}.AppImage'
             },
             {
-              version: macos-latest,
+              version: macos-13,
               build: './dist/Tanatloc-${{ needs.create-release.outputs.version }}.dmg'
             },
             {
