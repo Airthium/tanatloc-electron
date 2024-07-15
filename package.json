@@ -44,9 +44,9 @@
     "dist": "yarn build && echo Build application && electron-builder"
   },
   "dependencies": {
-    "@airthium/extract-json-from-string": "1.0.65",
-    "@airthium/pg-format": "2.0.70",
-    "@airthium/tanatloc-formula-validator": "1.0.50",
+    "@airthium/extract-json-from-string": "1.0.66",
+    "@airthium/pg-format": "2.0.71",
+    "@airthium/tanatloc-formula-validator": "1.0.51",
     "@babel/runtime": "7.24.8",
     "@hapi/iron": "7.0.1",
     "@sentry/electron": "5.2.0",
@@ -77,9 +77,9 @@
     "uuid": "10.0.0"
   },
   "devDependencies": {
-    "@airthium/deep-object-diff": "1.0.46",
-    "@airthium/tanatloc-3d": "1.2.4",
-    "@airthium/typedoc-plugin-airthium": "1.1.50",
+    "@airthium/deep-object-diff": "1.0.47",
+    "@airthium/tanatloc-3d": "1.2.5",
+    "@airthium/typedoc-plugin-airthium": "1.1.51",
     "@ant-design/icons": "5.3.7",
     "@babel/cli": "7.24.8",
     "@babel/preset-typescript": "7.24.7",
