@@ -129,5 +129,8 @@
     "typedoc": "0.26.5",
     "typescript": "5.5.4"
   },
+  "resolutions": {
+    "@electron/notarize": "2.3.2"
+  },
   "packageManager": "yarn@4.3.1"
 }
