@@ -9,6 +9,15 @@ module.exports = {
     '<rootDir>/tanatloc'
   ],
   transform: {
-    '^.+\\.ts?$': ['babel-jest', { presets: ['next/babel'] }]
+    '^.+\\.ts?$': [
+      'babel-jest',
+      {
+        presets: [
+          '@babel/preset-env',
+          '@babel/preset-react',
+          '@babel/preset-typescript'
+        ]
+      }
+    ]
   }
 }
