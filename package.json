@@ -78,7 +78,7 @@
   },
   "devDependencies": {
     "@airthium/deep-object-diff": "1.0.62",
-    "@airthium/tanatloc-3d": "1.2.21",
+    "@airthium/tanatloc-3d": "1.2.22",
     "@airthium/typedoc-plugin-airthium": "1.1.64",
     "@ant-design/icons": "5.5.1",
     "@babel/cli": "7.25.9",
