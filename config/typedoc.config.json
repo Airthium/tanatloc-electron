@@ -8,8 +8,6 @@
     "../server"
   ],
   "exclude": ["../tanatloc", "**/__tests__/**"],
-  "plugin": "@airthium/typedoc-plugin-airthium",
-  "theme": "airthium",
   "entryPointStrategy": "expand",
   "out": "../doc",
   "readme": "../README.md"
