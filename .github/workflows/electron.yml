@@ -83,7 +83,7 @@ jobs:
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@main
         with:
-          node-version: '18.x'
+          node-version: '22.x'
 
       - name: Corepack
         run: corepack enable
