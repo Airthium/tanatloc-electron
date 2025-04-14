@@ -57,8 +57,7 @@ mac:
   gatekeeperAssess: false
   entitlements: build/entitlements.mac.plist
   entitlementsInherit: build/entitlements.mac.plist
-  notarize:
-    teamId: 8FPHDRL6Z5
+  notarize: true
 
 win:
   target: nsis
