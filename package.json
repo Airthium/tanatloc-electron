@@ -110,7 +110,7 @@
     "babel-plugin-module-resolver": "5.0.3",
     "cookie": "1.1.1",
     "depcheck": "1.4.7",
-    "electron": "41.3.0",
+    "electron": "41.10.3",
     "electron-builder": "26.8.1",
     "email-addresses": "5.0.0",
     "eslint": "10.2.1",
